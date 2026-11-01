@@ -1,0 +1,43 @@
+{
+  "sources": [
+    {
+      "path": "projects/P03_verifier_reproduction/vendor/main_executor.py",
+      "origin": "https://github.com/ServiceNow/EnterpriseOps-Gym/blob/271f2c357f763376997dfd16807fcde2474ae41b/benchmark/executor.py",
+      "git_blob_sha": "43f45a0423b6fffc1640e6e93b824890b9e1d034",
+      "source_sha256": "28bb41a9d732d1e8d16c7bc33ba2b5800abd5b42d984717a814218f977156ebb",
+      "published_sha256": "28bb41a9d732d1e8d16c7bc33ba2b5800abd5b42d984717a814218f977156ebb",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "projects/P03_verifier_reproduction/vendor/task.json",
+      "origin": "https://github.com/ServiceNow/EnterpriseOps-Gym/blob/271f2c357f763376997dfd16807fcde2474ae41b/data/revised/csm/task_20251205_154853_044_d4a463c3_fce76046.json",
+      "git_blob_sha": "bac32e3dcdc21d14ec7aa6d9e98461d41537871a",
+      "source_sha256": "3cc8440866e8b75d7473ce8154c90b77b9aa1a9df990801b0142f5fdef5636bc",
+      "published_sha256": "3cc8440866e8b75d7473ce8154c90b77b9aa1a9df990801b0142f5fdef5636bc",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "projects/P03_verifier_reproduction/vendor/pr24_executor.py",
+      "source": "https://github.com/ServiceNow/EnterpriseOps-Gym/blob/5a71e6db5fda5afce8ed603e738f315d2506fbc7/benchmark/executor.py",
+      "source_sha256": "3f6ba7c19e1ada5fa1c5f9c12b30e0d344bbaf8f4a550ec2712d17f4118f65db",
+      "published_sha256": "3f6ba7c19e1ada5fa1c5f9c12b30e0d344bbaf8f4a550ec2712d17f4118f65db"
+    },
+    {
+      "path": "projects/P03_verifier_reproduction/vendor/LICENSE_APACHE_2_0",
+      "source": "ServiceNow/EnterpriseOps-Gym LICENSE at archived upstream commit",
+      "source_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "published_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "path": "projects/P03_verifier_reproduction/reproduce.py",
+      "source": "P03_adequation_environnements/src/reproduce_upstream_verifier_loss.py",
+      "source_sha256": "9b7402457db1bcb38663e82724260814adb5d68a0f5f1c6456177b20dd2f58d0",
+      "published_sha256": "2f6ba69d4b69d1392d303cdd39a837e360e249905c14caf29a403f0923a74ff4",
+      "changes": "Portable vendor input pins, explicit output, add actual PR24 method. Original data/aggregation oracles unchanged."
+    }
+  ],
+  "notes": [
+    "Only constructed fixture outcomes are measured. Main/PR24 refer to pinned historical commits, not current repository state.",
+    "No network services or private inputs."
+  ]
+}

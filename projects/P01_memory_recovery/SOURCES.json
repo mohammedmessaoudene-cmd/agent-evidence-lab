@@ -1,0 +1,65 @@
+{
+  "repository": "https://github.com/pydantic/pydantic-ai",
+  "base_commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+  "issue": "https://github.com/pydantic/pydantic-ai/issues/11191",
+  "related_pr": "https://github.com/pydantic/pydantic-ai/pull/10903",
+  "license": "MIT",
+  "upstream_sources": [
+    {
+      "path": "LICENSE",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/LICENSE",
+      "sha256_git_blob_bytes": "bc0e89738f36944c8106e1947c3d69631f9c33b8f1bcb60ec4f89d677d2dfcf4"
+    },
+    {
+      "path": "uv.lock",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/uv.lock",
+      "sha256_git_blob_bytes": "111d0a7ea6f519c70923f32e170399912ee6d4daecf0aeae3259c9f46075ae42"
+    },
+    {
+      "path": "pyproject.toml",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/pyproject.toml",
+      "sha256_git_blob_bytes": "670d619b89f4509c854e1eebf640db3ca7bfcb0d496e0a94b7133c6afcc7f930"
+    },
+    {
+      "path": "docs/contributing.md",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/docs/contributing.md",
+      "sha256_git_blob_bytes": "b49745af4509108adcd1531c6a2561ea6a856b74a00e26fb1b00a321dac0d09e"
+    },
+    {
+      "path": "tests/harness/memory/test_temporal_replay.py",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/tests/harness/memory/test_temporal_replay.py",
+      "sha256_git_blob_bytes": "74bcbd51859f4ad707f2d34022345f2eb1388ea31db5bb5b9c9d7447b708b5ca"
+    },
+    {
+      "path": "tests/harness/detect_loops/test_dbos.py",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/tests/harness/detect_loops/test_dbos.py",
+      "sha256_git_blob_bytes": "faa08a670d4c29d6a9bb79af383134d9fa5ea5def16e4ad68ebe218f611ea87b"
+    },
+    {
+      "path": "tests/harness/memory/test_memory.py",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/tests/harness/memory/test_memory.py",
+      "sha256_git_blob_bytes": "1e84660ac8be15fda685226b05c20428308a0fc3f29b162243d66f831cf3aedc"
+    },
+    {
+      "path": "pydantic_ai_slim/pydantic_ai/durable_exec/dbos/_operation_backend.py",
+      "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/d44704ec72744e4fc0bd5a3d5dd877462a24da5b/pydantic_ai_slim/pydantic_ai/durable_exec/dbos/_operation_backend.py",
+      "sha256_git_blob_bytes": "40ecc9172df886f7d4988978b00425eac11ca26758ff4e98296b35001cdcfc13"
+    }
+  ],
+  "candidate": {
+    "file": "test_dbos_recovery.py",
+    "sha256": "23000a86179287de8ce2d292e9d19b9ac33a72fa5f75598328bc5f009a456075",
+    "patch": "P01_DBOS_MEMORY_MINIMAL.patch",
+    "patch_sha256": "980a07abbd45e832fa8b7c9753203519d6f2c108b11857e06e249e40b40322b1",
+    "local_commit": "f66bd76d0087610649710a462e1496277d816155",
+    "upstream_submission": "NOT_SUBMITTED"
+  }
+}

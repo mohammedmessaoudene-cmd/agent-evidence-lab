@@ -1,0 +1,39 @@
+{
+  "kind": "review_fault_injection_actual_concurrent_ast",
+  "source_sha256": "f07f8937b1f2458c5a3b47d24dc6ee1c6d30bc75a4c4d3075ccab9d76290481f",
+  "real_processes_started": 0,
+  "ledger_operations": 0,
+  "status": "FAIL",
+  "cases": [
+    {
+      "scenario": "second_spawn_raises",
+      "observed_error": "OSError",
+      "children": [
+        {
+          "killed": false,
+          "communicated": false,
+          "running": true
+        }
+      ],
+      "cleanup_satisfied": false
+    },
+    {
+      "scenario": "already_exited_before_barrier",
+      "observed_error": "AssertionError",
+      "children": [
+        {
+          "killed": false,
+          "communicated": false,
+          "running": false
+        },
+        {
+          "killed": false,
+          "communicated": false,
+          "running": false
+        }
+      ],
+      "cleanup_satisfied": false
+    }
+  ],
+  "scope": "Fault paths of child ownership cleanup only; not a full-suite or ledger result."
+}

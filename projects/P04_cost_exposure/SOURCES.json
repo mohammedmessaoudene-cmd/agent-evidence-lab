@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "kind": "authorship_and_copy_map",
+  "frozen_originals_modified": false,
+  "files": [
+    {
+      "public_path": "src/exposure_ledger.py",
+      "origin_campaign": "CAMPAGNE_OPPORTUNITES_20261101_R1",
+      "origin_path": "P04_allocation_budget_agents/src/R2_WORKING/src/exposure_ledger.py",
+      "origin_sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188",
+      "public_sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188",
+      "exact_copy": true,
+      "changes": [],
+      "license": "MIT",
+      "provenance": "User-authorized original AI-assisted campaign code; no upstream source vendored."
+    },
+    {
+      "public_path": "tests/test_exposure_ledger.py",
+      "origin_campaign": "CAMPAGNE_OPPORTUNITES_20261101_R1",
+      "origin_path": "P04_allocation_budget_agents/src/R2_WORKING/tests/test_exposure_ledger.py",
+      "origin_sha256": "37698162e476e6c658c25b128da85ed4450892bdb153bcc57c1ae1fe250434f5",
+      "public_sha256": "384d45cccfddf3b06d75f92771c3722fe777fbdf1403ba57c07c76dd9084f8d0",
+      "exact_copy": false,
+      "changes": [
+        "Use -S for direct child interpreters.",
+        "Replace launcher documentation with direct Python.",
+        "Do not report Windows execution as NOT_TESTED when the measured platform is Windows.",
+        "Create/append children inside protected try/finally.",
+        "Kill live children; communicate with every successfully created child."
+      ],
+      "license": "MIT",
+      "provenance": "User-authorized original AI-assisted campaign code; no upstream source vendored."
+    }
+  ],
+  "preserved_correction": "Both old-schema fixture connections are already closed in the R1 corrected test source; preserved in public copy.",
+  "new_original_files": [
+    {
+      "public_path": "run_tests.py",
+      "public_sha256": "f82b32e970a9b0dfd886f6c975c8b390706f1164a052ac9be06acd7d5e607798",
+      "license": "MIT",
+      "authorship": "New AI-assisted publication assembly under user authorization"
+    }
+  ],
+  "cleanup_review_delta": {
+    "before_sha256": "f07f8937b1f2458c5a3b47d24dc6ee1c6d30bc75a4c4d3075ccab9d76290481f",
+    "after_sha256": "384d45cccfddf3b06d75f92771c3722fe777fbdf1403ba57c07c76dd9084f8d0",
+    "changes": [
+      "Create/append children inside protected try/finally.",
+      "Kill live children; communicate with every successfully created child."
+    ],
+    "production_code_changed": false,
+    "line_endings_preserved": true,
+    "finding": "Spawn failures before try/finally leaked previously started children; already-exited children could be left uncollected.",
+    "initial_public_full_run_preserved": "evidence/verification_20261101.json",
+    "affected_methods_only": "evidence/cleanup_delta_20261101.json"
+  },
+  "review_receipts": [
+    {
+      "public_path": "evidence/reviewer_cleanup_before.json",
+      "origin_campaign": "CAMPAGNE_PUBLICATION_20261101_R2",
+      "origin_path": "P01_integration/p04_cleanup_before.json",
+      "origin_sha256": "e1a0300db6e18e6a92ee8c8326da272063e74efee35529e04099e1ce681d3aec",
+      "public_sha256": "e1a0300db6e18e6a92ee8c8326da272063e74efee35529e04099e1ce681d3aec",
+      "exact_copy": true,
+      "scope": "Separate AI-assisted technical review using simulated children; not institutional independent attestation."
+    },
+    {
+      "public_path": "evidence/reviewer_cleanup_after.json",
+      "origin_campaign": "CAMPAGNE_PUBLICATION_20261101_R2",
+      "origin_path": "P01_integration/p04_cleanup_after.json",
+      "origin_sha256": "cb423597304bf77712ce5fdb6794b32d9abc92d3802490fe081b6d6713a43a0b",
+      "public_sha256": "cb423597304bf77712ce5fdb6794b32d9abc92d3802490fe081b6d6713a43a0b",
+      "exact_copy": true,
+      "scope": "Separate AI-assisted technical review using simulated children; not institutional independent attestation."
+    }
+  ]
+}

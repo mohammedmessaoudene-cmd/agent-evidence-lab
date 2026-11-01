@@ -1,0 +1,11 @@
+--- a/pydantic_ai_slim/pydantic_ai/durable_exec/dbos/_operation_backend.py
++++ b/pydantic_ai_slim/pydantic_ai/durable_exec/dbos/_operation_backend.py
+@@ -159,7 +159,7 @@
+             return operation.result_codec.dump(await operation.handler(cast(ParamsT, params)))
+ 
+         async def dispatch(step: Callable[..., Any], params: ParamsT) -> ResultT:
+-            return operation.result_codec.load(await step(params))
++            return await operation.handler(params)
+ 
+         return capability_step, dispatch
+ 

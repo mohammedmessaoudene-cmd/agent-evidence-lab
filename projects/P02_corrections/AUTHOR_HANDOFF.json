@@ -1,0 +1,27 @@
+{
+  "role": "AUTHOR_HANDOFF_NOT_APPROVAL",
+  "external_technical_review": "PENDING",
+  "external_strategic_review": "PENDING",
+  "project": "P02",
+  "execution_summary": "evidence/verification_20261101.json",
+  "fresh_execution_status": "PASS",
+  "code_matches_recorded_execution_hashes": true,
+  "original_source_hashes_rechecked": true,
+  "current_observed_test_failures": [],
+  "known_limits": [
+    "Synthetic local fixtures; no NASA or other dataset.",
+    "Known obligations may close while actual decision coverage remains UNKNOWN.",
+    "Signatures use deterministic test identities; they do not prove computation or business action.",
+    "Shared engine across the two modes; no independent algorithm or superiority comparison.",
+    "Node is single-writer. Windows EPERM directory sync does not establish power-loss durability.",
+    "No real provider, organization, network service, LLM, human-time measurement or upstream adoption."
+  ],
+  "historical_defects_preserved": [
+    "Windows Node directory fsync EPERM is exposed, not converted to a power-loss guarantee.",
+    "Known obligations can close while a registered consumer retains a stale undeclared decision."
+  ],
+  "execution_command": "python -S -B run_tests.py --summary <absolute-or-relative-output.json>",
+  "dependency_install_command": "python -I -m pip --isolated --disable-pip-version-check install --only-binary=:all: --no-compile --target .local/deps -r requirements.txt",
+  "private_artifacts": ".local/ is excluded; it contains dependency installs, raw logs and temporary test state.",
+  "no_publication_or_contact_performed": true
+}

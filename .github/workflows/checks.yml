@@ -1,0 +1,80 @@
+name: bounded-reproductions
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable-kits:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '20'
+      - name: Install only P02's pinned public dependencies
+        run: python -I -m pip --isolated --disable-pip-version-check install --only-binary=:all: --no-compile --target projects/P02_corrections/.local/deps -r projects/P02_corrections/requirements.txt
+      - name: Verify portable source identities
+        run: python -B tools/verify_manifest.py
+      - name: Run bounded cases and assert JSON contracts
+        run: python -B tools/run_checks.py --out .local/ci-results
+      - name: Preserve structured summary
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: bounded-summary-${{ matrix.os }}
+          path: .local/ci-results/SUMMARY_ALL.json
+          if-no-files-found: warn
+          retention-days: 30
+  p01-native:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: pydantic/pydantic-ai
+          ref: d44704ec72744e4fc0bd5a3d5dd877462a24da5b
+          path: .local/pydantic-ai
+          fetch-depth: 0
+          persist-credentials: false
+      - run: python -I -m pip --isolated --disable-pip-version-check install uv==0.13.6
+      - name: Install pinned upstream development packages
+        working-directory: .local/pydantic-ai
+        run: uv sync --frozen --package pydantic-ai-harness --extra dbos --extra anthropic --group dev --group lint
+      - name: Apply illustrative test only
+        working-directory: .local/pydantic-ai
+        run: git apply ../../projects/P01_memory_recovery/P01_DBOS_MEMORY_MINIMAL.patch
+      - name: Run one native journal case and the dispatch fake
+        working-directory: .local/pydantic-ai
+        env:
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+          PYTEST_ADDOPTS: ''
+          PYTEST_PLUGINS: ''
+        run: uv run --no-sync python -m pytest -p no:cacheprovider -p anyio.pytest_plugin -p cassetter.pytest_plugin -p inline_snapshot.pytest_plugin -p pytest_mock -p xdist.plugin tests/harness/memory/test_dbos_recovery.py tests/harness/memory/test_memory.py::test_snapshot_load_dispatches_as_durable_operation --junitxml=p01.xml
+      - name: Require two executed tests and no skips
+        run: python -B tools/check_p01_junit.py .local/pydantic-ai/p01.xml
+      - name: Preserve native-case JUnit
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: p01-native-junit
+          path: .local/pydantic-ai/p01.xml
+          if-no-files-found: warn
+          retention-days: 30

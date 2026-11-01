@@ -1,0 +1,93 @@
+{
+  "sources": [
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/run.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/run.py",
+      "source_sha256": "09880acf4ecda6d612da95e4e0a511eab74b4e15ff942836d194f84b5521df5f",
+      "published_sha256": "09880acf4ecda6d612da95e4e0a511eab74b4e15ff942836d194f84b5521df5f"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/observe.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/observe.py",
+      "source_sha256": "86b46d39b1e876820628f6cf30bbc58efa1f99db3bc5130cdbe33f59d04b7a4b",
+      "published_sha256": "86b46d39b1e876820628f6cf30bbc58efa1f99db3bc5130cdbe33f59d04b7a4b"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/PROTOCOL.json",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/PROTOCOL.json",
+      "source_sha256": "d7d8daaf81e9292cd6a1dd0dd8d9cd3462d643de31a54737f14f57a0a1e1a6a2",
+      "published_sha256": "d7d8daaf81e9292cd6a1dd0dd8d9cd3462d643de31a54737f14f57a0a1e1a6a2"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/PROTOCOL_FREEZE.json",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/PROTOCOL_FREEZE.json",
+      "source_sha256": "8c42edf96fa3bf39dced229a89fe8687f06ca6e503d951c0d1321b1a75da19ad",
+      "published_sha256": "8c42edf96fa3bf39dced229a89fe8687f06ca6e503d951c0d1321b1a75da19ad"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/src/old_worker.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/src/old_worker.py",
+      "source_sha256": "1d4692231ae7cfe54b74821e12499d7262a877b0e89cca7c785ac21338fd2be9",
+      "published_sha256": "1d4692231ae7cfe54b74821e12499d7262a877b0e89cca7c785ac21338fd2be9"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/src/p06_boundary/common.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/src/p06_boundary/common.py",
+      "source_sha256": "16250b4d7e1618290c4c403fecd4825d3cc3da8fe711e5e7d4d8d711f0eaec35",
+      "published_sha256": "16250b4d7e1618290c4c403fecd4825d3cc3da8fe711e5e7d4d8d711f0eaec35"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/src/p06_boundary/contract.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/src/p06_boundary/contract.py",
+      "source_sha256": "e7dd274626cbeaf1d3886502986b9b31f8e2ec3ae708551628f64ac31f6b1fe1",
+      "published_sha256": "e7dd274626cbeaf1d3886502986b9b31f8e2ec3ae708551628f64ac31f6b1fe1"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/src/p06_boundary/coordinator.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/src/p06_boundary/coordinator.py",
+      "source_sha256": "b98b596f1138aa1969e2ebcf43cc641e10ab5caa6db50e00ffafe5b178e4fb76",
+      "published_sha256": "b98b596f1138aa1969e2ebcf43cc641e10ab5caa6db50e00ffafe5b178e4fb76"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/src/p06_boundary/provider.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/src/p06_boundary/provider.py",
+      "source_sha256": "a46ff8b06b7166664a6da229c2554983ae30471279db3bdcc3e6b44acc223933",
+      "published_sha256": "a46ff8b06b7166664a6da229c2554983ae30471279db3bdcc3e6b44acc223933"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/src/p06_boundary/worker.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/src/p06_boundary/worker.py",
+      "source_sha256": "7ae17aada6dd6d0ff2c80bc87c029e5a41e45cdca26cc1ad18b6dc4ee3b3c5fe",
+      "published_sha256": "7ae17aada6dd6d0ff2c80bc87c029e5a41e45cdca26cc1ad18b6dc4ee3b3c5fe"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/provider_boundary/src/p06_boundary/__init__.py",
+      "source": "P06_transfert_missions/recherche/PRO_R2_RECEIVED/extracted/P06_R2/provider_boundary/src/p06_boundary/__init__.py",
+      "source_sha256": "ef666fa458e23b62d20bf83330c2fa73805a89eb8d8734ffa34f053ff3057bc8",
+      "published_sha256": "ef666fa458e23b62d20bf83330c2fa73805a89eb8d8734ffa34f053ff3057bc8"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/handoff/compare_parsers.py",
+      "source": "P06_transfert_missions/src/R4_PARSER/handoff/compare_parsers.py",
+      "source_sha256": "f262f9bfe906fc94dbd2ada39613bc51f9bd4caa335eaae71aae58c9113515c1",
+      "published_sha256": "f262f9bfe906fc94dbd2ada39613bc51f9bd4caa335eaae71aae58c9113515c1"
+    },
+    {
+      "path": "projects/P06_handoff_evidence/handoff/dossier.json",
+      "source": "P06_transfert_missions/src/R4_PARSER/handoff/dossier.json",
+      "source_sha256": "9ac689a5d39cd4c36cf3e5e89c66c14f3ef2617306aa9554986f9f16ccda7cd2",
+      "published_sha256": "1c7dfa1432f8809fa057fdb76d3d8ee367e70838eafbc59e18e5a0705c761e7b",
+      "changes": "A private Library identifier in inert historical metadata replaced with SYNTHETIC_ARCHIVE_NOT_INCLUDED before publication. No admission rules or executable payloads changed; all14 derived parser cases rerun on this public fixture."
+    },
+    {
+      "path": "projects/P06_handoff_evidence/handoff/node_parser.cjs",
+      "source": "P06_transfert_missions/src/R4_PARSER/handoff/node_parser.cjs",
+      "source_sha256": "7a41c40e470a2bdfd50cd56bf514030d9c893fce8e597e6d5c295f271315eb73",
+      "published_sha256": "7a41c40e470a2bdfd50cd56bf514030d9c893fce8e597e6d5c295f271315eb73"
+    }
+  ],
+  "notes": [
+    "The dossier is only a parser fixture with inert historical references; no referenced private archive is bundled or read by these tests.",
+    "No third-party runtime code is redistributed; signatures use documented local fixture keys."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "protocol": "protocol/r2_scope_preregistration.json",
+  "sha256": "36a6649b84482492f9d52cde466714d9b6084341d626c45357585c148f4f7542",
+  "frozen_at_utc": "2026-11-01T03:29:47.575990+00:00",
+  "before_new_R2_measurements": true,
+  "timestamp_trust": "local clock only, not independent timestamp"
+}

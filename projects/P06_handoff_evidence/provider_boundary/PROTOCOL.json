@@ -1,0 +1,89 @@
+{
+  "project_id": "P06",
+  "revision": "R2-provider-boundary",
+  "date": "2026-11-01",
+  "question": "Does an authentic provider fence acknowledgement suffice to prove that a still-live old owner cannot cause a new effect after handover?",
+  "hypothesis": "No. The observer must distinguish authentic issuer claims from atomic enforcement at the effect transaction.",
+  "interfaces": [
+    "classic",
+    "adapter"
+  ],
+  "fairness": "Same copied R1 safety kernel, identities, grants, payloads, provider capabilities and causal schedules in both interfaces. This experiment isolates the provider boundary and does not supply the independent real-runtime integration requested elsewhere in R2.",
+  "provider_classes": {
+    "atomic": "Advertised and implemented atomic fence, valid-grant admission, idempotency and lookup in durable local SQLite.",
+    "opaque": "Atomic fence and grant admission but no lookup and no idempotency; lost effect ACK remains UNKNOWN.",
+    "contract_violating_skip": "Advertises same powers as atomic and signs real fence acknowledgement; intentionally omits current-fence check when executing.",
+    "contract_violating_split": "Advertises same powers as atomic; validates old request, commits precheck, pauses, permits new fence, then executes without rechecking fence."
+  },
+  "cases": [
+    {
+      "id": "T01",
+      "name": "old_owner_after_authentic_barrier",
+      "providers": [
+        "atomic",
+        "opaque",
+        "contract_violating_skip"
+      ],
+      "expected": {
+        "atomic": "stale request refused and no old effect",
+        "opaque": "stale request refused and no old effect",
+        "contract_violating_skip": "authentic fence accepted, then old effect observed; observer must report CONTRACT_VIOLATION"
+      }
+    },
+    {
+      "id": "T02",
+      "name": "lost_effect_ack",
+      "providers": [
+        "atomic",
+        "opaque"
+      ],
+      "expected": {
+        "atomic": "real provider exit after COMMIT; new worker lookup recovers two obligations without duplicate",
+        "opaque": "one effect observed only by offline observer; runtime UNKNOWN, no blind retry"
+      }
+    },
+    {
+      "id": "T03",
+      "name": "expiry_while_old_worker_waits",
+      "providers": [
+        "atomic"
+      ],
+      "expected": "real wall-clock expiry while separate old worker is alive; request refused at provider admission; no effect"
+    },
+    {
+      "id": "T04",
+      "name": "different_mission_id",
+      "providers": [
+        "atomic",
+        "contract_violating_skip"
+      ],
+      "expected": "request body mission_id differs from authentic grant; SCOPE_MISMATCH, no effect"
+    },
+    {
+      "id": "T05",
+      "name": "pause_between_check_and_effect",
+      "providers": [
+        "atomic",
+        "contract_violating_split"
+      ],
+      "expected": {
+        "atomic": "provider transaction blocks new fence until old effect commits; old effect precedes barrier, no violation",
+        "contract_violating_split": "new fence and active B established during pause; old effect follows barrier, observer detects violation"
+      }
+    }
+  ],
+  "planned_case_runs": 20,
+  "time": "System wall clock; T03 grant TTL 2 seconds with receipt of readiness before expiration. No virtual clock and no independent host clocks.",
+  "processes": "Provider RPC uses real Python subprocess and separate SQLite DB. Old-owner process remains alive on portable file gates. No network sockets, no SIGSTOP dependency, no claim Windows execution.",
+  "observer": "Separate observe.py imports no copied runtime modules. Reads provider/coordinator SQLite read-only, independently checks HMAC fence receipt and its binding, compares causal event sequence and observed effect rows.",
+  "pass_criteria": "All truthful-provider safety expectations and opaque UNKNOWN hold; both contract-violating providers produce causal counterexamples detected by the independent observer, in both interfaces. PASS on adverse cases means detection, never safe execution.",
+  "refutation": "If signatures alone implied effect enforcement, no authentic-ack stale-effect counterexample could be observed. One valid counterexample refutes that inference; it does not refute cooperative-provider fencing.",
+  "scope_limits": [
+    "same host and shared test key, not production identity or hostile-host isolation",
+    "local SQLite rows, not real business effects",
+    "deliberately faulted providers establish possibility, not prevalence",
+    "shared safety kernel makes equal outcomes expected, not a product comparison",
+    "bounded two-obligation fixture; no general memory migration or complete federation"
+  ],
+  "allowed_actions": "Local code, public-source-derived fixture and tests only; no contact, purchase, publication, new authority or modification of P06 R1."
+}

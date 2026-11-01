@@ -1,0 +1,30 @@
+{
+  "role": "AUTHOR_HANDOFF_NOT_APPROVAL",
+  "external_technical_review": "PENDING",
+  "external_strategic_review": "PENDING",
+  "project": "P04",
+  "execution_summary": "evidence/cleanup_delta_20261101.json",
+  "fresh_execution_status": "INITIAL_FULL_23_PASS_THEN_FINAL_AFFECTED_5_PASS",
+  "code_matches_recorded_execution_hashes": true,
+  "original_source_hashes_rechecked": true,
+  "current_observed_test_failures": [],
+  "known_limits": [
+    "One-account SQLite fixture with cooperative local writers and synthetic evidence.",
+    "Tests use real local child processes and abrupt termination; no remote provider or paid calls.",
+    "Source-role and evidence-kind checks are not cryptographic or provider-bill authentication.",
+    "No real enforced provider ceiling, power-loss proof, network filesystem or multi-host deployment.",
+    "No end-to-end exactly-once external effects and no superior budget optimizer claim.",
+    "The historical 23-method run had one cleanup error; only its affected method was rerun then. This is a separate fresh full run of the public copy."
+  ],
+  "historical_defects_preserved": [
+    "Historical old-schema fixture cleanup error retained in documentation; that campaign only reran the affected method.",
+    "Current public-copy execution is a distinct full 23-method run, not retroactive relabeling of historical results.",
+    "Public initial concurrent helper had two cleanup fault-path defects; separate reviewer receipts preserve before FAIL and after PASS. Five affected real-process methods rerun after fix."
+  ],
+  "execution_command": "python -S -B run_tests.py --summary <absolute-or-relative-output.json>",
+  "dependency_install_command": null,
+  "private_artifacts": ".local/ is excluded; it contains dependency installs, raw logs and temporary test state.",
+  "no_publication_or_contact_performed": true,
+  "baseline_execution_summary": "evidence/verification_20261101.json",
+  "validation_scope": "Unchanged production ledger has initial full 23 evidence; final test helper has 5 affected-method passes plus separate 2-case simulated-child cleanup probe."
+}

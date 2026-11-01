@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "scope": "Only these files belong to the public author candidate; exclude .local and caches.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 34,
+      "sha256": "1af2070f7661064c1ff9c28ff14fb9f8ee61d6a2575095c0b7feff7c0e52fa78"
+    },
+    {
+      "path": "AUTHOR_HANDOFF.json",
+      "bytes": 2145,
+      "sha256": "4d69c437f1c49c1f660a6add505f427001577cd172d02af94da88fb413af5717"
+    },
+    {
+      "path": "DEPENDENCIES.json",
+      "bytes": 290,
+      "sha256": "9eb2aa07a128b5b74fe965a88ae3df9aef6dcf6fdbb77367d2d7c3161f93558e"
+    },
+    {
+      "path": "evidence/cleanup_delta_20261101.json",
+      "bytes": 2973,
+      "sha256": "eeb0e3930264bae4c3b6d04488f5fddc495e7e9c3c1a8c9343ad73e143c0735b"
+    },
+    {
+      "path": "evidence/reviewer_cleanup_after.json",
+      "bytes": 1010,
+      "sha256": "cb423597304bf77712ce5fdb6794b32d9abc92d3802490fe081b6d6713a43a0b"
+    },
+    {
+      "path": "evidence/reviewer_cleanup_before.json",
+      "bytes": 1015,
+      "sha256": "e1a0300db6e18e6a92ee8c8326da272063e74efee35529e04099e1ce681d3aec"
+    },
+    {
+      "path": "evidence/verification_20261101.json",
+      "bytes": 5704,
+      "sha256": "dfb7c13704261b81d3147b2513cba472a2f86c56ad445ab0cd0d5c88d94524d2"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1098,
+      "sha256": "0da71ad4127815519ea1a235dcc29c97b55e3ba41b7cca8cda29792048c8f90f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5460,
+      "sha256": "857fc01908e07388427fa5388bb2cfd7902ff97892496fce685e0a9f3b30867b"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 74,
+      "sha256": "5c60d9aecfc270bc61026f064e0ac7adf28d3ca34889e3f97a368401d1e40be2"
+    },
+    {
+      "path": "run_tests.py",
+      "bytes": 3845,
+      "sha256": "f82b32e970a9b0dfd886f6c975c8b390706f1164a052ac9be06acd7d5e607798"
+    },
+    {
+      "path": "SOURCES.json",
+      "bytes": 3946,
+      "sha256": "f917a29a3d39a816f43c32ce62fcf221c9c38ef30364e93e56e6f9d160627c36"
+    },
+    {
+      "path": "src/exposure_ledger.py",
+      "bytes": 24309,
+      "sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188"
+    },
+    {
+      "path": "tests/test_exposure_ledger.py",
+      "bytes": 28756,
+      "sha256": "384d45cccfddf3b06d75f92771c3722fe777fbdf1403ba57c07c76dd9084f8d0"
+    }
+  ]
+}

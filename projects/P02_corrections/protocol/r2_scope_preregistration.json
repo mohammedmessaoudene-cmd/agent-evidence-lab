@@ -1,0 +1,102 @@
+{
+  "project_id": "P02",
+  "cycle": "R2",
+  "protocol_id": "P02-R2-SCOPE-SEMANTICS-1",
+  "author_role": "parallel internal adversarial reviewer",
+  "created_at_utc": "2026-11-01T03:29:47.575698+00:00",
+  "measurement_status_at_freeze": "No new R2 execution performed; R1 code and Codex feedback read only.",
+  "question": "Can a readonly audit distinguish closure of known correction obligations from actual decision coverage, including omitted provenance by an already enrolled consumer, and expose declared semantic mismatches without mistaking hashes or signatures for real computation/action truth?",
+  "scope": "Local synthetic consumer subprocesses, actual SQLite state and signed test envelopes; no human/LLM review, external organization or network action.",
+  "comparator_information": "classic_sql and portable_graph receive identical fixture, changes, semantic expectations, read observations and fault assumptions; their engine/wire/evaluator are shared. No performance or algorithmic superiority claim.",
+  "cases": [
+    {
+      "id": "R2-S01",
+      "description": "Same enrolled consumer-a produces D_known and D_hidden from A=10, both threshold15; exports provenance only for D_known. After A=20, process reevaluates D_known only; D_hidden remains false whereas replay of its actual read-dependent recipe is true.",
+      "expected": "Known obligations can close1/1. Real decision coverage UNKNOWN. With separately captured read trace, omitted D_hidden is flagged as observed potential missing impact; without that trace, no discovery claim."
+    },
+    {
+      "id": "R2-S02",
+      "description": "Same enrolled owner has two registered decisions. Real D_omitted=sum(A,B), A=0,B=20, threshold25. Declared D_omitted reads only B; initial outputs identical. A->20 makes real outcome true, declared false.",
+      "expected": "Close known obligations only. Captured reads A,B reveal omitted A dependency; actual coverage UNKNOWN. Record limitation even if all known receipts valid."
+    },
+    {
+      "id": "R2-S03",
+      "description": "Enrolled consumer signs score999 without rerunning its application and without invoking any action. Coordinator has corrected A=20 for threshold15.",
+      "expected": "Valid signature accepted as ATTESTATION_ONLY; replay rejects false score; local replay count0; external action evidence UNKNOWN. No signed receipt alone proves producer computation."
+    },
+    {
+      "id": "R2-S04",
+      "description": "Expected unit K, source declares degC. Numeric source value2000 is centidegree Celsius20; consumer treats it as centikelvin and compares to27315. Correct conversion29315 changes outcome. All wire hashes/signatures internally valid.",
+      "expected": "Raw pipeline may close wrong semantic rule. Explicit semantic contract detects unit mismatch and never calls the result semantically validated."
+    },
+    {
+      "id": "R2-S05",
+      "description": "Expected window2015-01-01T00:00:00Z to2015-01-04T00:00:00Z; supplied window2015-02-01T00:00:00Z to2015-02-04T00:00:00Z. Synthetic January score20, February score10, threshold15.",
+      "expected": "Window mismatch detected with explicit expected/observed metadata; coherent hashes do not eliminate it."
+    },
+    {
+      "id": "R2-S06",
+      "description": "Expected dataset namespace urn:publisher and name temperature/location-A; supplied temperature/location-B. Both legitimate source identities may contain the same numeric bytes.",
+      "expected": "Identity mismatch detected from expectations despite internally correct source hashes; no semantic identity inferred from byte equality."
+    },
+    {
+      "id": "R2-S07",
+      "description": "Expected and observed metadata both assert K and same window/identity, but the synthetic hidden truth still represents20 Celsius as if20 Kelvin.",
+      "expected": "At most CONSISTENT_DECLARATIONS; actual semantic truth and action remain UNKNOWN. Explicitly preserve this undetectable coherent-lie counterexample."
+    },
+    {
+      "id": "R2-S08",
+      "description": "Empty semantic contract and missing observed unit/window/identity.",
+      "expected": "UNKNOWN or explicit rejection; absence of checks cannot establish semantic validity."
+    },
+    {
+      "id": "R2-S09",
+      "description": "No observed_reads journal versus available incomplete local journal, with same registered participants.",
+      "expected": "No claimed global completeness in either case; journal completeness/authenticity not inferred merely from supplied rows."
+    },
+    {
+      "id": "R2-S10",
+      "description": "Authentic receipt and current frontier are replayed after a later correction; review-state counters distinguish attestations, local replay and outstanding work.",
+      "expected": "Late receipt cannot close current obligation; audit reports state snapshot consistently."
+    }
+  ],
+  "fixed_semantic_profile": {
+    "expected_fields": [
+      "unit",
+      "window_start",
+      "window_end",
+      "dataset_namespace",
+      "dataset_name"
+    ],
+    "timestamps": "UTC ISO8601 strings with Z; half-open intervals; no claim of general calendar/timezone/ontology equivalence",
+    "units": "Explicit declarations, no general units ontology. Celsius/Kelvin offset used only for labeled illustrative calculation.",
+    "trusted_expectations": "Caller-supplied test contract. The correctness of either metadata side is unverified outside the fixture."
+  },
+  "execution_plan": {
+    "modes": [
+      "classic_sql",
+      "portable_graph"
+    ],
+    "reuse_R1_270_graphs": false,
+    "consumer": "Actual Python child process with separate JSON application state and append-only local trace; observed_reads emitted separately from declared graph",
+    "new_measurement_artifacts": "results/scope_r2/run_before or run_after, all preserved; no overwrite",
+    "audit_module": "Root-owned src/p02/audit.py, tested once available; reviewer owns only new review/r2_*.py and scoped artifacts"
+  },
+  "acceptance": {
+    "safety": "Zero false claim of actual global decision coverage, honest producer recomputation or external action from receipt/authentication alone. Any such claim blocks the scoped audit result.",
+    "semantics": "All three explicit mismatch categories detected. Identical or missing metadata must never prove physical or operational semantic truth.",
+    "scope": "Same consumer identity and actual subprocess read/output evidence must be recorded; no substitution with merely unknown consumer.",
+    "parity": "Same conditions and conclusions in both modes; parity is not independent algorithmic validation.",
+    "stop": "Do not rerun the270 graphs. Repair and replay only newly affected cases. External adoption/human cost remain UNKNOWN."
+  },
+  "unmeasured": [
+    "real operator integrations",
+    "human review time",
+    "business side effects",
+    "LLM judgment",
+    "production namespace ownership",
+    "WAN failures",
+    "Node concurrent-writer durability"
+  ],
+  "possible_abandonment": "If audit already exists in upstream tooling or adds no useful missing-work/semantic diagnostic beyond a bilateral application check, retain reusable tests/adapters and abandon standalone new-protocol claim."
+}

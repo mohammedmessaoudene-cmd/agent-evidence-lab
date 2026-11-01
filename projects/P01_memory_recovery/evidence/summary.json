@@ -1,0 +1,110 @@
+{
+  "scope": "Local Windows in-process recovery from a real SQLite DBOS journal",
+  "platforms": {
+    "Windows": "EXECUTED",
+    "Linux": "NOT_RUN",
+    "macOS": "NOT_RUN"
+  },
+  "python": "3.11.9",
+  "versions": {
+    "dbos": "2.29.0",
+    "pytest": "9.1.1",
+    "ruff": "0.17.1",
+    "pyright": "1.1.414",
+    "pydantic-ai-slim": "2.64.0",
+    "pydantic-ai-harness": "0.64.0",
+    "pydantic": "2.14.1",
+    "anyio": "4.15.1",
+    "cassetter": "0.15.2",
+    "opentelemetry-sdk": "1.45.2"
+  },
+  "source_commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+  "version_label_caveat": "Editable Pydantic metadata retained 2.64.0/0.64.0 labels; imported source was the pinned Git checkout, not released wheels.",
+  "candidate_commit_local": "f66bd76d0087610649710a462e1496277d816155",
+  "candidate_sha256": "23000a86179287de8ce2d292e9d19b9ac33a72fa5f75598328bc5f009a456075",
+  "baseline": {
+    "tests": 2,
+    "passed": 2,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "duration_seconds": 4.34
+  },
+  "mutant": {
+    "tests": 2,
+    "candidate": "EXPECTED_FAIL_B_REPLACES_A",
+    "existing_memory_dispatch_fake": "PASS",
+    "production_source_restored_exactly": true,
+    "restored_backend_sha256": "168f32f158e66c66d40dd27ac2ce20868fcb1e0f7f5747e1fdbd3cd8609b0532",
+    "environment_caveat": "Base-interpreter child auto-loaded additional global pytest plugins: zarr, jaxtyping, asyncio and cov. Baseline used isolated venv. Not a fully controlled one-variable comparison."
+  },
+  "quality": {
+    "candidate_pyright_errors": 0,
+    "candidate_pyright_warnings": 0,
+    "candidate_ruff": "PASS",
+    "repository_ruff_format": "2254 files already formatted",
+    "repository_ruff_check": "3 pre-existing I001 errors in unchanged files"
+  },
+  "retained_adverse_results": [
+    "Initial functional assertions passed but teardown errored because opentelemetry.sdk was absent; evidence copies included.",
+    "Initial typecheck: legacy DBOS run_admin_server key incompatible with DBOS3.4 type definition and None/object dependency annotation mismatch. Final check uses locked DBOS2.29 and object annotation.",
+    "A later typecheck omitted PYTHONPATH and could not resolve tests.conftest. The corrected invocation passed."
+  ],
+  "preliminary_compatibility": "Two targeted tests also passed under DBOS3.4.0 before the final annotation-only correction. Final qualification is DBOS2.29.0.",
+  "not_established": [
+    "OS process-kill recovery",
+    "new worker PID",
+    "cross-host recovery",
+    "Prefect behavior",
+    "full-suite coverage superiority",
+    "new production defect",
+    "fresh full-lock installation",
+    "hosted CI",
+    "independent reproduction",
+    "maintainer acceptance or adoption"
+  ],
+  "provider_calls": 0,
+  "evidence_type": "AI-assisted local test records; redacted publication copies, not independent attestation",
+  "controlled_comparison_addendum": {
+    "record": "controlled_comparison.json",
+    "status": "CONTROLLED_COMPARISON_EXPECTATIONS_MET",
+    "same_runtime_and_plugin_modules_observed": true,
+    "results": {
+      "baseline": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "duration_seconds": 3.927,
+        "cases": [
+          {
+            "name": "test_recovery_restores_snapshot_after_compaction",
+            "outcome": "PASS"
+          },
+          {
+            "name": "test_snapshot_load_dispatches_as_durable_operation",
+            "outcome": "PASS"
+          }
+        ]
+      },
+      "mutant": {
+        "tests": 2,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0,
+        "duration_seconds": 3.844,
+        "cases": [
+          {
+            "name": "test_recovery_restores_snapshot_after_compaction",
+            "outcome": "FAIL"
+          },
+          {
+            "name": "test_snapshot_load_dispatches_as_durable_operation",
+            "outcome": "PASS"
+          }
+        ]
+      }
+    },
+    "supersedes": "The earlier plugin-environment difference for the targeted baseline/mutant comparison only."
+  }
+}
