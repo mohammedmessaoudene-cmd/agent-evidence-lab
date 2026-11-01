@@ -1,0 +1,24 @@
+{
+  "project_id": "P06",
+  "source_commit": "da6e193a2c3290eec3876c9139719b7ec12f3013",
+  "id": "I03",
+  "question": "Can a contract-valid Unicode mission run through the provider/worker RPC boundary under a real non-UTF-8 process locale?",
+  "frozen_before_execution": true,
+  "interfaces": ["classic", "adapter"],
+  "fixtures": {
+    "ascii": "Published shape, ASCII mission and payload strings.",
+    "unicode": "Same shape and rights, valid Unicode in mission ID, subject and payload labels."
+  },
+  "before_matrix_per_interface": [
+    {"fixture":"ascii","process_locale":"ASCII","role":"positive control"},
+    {"fixture":"unicode","process_locale":"UTF-8","role":"positive control"},
+    {"fixture":"unicode","process_locale":"ASCII","role":"candidate counterexample"}
+  ],
+  "ascii_environment": {"LC_ALL":"C","LANG":"C","PYTHONUTF8":"0","PYTHONCOERCECLOCALE":"0"},
+  "utf8_control_environment": {"LC_ALL":"C","LANG":"C","PYTHONUTF8":"1","PYTHONCOERCECLOCALE":"0"},
+  "independent_measurements": ["child locale and stdio encoding","child exit/stdout/stderr bytes","coordinator obligation states","provider durable effect rows","source and command SHA256"],
+  "failure_criterion": "Both controls complete two obligations; Unicode/ASCII fails in implicit text encoding despite valid normalized contract. No authority or semantic payload mutation is introduced.",
+  "correction_scope_if_reproduced": "Explicit UTF-8 bytes on RPC input/output and worker JSON output, inside probes/implementation/corrected only. Do not change existing handoff R4 parsers.",
+  "after_matrix": "Repeat the six affected transport cases, plus Unicode/ASCII opaque lost-ACK for each interface; preserve UNKNOWN and no second effect after an ordinary released-lease retry.",
+  "limitations": ["Executed on current Linux host only; no claim that Windows was executed here.","A real ASCII locale is selected, not mocked encoding or modified code behavior.","This establishes a transport/availability defect for accepted inputs, not an authorization bypass.","No existing 20-case matrix is rerun."]
+}

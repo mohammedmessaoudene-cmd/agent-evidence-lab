@@ -1,0 +1,608 @@
+{
+  "schema": 1,
+  "project": "P04",
+  "kind": "author_targeted_execution_projection",
+  "stage": "after",
+  "source_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+  "runtime": {
+    "python": "3.11.9",
+    "platform": "Windows",
+    "sqlite": "3.45.1",
+    "no_site": true
+  },
+  "sqlite": {
+    "status": "PASS",
+    "cases_run": 6,
+    "passed": 6,
+    "failed": 0,
+    "probe_sha256": "998e7939c78cc2b1248dfd5ac3344f505d42aa27530691c0a0a0efb38fffbf3e",
+    "scope": "Native local SQLite calls, three defect paths and three bounded controls. No WAL-reset, power-loss, stress or external-provider qualification.",
+    "raw_receipt_sha256": "a43f4906f94709f2c811dbbc938ee1d0f4d60d486045a7820a95ed355e7b9fc1",
+    "cases": {
+      "connection_setup_cleanup": {
+        "status": "NO_DEFECT_IN_CHECK",
+        "native_error_type": "DatabaseError",
+        "native_error": "file is not a database",
+        "real_connection_usable_after_exception": false,
+        "traceback_frame_retaining_connection": "_connect",
+        "exception_retained": true,
+        "instrumentation": "none; native sqlite3.Connection recovered from the actual exception traceback",
+        "limits": "resource lifetime defect; no financial loss or Windows file-lock behavior is inferred",
+        "expected_status": "NO_DEFECT_IN_CHECK",
+        "expectation_met": true
+      },
+      "normalized_memory_alias": {
+        "status": "NO_DEFECT_IN_CHECK",
+        "cases": [
+          {
+            "input": ":memory:",
+            "constructor_accepted": false,
+            "error_type": "ValueError",
+            "error": "persistent SQLite file required"
+          },
+          {
+            "input": "./:memory:",
+            "constructor_accepted": false,
+            "error_type": "ValueError",
+            "error": "persistent SQLite file required"
+          },
+          {
+            "input": "././:memory:",
+            "constructor_accepted": false,
+            "error_type": "ValueError",
+            "error": "persistent SQLite file required"
+          }
+        ],
+        "files_created": [],
+        "limits": "persistence input-contract violation; constructor succeeds but the next operation fails closed",
+        "expected_status": "NO_DEFECT_IN_CHECK",
+        "expectation_met": true
+      },
+      "relative_path_rebinding": {
+        "status": "NO_DEFECT_IN_CHECK",
+        "ledger_stored_path_is_absolute": true,
+        "same_object_reused": true,
+        "original_snapshot": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 100,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 60,
+          "nominal_available_microusd": 40,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 40,
+          "frozen": false,
+          "event_count": 0,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "original-job",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            }
+          ]
+        },
+        "unrelated_snapshot_before": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 1000,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 0,
+          "nominal_available_microusd": 1000,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 1000,
+          "frozen": false,
+          "event_count": 0,
+          "conflict_count": 0,
+          "attempts": []
+        },
+        "same_object_snapshot_after_cwd_change": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 100,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 60,
+          "nominal_available_microusd": 40,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 40,
+          "frozen": false,
+          "event_count": 0,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "original-job",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            }
+          ]
+        },
+        "new_reservation": {
+          "newly_reserved": false,
+          "rejected": true,
+          "error": "account frozen, liability unbounded, or insufficient available authorization"
+        },
+        "original_file_after": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 100,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 60,
+          "nominal_available_microusd": 40,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 40,
+          "frozen": false,
+          "event_count": 0,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "original-job",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            }
+          ]
+        },
+        "unrelated_file_after": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 1000,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 0,
+          "nominal_available_microusd": 1000,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 1000,
+          "frozen": false,
+          "event_count": 0,
+          "conflict_count": 0,
+          "attempts": []
+        },
+        "limits": "all operations use the public API; no file replacement or arbitrary SQL. This is account-file rebinding, not over-allocation inside one SQLite file",
+        "expected_status": "NO_DEFECT_IN_CHECK",
+        "expectation_met": true
+      },
+      "snapshot_interleaving": {
+        "status": "POSITIVE_CONTROL_PASS",
+        "snapshot_during_writer_commit": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 200,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 100,
+          "nominal_available_microusd": 100,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 100,
+          "frozen": false,
+          "event_count": 0,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "snapshot-job",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            }
+          ]
+        },
+        "snapshot_after_reader_transaction": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 200,
+          "known_spend_microusd": 120,
+          "still_exposed_reservation_microusd": 0,
+          "nominal_available_microusd": 80,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 0,
+          "frozen": true,
+          "event_count": 1,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "snapshot-job",
+              "billing_finality": "FINAL",
+              "known_spend_microusd": 120,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 20
+            }
+          ]
+        },
+        "writer_committed_between_account_and_attempt_reads": true,
+        "scope": "one deterministic interleaving; no stress/throughput or power-loss claim",
+        "children_reaped": true,
+        "temporary_directory_removed": true,
+        "expected_status": "POSITIVE_CONTROL_PASS",
+        "expectation_met": true
+      },
+      "same_attempt_concurrency": {
+        "status": "POSITIVE_CONTROL_PASS",
+        "contenders": 3,
+        "successful_new_reservations": 1,
+        "dispatch_permissions": 1,
+        "snapshot": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 100,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 60,
+          "nominal_available_microusd": 40,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 40,
+          "frozen": false,
+          "event_count": 3,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "shared-job",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            }
+          ]
+        },
+        "scope": "new same-ID reservation and same-attempt dispatch race; no actual external effect",
+        "children_reaped": true,
+        "temporary_directory_removed": true,
+        "expected_status": "POSITIVE_CONTROL_PASS",
+        "expectation_met": true
+      },
+      "sql_integer_boundaries": {
+        "status": "POSITIVE_CONTROL_PASS",
+        "maximum_stored_microusd": 9223372036854775807,
+        "full_budget_snapshot": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 9223372036854775807,
+          "known_spend_microusd": 0,
+          "still_exposed_reservation_microusd": 9223372036854775807,
+          "nominal_available_microusd": 0,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 0,
+          "frozen": false,
+          "event_count": 0,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "large",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            },
+            {
+              "attempt_id": "small",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            }
+          ]
+        },
+        "one_unit_remaining_snapshot": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 9223372036854775807,
+          "known_spend_microusd": 9223372036854775805,
+          "still_exposed_reservation_microusd": 1,
+          "nominal_available_microusd": 1,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 1,
+          "frozen": false,
+          "event_count": 1,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "large",
+              "billing_finality": "FINAL",
+              "known_spend_microusd": 9223372036854775805,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            },
+            {
+              "attempt_id": "small",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            }
+          ]
+        },
+        "overrun_aggregate_exact_integer": 18446744073709551612,
+        "overrun_snapshot": {
+          "schema_version": 2,
+          "authorized_budget_microusd": 9223372036854775807,
+          "known_spend_microusd": 18446744073709551612,
+          "still_exposed_reservation_microusd": 1,
+          "nominal_available_microusd": -9223372036854775806,
+          "unbounded_exposure_count": 0,
+          "available_for_admission_microusd": 0,
+          "frozen": true,
+          "event_count": 2,
+          "conflict_count": 0,
+          "attempts": [
+            {
+              "attempt_id": "large",
+              "billing_finality": "FINAL",
+              "known_spend_microusd": 9223372036854775805,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            },
+            {
+              "attempt_id": "last-unit",
+              "billing_finality": "UNKNOWN",
+              "known_spend_microusd": 0,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 0
+            },
+            {
+              "attempt_id": "small",
+              "billing_finality": "FINAL",
+              "known_spend_microusd": 9223372036854775807,
+              "unbounded_exposure": false,
+              "authorization_overrun_microusd": 9223372036854775806
+            }
+          ]
+        },
+        "sql_invalid_money_rejections": [
+          {
+            "field": "known",
+            "value_repr": "-1",
+            "error_type": "IntegrityError"
+          },
+          {
+            "field": "known",
+            "value_repr": "1.25",
+            "error_type": "IntegrityError"
+          },
+          {
+            "field": "known",
+            "value_repr": "'not-number'",
+            "error_type": "IntegrityError"
+          },
+          {
+            "field": "known",
+            "value_repr": "None",
+            "error_type": "IntegrityError"
+          },
+          {
+            "field": "authorized_max",
+            "value_repr": "1.25",
+            "error_type": "IntegrityError"
+          },
+          {
+            "field": "known",
+            "value_repr": "9223372036854775808",
+            "error_type": "OverflowError"
+          }
+        ],
+        "numeric_string_SQL_affinity": {
+          "stored_value": 2,
+          "stored_type": "integer"
+        },
+        "scope": "temporary DB only; SQL probes test stored-value constraints, not hostile-file authenticity",
+        "temporary_directory_removed": true,
+        "expected_status": "POSITIVE_CONTROL_PASS",
+        "expectation_met": true
+      }
+    }
+  },
+  "finality": {
+    "status": "PASS",
+    "cases_run": 1,
+    "checks_total": 19,
+    "checks_failed": 0,
+    "probe_sha256": "f0c0583e6834cd6a3b23643b9bf3c6676af7e8c3c8261ef495cd6bd89463ddd6",
+    "scope": "Final overrun, older observation, reopen and invoice replay. Freeze and known cost retained; no authentic bill or external effect.",
+    "raw_receipt_sha256": "06e7a0ab009b1fb0b95a28c045de1e806784a53b911548f63152262d6c087f02",
+    "checks": [
+      {
+        "name": "reserve_a",
+        "category": "probe_precondition",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "name": "gate_a",
+        "category": "probe_precondition",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "name": "initial_gate_permits_exactly_one_claim",
+        "category": "accounting_safety",
+        "observed": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "name": "overcap_final_invoice_recorded",
+        "category": "probe_precondition",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "name": "overcap_freeze_is_retained",
+        "category": "accounting_safety",
+        "observed": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "name": "authoritative_invoice_starts_with_no_unbounded_liability",
+        "category": "accounting_safety",
+        "observed": 0,
+        "expected": 0,
+        "passed": true
+      },
+      {
+        "name": "final_invoice_known_spend",
+        "category": "accounting_safety",
+        "observed": 120,
+        "expected": 120,
+        "passed": true
+      },
+      {
+        "name": "older_lower_observation_is_accepted",
+        "category": "probe_precondition",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "name": "older_lower_observation_keeps_final_invoice",
+        "category": "accounting_safety",
+        "observed": "FINAL",
+        "expected": "FINAL",
+        "passed": true
+      },
+      {
+        "name": "older_lower_observation_cannot_create_unbounded_liability",
+        "category": "semantic_finality",
+        "observed": 0,
+        "expected": 0,
+        "passed": true
+      },
+      {
+        "name": "known_cost_does_not_fall",
+        "category": "accounting_safety",
+        "observed": 120,
+        "expected": 120,
+        "passed": true
+      },
+      {
+        "name": "durable_state_preserved_on_reopen",
+        "category": "accounting_safety",
+        "observed": {
+          "canonical_json_sha256": "9f6dfcf61cc1507ec8506b3bd958faa6c99ba4080a77b1578e3d2643f4294d91",
+          "snapshot": {
+            "schema_version": 2,
+            "authorized_budget_microusd": 300,
+            "known_spend_microusd": 120,
+            "still_exposed_reservation_microusd": 0,
+            "nominal_available_microusd": 180,
+            "unbounded_exposure_count": 0,
+            "available_for_admission_microusd": 0,
+            "frozen": true,
+            "event_count": 3,
+            "conflict_count": 0,
+            "attempts": [
+              {
+                "attempt_id": "a",
+                "billing_finality": "FINAL",
+                "known_spend_microusd": 120,
+                "unbounded_exposure": false,
+                "authorization_overrun_microusd": 20
+              }
+            ]
+          }
+        },
+        "expected": {
+          "canonical_json_sha256": "9f6dfcf61cc1507ec8506b3bd958faa6c99ba4080a77b1578e3d2643f4294d91",
+          "snapshot": {
+            "schema_version": 2,
+            "authorized_budget_microusd": 300,
+            "known_spend_microusd": 120,
+            "still_exposed_reservation_microusd": 0,
+            "nominal_available_microusd": 180,
+            "unbounded_exposure_count": 0,
+            "available_for_admission_microusd": 0,
+            "frozen": true,
+            "event_count": 3,
+            "conflict_count": 0,
+            "attempts": [
+              {
+                "attempt_id": "a",
+                "billing_finality": "FINAL",
+                "known_spend_microusd": 120,
+                "unbounded_exposure": false,
+                "authorization_overrun_microusd": 20
+              }
+            ]
+          }
+        },
+        "passed": true
+      },
+      {
+        "name": "exact_invoice_replay_returns",
+        "category": "probe_precondition",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "name": "exact_invoice_replay_not_newly_finalized",
+        "category": "accounting_safety",
+        "observed": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "exact_invoice_replay_has_no_unbounded_liability",
+        "category": "semantic_finality",
+        "observed": 0,
+        "expected": 0,
+        "passed": true
+      },
+      {
+        "name": "same_final_invoice_new_delivery_returns",
+        "category": "probe_precondition",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "name": "same_final_invoice_new_delivery_not_newly_finalized",
+        "category": "accounting_safety",
+        "observed": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "name": "same_invoice_delivery_identity_does_not_change_exposure",
+        "category": "semantic_finality",
+        "observed": [
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0
+        ],
+        "passed": true
+      },
+      {
+        "name": "freeze_still_denies_new_admission",
+        "category": "accounting_safety",
+        "observed": "AdmissionDenied",
+        "expected": "AdmissionDenied",
+        "passed": true
+      }
+    ],
+    "final_snapshot": {
+      "schema_version": 2,
+      "authorized_budget_microusd": 300,
+      "known_spend_microusd": 120,
+      "still_exposed_reservation_microusd": 0,
+      "nominal_available_microusd": 180,
+      "unbounded_exposure_count": 0,
+      "available_for_admission_microusd": 0,
+      "frozen": true,
+      "event_count": 4,
+      "conflict_count": 0,
+      "attempts": [
+        {
+          "attempt_id": "a",
+          "billing_finality": "FINAL",
+          "known_spend_microusd": 120,
+          "unbounded_exposure": false,
+          "authorization_overrun_microusd": 20
+        }
+      ]
+    }
+  },
+  "projection": "Selected causal values and all check outcomes; repetitive snapshots reduced. Raw author receipts retained privately under the stated hashes.",
+  "historical_23_method_suite_executed": false,
+  "limitations": [
+    "Synthetic local evidence; no authentic provider invoice or external effect.",
+    "No WAL-reset, power-loss, network filesystem, multi-host or production durability qualification.",
+    "Not independent or institutional attestation; no optimizer advantage or adoption claim."
+  ]
+}

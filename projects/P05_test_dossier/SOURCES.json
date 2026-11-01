@@ -85,5 +85,26 @@
   "notes": [
     "The exports contain synthetic values and original provenance attachments; no OpenHTF code, radio dataset, customer record or commercial calibration evidence is included.",
     "https://github.com/google/openhtf ; OpenHTF1.6.3 was used in the historical producer environment."
-  ]
+  ],
+  "r2_corrective_review": {
+    "review_source": "AI-assisted exact-public-source review, then local integration and two scoped cross reviews",
+    "private_delivery_sha256": "42c1bb3f280044add5d1aeac16fc96c416bb9403c7d0c58ba5307f6e518067f1",
+    "production_paths": [
+      "src/openhtf_adapter.py",
+      "control/competent_script.py"
+    ],
+    "production_hashes": {
+      "src/openhtf_adapter.py": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38",
+      "control/competent_script.py": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743"
+    },
+    "evidence": "evidence/hardening_20261101.json",
+    "original_fixtures_contract_pilot_unchanged": true,
+    "test_driver_changes": "Added explicit portable-only subset and forwarded it to archive verifier; original complete45profile retained. Output probe metadata reports observed OS.",
+    "publication_of_delta": "PENDING_NEW_COMMIT_READBACK",
+    "external_validation": "NOT_ESTABLISHED"
+  },
+  "source_identity_qualifier": {
+    "sources_published_sha256": "Initial_publication_at_fa7e46776cc5e0ea38ebe1bf11a78b23cdd13e49; those values remain historical, not current corrected hashes.",
+    "current_corrected_production_hashes": "r2_corrective_review.production_hashes; FILE_MANIFEST.json binds all current files."
+  }
 }

@@ -37,22 +37,39 @@ def strict_load(raw):
     return value
 
 def admit(value):
+    if not isinstance(value, dict): raise ValueError("DOSSIER_OBJECT")
     if type(value.get("schema_version")) is not int or value["schema_version"] != 1:
         raise ValueError("SCHEMA_VERSION")
     if value.get("mission_id") != "P06": raise ValueError("MISSION_MISMATCH")
     mem = value.get("memory", {})
+    if not isinstance(mem, dict): raise ValueError("MEMORY_OBJECT")
     for key, expected in [("name", "p06_recovery"), ("type", "object"), ("version", 1)]:
         if type(mem.get(key)) is not type(expected) or mem[key] != expected:
             raise ValueError("MEMORY_" + key.upper())
     if not isinstance(mem.get("data"), dict): raise ValueError("MEMORY_DATA")
+    obligations = value.get("obligations")
+    if not isinstance(obligations, list): raise ValueError("OBLIGATIONS_LIST")
     seen = set()
-    for ob in value.get("obligations", []):
+    for ob in obligations:
+        if not isinstance(ob, dict): raise ValueError("OBLIGATION_OBJECT")
+        if not isinstance(ob.get("id"), str) or not ob["id"]:
+            raise ValueError("OBLIGATION_ID")
         if ob["id"] in seen: raise ValueError("DUPLICATE_OBLIGATION")
         seen.add(ob["id"])
-        if ob["status"] not in {"PENDING", "DONE", "UNKNOWN", "BLOCKED"}:
+        if not isinstance(ob.get("kind"), str) or not ob["kind"]:
+            raise ValueError("OBLIGATION_KIND")
+        if not isinstance(ob.get("status"), str) or ob["status"] not in {"PENDING", "DONE", "UNKNOWN", "BLOCKED"}:
             raise ValueError("OBLIGATION_STATUS")
+        if not isinstance(ob.get("payload"), dict): raise ValueError("OBLIGATION_PAYLOAD")
         if ob["status"] == "PENDING" and ob["kind"] not in KINDS:
             raise ValueError("UNKNOWN_EXECUTABLE_OBLIGATION")
+        if ob["status"] == "PENDING" and ob["kind"] == "hash_file":
+            payload = ob["payload"]
+            if not isinstance(payload.get("path"), str) or not payload["path"]:
+                raise ValueError("HASH_FILE_PATH")
+            sha = payload.get("sha256")
+            if not isinstance(sha, str) or len(sha) != 64 or any(c not in "0123456789abcdef" for c in sha):
+                raise ValueError("HASH_FILE_SHA256")
     # Claims remain data. Execution policy is independently loaded by receiver.
     return {"mission_id": value["mission_id"],
             "pending_ids": [x["id"] for x in value["obligations"] if x["status"] == "PENDING"],

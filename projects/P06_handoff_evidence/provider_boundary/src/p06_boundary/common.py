@@ -108,11 +108,12 @@ def rpc(provider_db, key_file, request, *, partition=False, lose_ack=False):
         if lose_ack:
             req["fixture_exit_after_commit"] = True
         launched=True
-        result = subprocess.run([sys.executable, "-m", "p06_boundary.provider", str(provider_db), str(key_file)], input=canonical(req), text=True, capture_output=True, timeout=20)
+        result = subprocess.run([sys.executable, "-m", "p06_boundary.provider", str(provider_db), str(key_file)], input=canonical(req).encode("utf-8"), capture_output=True, timeout=20)
         if result.returncode != 0:
-            raise Refusal("ACK_LOST", f"provider exit={result.returncode}; stderr={result.stderr[-500:]}")
+            stderr = result.stderr.decode("utf-8", errors="replace")
+            raise Refusal("ACK_LOST", f"provider exit={result.returncode}; stderr={stderr[-500:]}")
         try:
-            reply = json.loads(result.stdout)
+            reply = json.loads(result.stdout.decode("utf-8"))
         except ValueError as exc:
             raise Refusal("ACK_LOST", "invalid or missing stdout") from exc
         if not reply.get("ok"):

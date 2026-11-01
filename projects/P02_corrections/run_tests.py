@@ -36,6 +36,7 @@ def main():
         ('scope', 'review/r2_scope_tests.py', 18),
         ('records', 'review/r2_audit_record_probes.py', 12),
         ('recovery_interop', 'tests/test_recovery_interop.py', 8),
+        ('receipt_identity', 'tests/test_receipt_identity.py', 3),
     ]
     results = []
     overall = True
@@ -56,7 +57,11 @@ def main():
                       'without_observation_gap_discovery', 'external_action_performed',
                       'negative_limit', 'storage_durability', 'stale_frontier_rejected',
                       'python_to_node_signature', 'node_to_python_signature_and_replay',
-                      'crash_exit_code', 'restart_exit_code', 'final_status')
+                      'crash_exit_code', 'restart_exit_code', 'final_status',
+                      'signature_valid_in_test_registry', 'receipt_event_id_type',
+                      'expected_acceptance', 'receipt_accepted', 'logical_store_unchanged',
+                      'admission_sql_statements', 'engine_status', 'audit_closure',
+                      'audit_finding_codes')
             item['observations'] = {key: evidence[key] for key in fields if key in evidence}
             records.append(item)
         results.append({'suite': name, 'status': 'PASS' if passed else 'FAIL_OR_INCOMPLETE',

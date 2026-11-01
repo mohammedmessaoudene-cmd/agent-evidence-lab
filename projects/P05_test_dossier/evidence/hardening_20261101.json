@@ -1,0 +1,208 @@
+{
+  "schema": "p05-public-hardening/1",
+  "date": "2026-11-01",
+  "received_packet_sha256": "42c1bb3f280044add5d1aeac16fc96c416bb9403c7d0c58ba5307f6e518067f1",
+  "execution": {
+    "schema": "p05-targeted-public-review/1",
+    "status": "PASS",
+    "error": null,
+    "execution_mode": "EXECUTE_NEW_AND_AFFECTED_ONLY",
+    "profile": "PORTABLE_SUBSET_41_OBSERVATIONS",
+    "symbolic_link_cases": "NOT_RUN_BY_EXPLICIT_SUBSET",
+    "python": "3.11.9",
+    "platform": "Windows",
+    "candidate_sha256": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38",
+    "control_sha256": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743",
+    "stages": [
+      {
+        "stage": "new_semantic_profile",
+        "cases": 8,
+        "records": 16,
+        "passed": 16
+      },
+      {
+        "stage": "new_cli_boundaries",
+        "records": 7,
+        "passed": 7
+      },
+      {
+        "stage": "new_output_guards",
+        "records": 12,
+        "passed": 12,
+        "cli_executions": 11,
+        "review_api_calls": 1
+      },
+      {
+        "stage": "three_affected_historical_cases",
+        "cases": 3,
+        "records": 6,
+        "passed": 6,
+        "reason": "Changed output persistence/serialization and native structure guards touch these paths; no new independent cases claimed"
+      }
+    ],
+    "invocations": [
+      {
+        "stage": "semantic",
+        "returncode": 0,
+        "script": "review/focused/new_semantic_probes.py",
+        "script_sha256": "195f00f5e460a36b2b7beace0e52405289d68b1404041e625fd606fb08b8c869"
+      },
+      {
+        "stage": "cli",
+        "returncode": 0,
+        "script": "review/focused/probe_cli_boundaries.py",
+        "script_sha256": "f2582e7305194ffeecb1224a203ec3b7e79d7e323288fef3634b14c4b9342407"
+      },
+      {
+        "stage": "output_guards",
+        "returncode": 0,
+        "script": "review/focused/probe_output_guards.py",
+        "script_sha256": "cf30d3e6a015e47ffec645ff959beebeff237c35a799f7ebe9cddc4d70a43814"
+      },
+      {
+        "stage": "affected_historical",
+        "returncode": 0,
+        "script": "review/counterexamples.py",
+        "script_sha256": "cfb3c4ce7f0e238567be8ec39e66fa92a3a0f1320f37de4430348fce54716326"
+      }
+    ],
+    "historical_full_matrices_rerun": 0,
+    "framework_regenerations": 0,
+    "physical_tests": 0,
+    "human_time_measured": false,
+    "agent_in_decision_runtime": false,
+    "scope": "Constructed software regressions and explicitly affected old cases; not independent field samples or a superiority score"
+  },
+  "filesystem_capability": {
+    "symlink": {
+      "available": false,
+      "error_type": "OSError",
+      "winerror": 1314,
+      "errno": 22
+    },
+    "hardlink": {
+      "available": true,
+      "observed_bytes": "73796e746865746963206361706162696c6974792070726f62650a"
+    }
+  },
+  "archive_verifier": {
+    "schema": "p05-verifier-integrity-probe/1",
+    "rows": [
+      {
+        "case": "intact_records_pinned_sources",
+        "source_snapshot": "pinned",
+        "expected_status": "PASS",
+        "status": "PASS",
+        "returncode": 0,
+        "error": null,
+        "business_programs_executed": 0,
+        "invocations_recorded": 0,
+        "expected_met": true
+      },
+      {
+        "case": "contradictory_recorded_pin",
+        "source_snapshot": "pinned",
+        "expected_status": "FAIL",
+        "status": "FAIL",
+        "returncode": 1,
+        "error": "RuntimeError: Recorded source SHA256 differs from current program: candidate",
+        "business_programs_executed": 0,
+        "invocations_recorded": 0,
+        "expected_met": true,
+        "recorded_pin_before_mutation": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38",
+        "recorded_pin_after_mutation": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "case": "missing_positive_report",
+        "source_snapshot": "pinned",
+        "expected_status": "FAIL",
+        "status": "FAIL",
+        "returncode": 1,
+        "error": "RuntimeError: Required report absent or inconsistent",
+        "business_programs_executed": 0,
+        "invocations_recorded": 0,
+        "expected_met": true
+      },
+      {
+        "case": "missing_positive_packet",
+        "source_snapshot": "pinned",
+        "expected_status": "FAIL",
+        "status": "FAIL",
+        "returncode": 1,
+        "error": "RuntimeError: Required packet file absent",
+        "business_programs_executed": 0,
+        "invocations_recorded": 0,
+        "expected_met": true
+      },
+      {
+        "case": "changed_packet_raw_export",
+        "source_snapshot": "pinned",
+        "expected_status": "FAIL",
+        "status": "FAIL",
+        "returncode": 1,
+        "error": "RuntimeError: Packet raw export preservation",
+        "business_programs_executed": 0,
+        "invocations_recorded": 0,
+        "expected_met": true
+      },
+      {
+        "case": "contradictory_semantic_stdout",
+        "source_snapshot": "pinned",
+        "expected_status": "FAIL",
+        "status": "FAIL",
+        "returncode": 1,
+        "error": "RuntimeError: run_subtests_integer_zero: stdout decision contradicts recorded observation",
+        "business_programs_executed": 0,
+        "invocations_recorded": 0,
+        "expected_met": true
+      },
+      {
+        "case": "historical_records_changed_sources",
+        "source_snapshot": "changed",
+        "expected_status": "FAIL",
+        "status": "FAIL",
+        "returncode": 1,
+        "error": "RuntimeError: Recorded source SHA256 differs from current program: candidate",
+        "business_programs_executed": 0,
+        "invocations_recorded": 0,
+        "expected_met": true
+      }
+    ],
+    "profile": "PORTABLE_SUBSET_41_OBSERVATIONS",
+    "verifier_processes": 7,
+    "business_programs_executed": 0,
+    "all_expectations_met": true,
+    "runner_sha256": "284f90deb664d9b36448f4e01f04b81645103c447da1782f130afa90ed28017f",
+    "source_snapshots": {
+      "pinned": {
+        "src/openhtf_adapter.py": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38",
+        "control/competent_script.py": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743"
+      },
+      "changed": {
+        "src/openhtf_adapter.py": "f4508b07b70c0e1779a3288b48126d8d702fd4e1206ff142bb0dbe0dcc16b435",
+        "control/competent_script.py": "1456e46d85a261eb164630e03dab9ac09928074162c9b1e3a4f22c4da5de22dc"
+      }
+    },
+    "scope": "Archive readback assertions only; intact historical records retain their execution-source pins"
+  },
+  "source_changes": [
+    {
+      "path": "src/openhtf_adapter.py",
+      "before_sha256": "f4508b07b70c0e1779a3288b48126d8d702fd4e1206ff142bb0dbe0dcc16b435",
+      "received_sha256": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38"
+    },
+    {
+      "path": "control/competent_script.py",
+      "before_sha256": "1456e46d85a261eb164630e03dab9ac09928074162c9b1e3a4f22c4da5de22dc",
+      "received_sha256": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743"
+    }
+  ],
+  "qualifications": [
+    "41 constructed observations on the two exact final production sources under Windows3.11.9; not41independent cases or field observations.",
+    "No local symbolic-link permissions: WinError1314 observed. Four symbolic-link observations from the full45profile are NOT_RUN locally. Additional4input-cycle observations also NOT_RUN locally.",
+    "The output-guard probe metadata was corrected after execution to report the actual operating system. Its received source hash remains in the recorded invocation and the private source packet; production bytes did not change.",
+    "Seven archive-only mutations/control outcomes executed against the final subset-aware verifier; no measurement program executed for these seven.",
+    "CompleteFAIL remains eligible for review; coherentforgery can remain documentaryPASS; material_release_authorized alwaysfalse.",
+    "Historical30/22matrices are preserved; final sources will be tested separately by hostedCI."
+  ]
+}

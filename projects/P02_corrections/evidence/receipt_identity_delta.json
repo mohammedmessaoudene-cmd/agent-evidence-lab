@@ -1,0 +1,54 @@
+{
+  "finding": "P02-PUBLIC-R2-F01",
+  "status": "MINIMAL_FIX_LOCALLY_VERIFIED_PENDING_TWO_REVIEWS_PUBLIC_CI_AND_READBACK",
+  "public_base_commit": "fa7e46776cc5e0ea38ebe1bf11a78b23cdd13e49",
+  "engine_before_sha256": "a333872e81c6198b224fca4506e51c0b5cb1e8497dbf952fb167e8a0034cdc07",
+  "engine_after_sha256": "d8113d1018df2c39d743faf6d21c4200fb57bd1cf4a279d3177b8d1f690374c2",
+  "production_delta": "Two lines: require event_id to be a nonempty exact str before SQL; no decision_id restriction or stored-data migration.",
+  "proposed_engine_exact": true,
+  "patch_sha256": "1909eb30f3cc8156829604da147d9e3d8fe617b775dce5dbce9b36010b885db8",
+  "before": {
+    "receipt": "evidence/receipt_identity_before.json",
+    "sha256": "1fa2f907556affe491b1ea8d5c13afcb2ddbe1f3f247f85c0a0bc435e5d4a2cd",
+    "passed": 1,
+    "failed": 2,
+    "meaning": "Valid control passes. Signed int/bool receipts wrongly close the event while the auditor reports INVALID_RECEIPT_RECORD."
+  },
+  "after": {
+    "receipt": "evidence/receipt_identity_after.json",
+    "sha256": "8a097171115c34ff2c81b4e66729d6093589be3b682a37f6e63a68516dfbd8b6",
+    "passed": 3,
+    "failed": 0,
+    "meaning": "Valid string accepted; int/bool rejected before SQL with unchanged complete logical store hash."
+  },
+  "runtime": {
+    "platform": "Windows",
+    "python": "3.11.9",
+    "sqlite": "3.45.1",
+    "site_import_disabled": true
+  },
+  "runner_suite_cases": [
+    18,
+    12,
+    8,
+    3
+  ],
+  "runner_wiring_static_check": "PASS",
+  "full_41_case_runner_executed": false,
+  "prior_38_case_suites_rerun": false,
+  "old_38_case_evidence": {
+    "path": "evidence/verification_20261101.json",
+    "sha256": "1ad3cac22f7d20a3f0e4f9d3a9747d47a80097b7d1522202b018e422c6365add",
+    "unchanged": true
+  },
+  "wire_auditor_original_fixtures_worker_and_node_unchanged": true,
+  "new_runtime_interop_concurrency_controls": false,
+  "limits": [
+    "Authentic public test signer and correct computed score; no cryptographic break is alleged.",
+    "No new decision_id restriction; the existing registered-decision contract is preserved.",
+    "Rejecting future malformed receipts does not repair invalid records already stored.",
+    "Three shared-admission-path cases only; no independent algorithm comparison or business action."
+  ],
+  "reviewer_approval": "PENDING_SEPARATE_REVIEWERS_NOT_AUTHOR_SELF_APPROVAL",
+  "publication_and_next_hosted_ci": "NOT_PERFORMED_FOR_THIS_DELTA"
+}

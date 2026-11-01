@@ -162,7 +162,7 @@ def review(contract_path, expected_contract_sha256, input_dir):
             raise ValueError("input_dir is not a directory")
         files = sorted(root.glob("*.json"))
         require(bool(files), "NO_EXPORTS", "input", "At least one native export required")
-    except (OSError, ValueError, TypeError, OverflowError, UnicodeError, AttributeError, RecursionError) as exc:
+    except (OSError, ValueError, TypeError, OverflowError, UnicodeError, AttributeError, RecursionError, RuntimeError) as exc:
         problem("CONTRACT_OR_INPUT_INVALID", "input", type(exc).__name__ + ": " + str(exc))
         return outcome()
 
@@ -217,8 +217,8 @@ def review(contract_path, expected_contract_sha256, input_dir):
             if len(chosen) != 1:
                 raise ValueError("Exactly one source declaration for the measurement instrument required")
             instrument = chosen[0]
-            for key in ("id", "serial", "calibration_status"):
-                require(instrument.get(key) == instrument_policy.get(key), "INSTRUMENT_DECLARATION", loc + ":" + key, "Required declared instrument metadata is missing or differs")
+            for key, expected_value in instrument_policy.items():
+                require(key in instrument and _same(instrument[key], expected_value), "INSTRUMENT_DECLARATION", loc + ":" + key, "Required declared instrument metadata is missing or differs")
             cal_from, cal_until = instrument.get("calibration_valid_from_millis"), instrument.get("calibration_valid_until_millis")
             valid_cal_time = _millis(cal_from) and _millis(cal_until) and cal_from <= cal_until
             require(valid_cal_time, "CALIBRATION_UNKNOWN", loc, "Declared calibration interval is missing or invalid")
@@ -263,10 +263,13 @@ def review(contract_path, expected_contract_sha256, input_dir):
             require(_same(phase_result, {"phase_result": "CONTINUE"}), "PHASE_RESULT", loc, "Only an unqualified CONTINUE phase is supported; CONTINUE does not mean PASS")
             require(record.get("outcome") == computed, "RUN_OUTCOME", loc, "Native run outcome contradicts the single supported phase")
             for key in ("diagnoses", "diagnosers", "subtests", "branches", "checkpoints", "outcome_details"):
-                require(not record.get(key), "UNSUPPORTED_RUN_STRUCTURE", loc + ":" + key, "Additional result-affecting structures require review")
+                value = record.get(key)
+                require(key not in record or (isinstance(value, list) and not value), "UNSUPPORTED_RUN_STRUCTURE", loc + ":" + key, "Only an absent field or an empty native list is within this profile")
             require(record.get("marginal") is None or record.get("marginal") is False, "UNSUPPORTED_MARGINAL", loc, "Marginal results require an explicit profile")
-            for key in ("diagnosis_results", "failure_diagnosis_results", "diagnosers", "subtest_name"):
-                require(not phase.get(key), "UNSUPPORTED_PHASE_STRUCTURE", loc + ":" + key, "Additional diagnosis structures require review")
+            for key in ("diagnosis_results", "failure_diagnosis_results", "diagnosers"):
+                value = phase.get(key)
+                require(key not in phase or (isinstance(value, list) and not value), "UNSUPPORTED_PHASE_STRUCTURE", loc + ":" + key, "Only an absent field or an empty native list is within this profile")
+            require(phase.get("subtest_name") is None, "UNSUPPORTED_PHASE_STRUCTURE", loc + ":subtest_name", "A subtest association requires a separate profile")
 
             attached = obj(phase.get("attachments"), "attachments")
             checked_attachments = {}
@@ -310,12 +313,33 @@ def review(contract_path, expected_contract_sha256, input_dir):
                 "instrument_declaration": instrument,
                 "attachments": checked_attachments,
             })
-        except (OSError, ValueError, TypeError, KeyError, AttributeError, OverflowError, UnicodeError, binascii.Error, RecursionError) as exc:
+        except (OSError, ValueError, TypeError, KeyError, AttributeError, OverflowError, UnicodeError, binascii.Error, RecursionError, RuntimeError) as exc:
             problem("NATIVE_EXPORT_INVALID", loc, type(exc).__name__ + ": " + str(exc))
 
     require(seen_duts == set(expected_runs), "POPULATION_INCOMPLETE", "input", "Submitted DUT population must exactly match the independently approved work order")
     require(len(findings) == len(expected_runs), "MEASUREMENT_COVERAGE", "input", "Every expected DUT must have one complete supported observation")
     return outcome()
+
+
+def _save_new_report(path, result):
+    """Write one fresh UTF-8 JSON report without replacing evidence."""
+    path = Path(path)
+    if path.exists() or path.is_symlink():
+        raise FileExistsError("Output destination already exists: " + str(path))
+    raw = (json.dumps(result, indent=2, ensure_ascii=True, allow_nan=False) + "\n").encode("utf-8")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    created = False
+    try:
+        with path.open("xb") as stream:
+            created = True
+            stream.write(raw)
+    except (OSError, ValueError):
+        if created:
+            try:
+                path.unlink()
+            except OSError:
+                pass
+        raise
 
 
 def main():
@@ -326,11 +350,18 @@ def main():
     parser.add_argument("--out", type=Path)
     args = parser.parse_args()
     result = review(args.contract, args.expected_contract_sha256, args.input_dir)
-    encoded = json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
-    if args.out:
-        args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text(encoded, encoding="utf-8")
-    print(encoded)
+    if args.out is not None:
+        try:
+            _save_new_report(args.out, result)
+        except (OSError, ValueError, TypeError, RecursionError) as exc:
+            result = dict(result)
+            result.update(status="INCOMPLETE", measurement_summary="UNKNOWN",
+                          material_release_authorized=False)
+            result["issues"] = list(result.get("issues", [])) + [{
+                "code": "OUTPUT_PERSISTENCE", "location": "output",
+                "detail": type(exc).__name__ + ": " + str(exc)}]
+    encoded = json.dumps(result, indent=2, ensure_ascii=True, allow_nan=False) + "\n"
+    print(encoded, end="")
     return 0 if result["status"] == "READY_FOR_REVIEW" else 2
 
 

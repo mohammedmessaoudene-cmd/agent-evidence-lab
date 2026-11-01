@@ -233,6 +233,20 @@ def run_case(out,case_id,name,profile,mode):
         if case_id=='T02':
             if profile=='opaque':require((observation['effect_count'],observation['done'],observation['unknown'],observation['pending'])==(1,0,1,1),'opaque knowledge state mismatch')
             else:require((observation['effect_count'],observation['done'],observation['business_duplicates'])==(2,2,0),'recovery duplicated/lost obligations')
+        if case_id=='T05' and profile=='atomic':
+            require(observation['effect_count']==1 and observation['business_duplicates']==0,
+                    'atomic T05 requires one committed effect')
+            effect=observation['observed_effects'][0]
+            require((effect['mission'],effect['obligation'],effect['epoch'],effect['subject'])==
+                    (a['mission'],'01-reserve',a['epoch'],a['subject']), 'atomic T05 wrong effect binding')
+            effect_seq=[e['seq'] for e in observation['provider_causal_trace']
+                        if e['event']=='EFFECT_COMMIT' and e['detail']['effect_id']==effect['id']]
+            fence_seq=[e['seq'] for e in observation['provider_causal_trace']
+                       if e['event']=='FENCE_COMMIT' and
+                       (e['detail']['mission'],e['detail']['epoch'],e['detail']['subject'])==
+                       (b['mission'],b['epoch'],b['subject'])]
+            require(len(effect_seq)==len(fence_seq)==1 and effect_seq[0]<fence_seq[0],
+                    'atomic T05 effect must precede the new fence')
         r['metrics']={k:observation[k] for k in ['effect_count','done','unknown','pending','business_duplicates','contract_violation_observed','all_recorded_barriers_authenticated']}
         r['status']='PASS'
     except Exception as exc:

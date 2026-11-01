@@ -105,7 +105,7 @@ def main():
     db = connect(sys.argv[1]); key = Path(sys.argv[2]).read_bytes()
     request={}
     try:
-        request = strict_json_loads(sys.stdin.read())
+        request = strict_json_loads(sys.stdin.buffer.read())
         if not isinstance(request,dict):raise Refusal("REQUEST_OBJECT_REQUIRED")
         event(db,"RPC_RECEIVED",operation=request.get("op"),mission=request.get("mission"))
         db.execute("BEGIN IMMEDIATE")
@@ -119,7 +119,8 @@ def main():
         db.close()
     if request.get("fixture_exit_after_commit") and reply.get("ok"):
         os._exit(73)
-    print(canonical(reply),flush=True)
+    sys.stdout.buffer.write((canonical(reply)+"\n").encode("utf-8"))
+    sys.stdout.buffer.flush()
 
 
 if __name__ == "__main__": main()

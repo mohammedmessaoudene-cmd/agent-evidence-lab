@@ -16,7 +16,7 @@ def run(root,subject="A",mode="classic",crash=None,partition=False,lose_ack=Fals
     if mode=="adapter":
         bundle=read_json(input_file) if input_file else envelope(manifest)
         manifest=import_envelope(bundle)
-        (root/f"envelope-{subject}.json").write_text(canonical(bundle)+"\n")
+        (root/f"envelope-{subject}.json").write_text(canonical(bundle)+"\n",encoding="utf-8")
     elif input_file:
         manifest=read_json(input_file)
     else:
@@ -36,7 +36,7 @@ def run(root,subject="A",mode="classic",crash=None,partition=False,lose_ack=Fals
         if crash=="after_intent":os._exit(71)
         if pause_file:
             p=Path(pause_file)
-            p.write_text(canonical({"pid":os.getpid(),"epoch":epoch,"request":req})+"\n")
+            p.write_text(canonical({"pid":os.getpid(),"epoch":epoch,"request":req})+"\n",encoding="utf-8")
             until=time.monotonic()+15
             while not Path(str(p)+".resume").exists():
                 if time.monotonic()>until:raise Refusal("TEST_BARRIER_TIMEOUT")
@@ -71,7 +71,8 @@ def main():
     args=vars(parser.parse_args());root=args.pop("root")
     try:result=run(root,**args)
     except Refusal as exc:result={"ok":False,"status":"BLOCKED","error":exc.code,"detail":exc.detail,"pid":os.getpid()}
-    print(canonical(result),flush=True)
+    sys.stdout.buffer.write((canonical(result)+"\n").encode("utf-8"))
+    sys.stdout.buffer.flush()
     if not result["ok"]:sys.exit(2)
 
 

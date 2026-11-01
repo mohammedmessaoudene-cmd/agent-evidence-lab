@@ -1,0 +1,35 @@
+{
+  "schema": "p02-receipt-identity-regression/1",
+  "finding": "P02-PUBLIC-R2-F01",
+  "classification": "Post-finding targeted regression contract; not a preregistration",
+  "mode": "portable_graph",
+  "scope": "Receipt admission is shared by both modes. Three signed event identity cases only; no impact-algorithm comparison.",
+  "cases": [
+    {"case_id": "valid_string", "event_id": "1", "expected_acceptance": true},
+    {"case_id": "integer_event_id", "event_id": 1, "expected_acceptance": false},
+    {"case_id": "boolean_event_id", "event_id": true, "expected_acceptance": false}
+  ],
+  "fixture": {
+    "leaves": {
+      "A": {"issuer": "publisher-a", "revision": 0, "value": 10},
+      "B": {"issuer": "publisher-b", "revision": 0, "value": 20}
+    },
+    "nodes": {
+      "a": {"op": "identity", "inputs": ["A"]},
+      "b": {"op": "identity", "inputs": ["B"]}
+    },
+    "decisions": {
+      "D_main": {"node": "a", "owner": "consumer-a", "threshold": 15, "policy": "ge-v1"},
+      "D_unrelated": {"node": "b", "owner": "consumer-b", "threshold": 25, "policy": "ge-v1"}
+    },
+    "graph_complete": true,
+    "membership_closed": true,
+    "cutoff": "public-review-receipt-identity-epoch",
+    "data_kind": "SYNTHETIC"
+  },
+  "limits": [
+    "Authentic public test signer and correct computed score; no cryptographic break is alleged.",
+    "No new decision_id restriction; the existing registered-decision contract is preserved.",
+    "Rejecting future malformed receipts does not repair invalid records already stored."
+  ]
+}

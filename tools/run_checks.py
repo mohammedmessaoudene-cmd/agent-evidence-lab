@@ -19,14 +19,21 @@ def verify(pid,out):
     if pid in {'P02','P04'}:
         report=read(out/f'{pid}.json');require(report['status']=='PASS',pid+' summary status')
         if pid=='P02':
-            suites=report['suites'];require(len(suites)==3,'P02 suite cardinality')
-            require(sorted(x['recorded_cases'] for x in suites)==[8,12,18],'P02 cases')
+            suites=report['suites'];require(len(suites)==4,'P02 suite cardinality')
+            require(sorted(x['recorded_cases'] for x in suites)==[3,8,12,18],'P02 cases')
             for suite in suites:
                 require(suite['recorded_cases']==suite['passed']==suite['expected_cases'] and suite['failed']==0,'P02 suite result')
                 require(len(suite['cases'])==suite['expected_cases'] and all(x['status']=='PASS' for x in suite['cases']),'P02 case records')
         else:
             require(report['tests_run']==23 and report['failures']==report['errors']==report['skipped']==0,'P04 counts')
             require(len(report['tests'])==23 and all(x['status']=='PASS' for x in report['tests']),'P04 method results')
+            sql=report['regression_sqlite'];final=report['regression_finality']
+            require(sql['status']=='PASS' and sql['exit_code']==0 and sql['cases_run']==sql['passed']==len(sql['cases'])==6 and sql['failed']==0,'P04 SQLite regression counts')
+            require(all(x['expectation_met'] is True for x in sql['cases'].values()),'P04 SQLite outcomes')
+            require(final['status']=='PASS' and final['exit_code']==0 and final['cases_run']==1 and final['checks_total']==len(final['checks'])==19 and final['checks_failed']==0,'P04 finality regression counts')
+            require(len({x['name'] for x in final['checks']})==19 and all(x['passed'] is True for x in final['checks']),'P04 finality checks')
+            current=hashlib.sha256((ROOT/'projects/P04_cost_exposure/src/exposure_ledger.py').read_bytes()).hexdigest()
+            require(sql['source_sha256']==final['source_sha256']==current,'P04 regression source identity')
         return report
     if pid=='P03':
         report=read(out/'P03.json');require(len(report['cases'])==8 and report['upstream_false_positives']==2 and report['candidate_false_positives']==0,'P03 counts')
@@ -48,14 +55,58 @@ def verify(pid,out):
         return {'primary':primary,'adversarial_counts':{k:v for k,v in adverse.items() if k not in {'rows','decision_comparison'}}}
     if pid=='P06':
         provider=read(out/'P06_provider/summary.json');parsers=read(out/'P06_parsers/result.json')
+        # This is the fixed P06 matrix, independently listed from the runner.
+        provider_pairs={('T01','atomic'),('T01','opaque'),('T01','contract_violating_skip'),
+                        ('T02','atomic'),('T02','opaque'),('T03','atomic'),
+                        ('T04','atomic'),('T04','contract_violating_skip'),
+                        ('T05','atomic'),('T05','contract_violating_split')}
+        expected_provider={(case,profile,mode) for case,profile in provider_pairs for mode in ('classic','adapter')}
+        provider_rows=provider.get('results')
+        require(isinstance(provider_rows,list) and len(provider_rows)==20,'P06 provider row count')
+        provider_keys=[(r['case_id'],r['provider_profile'],r['mode']) for r in provider_rows]
+        require(len(set(provider_keys))==20 and set(provider_keys)==expected_provider,'P06 provider matrix identities')
+        for row in provider_rows:
+            expected_unsafe=(row['case_id'],row['provider_profile']) in {('T01','contract_violating_skip'),('T05','contract_violating_split')}
+            expected_meaning='EXPECTED_UNSAFE_COUNTEREXAMPLE_OBSERVED' if expected_unsafe else 'EXPECTED_BOUNDED_BEHAVIOR_OBSERVED'
+            require(row['status']=='PASS' and row['meaning']==expected_meaning,'P06 provider row outcome')
+            require(row['metrics']['contract_violation_observed'] is expected_unsafe,'P06 provider adverse classification')
+        require(all(type(provider[k]) is int for k in ('planned_case_runs','case_runs','passed','failed','unsafe_counterexamples_observed')),'P06 provider integer counts')
+        require(provider['case_runs']==len(provider_rows) and provider['passed']==sum(r['status']=='PASS' for r in provider_rows)
+                and provider['failed']==sum(r['status']!='PASS' for r in provider_rows)
+                and provider['unsafe_counterexamples_observed']==sum(r['meaning']=='EXPECTED_UNSAFE_COUNTEREXAMPLE_OBSERVED' for r in provider_rows),'P06 provider aggregate recomposition')
         require(provider['planned_case_runs']==provider['case_runs']==provider['passed']==20 and provider['failed']==0 and provider['unsafe_counterexamples_observed']==4,'P06 provider expectations')
+        expected_parser={'actual_p06_dossier':True,'memory_name_incompatible':False,'memory_type_incompatible':False,
+                         'memory_version_incompatible':False,'other_mission_id':False,'unknown_pending_obligation':False,
+                         'duplicate_obligation_id':False,'forged_permission_is_only_data':True,'duplicate_mission_member':False,
+                         'overflow_exponent':False,'unsafe_integer':False,'named_nan':False,'unpaired_surrogate':False,'valid_unicode':True}
+        parser_rows=parsers.get('rows')
+        require(isinstance(parser_rows,list) and len(parser_rows)==14,'P06 parser row count')
+        parser_names=[r['name'] for r in parser_rows]
+        require(len(set(parser_names))==14 and set(parser_names)==set(expected_parser),'P06 parser identities')
+        protocol_path=out/'P06_parsers/protocol.json';protocol=read(protocol_path)
+        require((out/'P06_parsers/protocol.sha256').read_text().strip()==hashlib.sha256(protocol_path.read_bytes()).hexdigest(),'P06 protocol digest')
+        protocol_cases=protocol['cases']
+        require(len(protocol_cases)==14 and len({r['name'] for r in protocol_cases})==14
+                and {r['name'] for r in protocol_cases}==set(expected_parser),'P06 protocol identities')
+        by_name={r['name']:r for r in protocol_cases}
+        require(all(by_name[name]['expected_admitted'] is expected for name,expected in expected_parser.items()),'P06 protocol expectations')
+        require(type(parsers['cases']) is int and type(parsers['expected_results']) is int,'P06 parser integer counts')
         require(parsers['cases']==parsers['expected_results']==14 and len(parsers['rows'])==14,'P06 parser counts')
-        require(all(x['pass'] and x['identical_bytes'] for x in parsers['rows']),'P06 parser byte identity')
         for row in parsers['rows']:
             evidence=row['byte_evidence'];data=(out/'P06_parsers'/(row['name']+'.json.txt')).read_bytes();digest=hashlib.sha256(data).hexdigest()
+            require(row['expected'] is expected_parser[row['name']] and type(row['joint_admitted']) is bool,'P06 parser expected decision')
+            require(row['joint_admitted']==row['expected'],'P06 parser semantic decision')
+            require(by_name[row['name']]['sha256']==digest,'P06 case protocol binding')
+            if row['name']=='actual_p06_dossier':require(protocol['dossier_sha256']==digest,'P06 source dossier binding')
             require(all(evidence[k]==digest for k in ['python_input_sha256','saved_file_sha256','node_stdin_sha256']),'P06 three digests')
             require(all(evidence[k]==len(data) for k in ['python_input_bytes','saved_file_bytes','node_stdin_bytes']),'P06 three sizes')
             require(row['node_raw']['received_sha256']==digest and row['node_raw']['received_bytes']==len(data),'P06 actual Node observation')
+            require(row['pass'] is True and row['identical_bytes'] is True,'P06 recomposed parser result')
+            if row['joint_admitted']:
+                require(row['python_raw']['accepted'] is True and row['node_raw']['accepted'] is True,'P06 admitted parser acceptance')
+                py_digest=row['python_raw']['bounded_canonical_sha256'];node_digest=row['node_raw']['bounded_canonical_sha256']
+                require(isinstance(py_digest,str) and len(py_digest)==64 and py_digest==node_digest,'P06 admitted semantic digest')
+        require(parsers['expected_results']==sum(r['pass'] is True for r in parser_rows),'P06 parser aggregate recomposition')
         return {'provider':{k:v for k,v in provider.items() if k not in {'results','metadata'}},'parser_cases':14,'byte_identity':'PASS'}
 
 def main():

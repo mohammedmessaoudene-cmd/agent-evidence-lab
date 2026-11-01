@@ -1,0 +1,80 @@
+{
+  "name": "after_t05_classic_ack_without_effect",
+  "command": [
+    "<python>\\python.exe",
+    "-S",
+    "-B",
+    "<project>\\review\\check_t05_effect.py",
+    "--mode",
+    "classic",
+    "--fault",
+    "ack_without_effect",
+    "--out",
+    "<run-root>\\after_t05_classic_ack_without_effect"
+  ],
+  "started_utc": "2026-11-01T16:56:58.010053+00:00",
+  "exit_code": 0,
+  "expected_exit": 0,
+  "probe_sha256": "e0d5623919cb17b4edd7bd8598cb7f3366eade9b3fc3a7528987a139f7629682",
+  "result": {
+    "base_commit": "da6e193a2c3290eec3876c9139719b7ec12f3013",
+    "experiment": "NEW_ACK_WITHOUT_EFFECT_ORACLE_CHALLENGE",
+    "argv": [
+      "<project>\\review\\check_t05_effect.py",
+      "--mode",
+      "classic",
+      "--fault",
+      "ack_without_effect",
+      "--out",
+      "<run-root>\\after_t05_classic_ack_without_effect"
+    ],
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "mode": "classic",
+    "fault": "ack_without_effect",
+    "mutation": "One explicit early success return before effect INSERT; copied provider only.",
+    "evaluator_unchanged": true,
+    "observer_unchanged": true,
+    "source_sha256": {
+      "run.py": "6a84eac1ef8026cb611e8d341cff7d832d2380fe646e50a94755f01c013e94d3",
+      "observe.py": "86b46d39b1e876820628f6cf30bbc58efa1f99db3bc5130cdbe33f59d04b7a4b",
+      "src/p06_boundary/provider.py": "bde16d1060674c9e3753f3046c76db687608706fd0ee33c6c5718a2aeb1636dc"
+    },
+    "original_provider_sha256": "bde16d1060674c9e3753f3046c76db687608706fd0ee33c6c5718a2aeb1636dc",
+    "mutant_provider_sha256": "2d3bd8ffbb6121574d3218bcaf3a9629f55f64b814ddd0d236efdcd05ce7ad95",
+    "run_case_result": {
+      "case_id": "T05",
+      "case": "reviewer2_execute_ack_without_effect",
+      "provider_profile": "atomic",
+      "mode": "classic",
+      "status": "FAIL",
+      "old_response": {
+        "completed_at": 1793552220.7558372,
+        "mode": "classic",
+        "ok": true,
+        "pid": 39684,
+        "response": {
+          "ok": true,
+          "receipt": {
+            "reviewer2_fault": "ACK_WITHOUT_EFFECT"
+          },
+          "replayed": false
+        },
+        "submitted_at": 1793552220.5618231
+      },
+      "meaning": "EXPECTED_BOUNDED_BEHAVIOR_OBSERVED",
+      "error": "atomic T05 requires one committed effect",
+      "traceback": "Traceback (most recent call last):\n  File \"<run-root>\\after_t05_classic_ack_without_effect\\faulted_provider_copy\\run.py\", line 237, in run_case\n    require(observation['effect_count']==1 and observation['business_duplicates']==0,\n  File \"<run-root>\\after_t05_classic_ack_without_effect\\faulted_provider_copy\\run.py\", line 51, in require\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: atomic T05 requires one committed effect\n"
+    },
+    "observed_effect_count": 0,
+    "false_positive_reproduced": false,
+    "expected_runner_status": "FAIL",
+    "expectation_met": true,
+    "qualification": "Does not claim the original provider omits effects. The fault challenges the exact published evaluator with an omitted required effect.",
+    "probe_sha256": "e0d5623919cb17b4edd7bd8598cb7f3366eade9b3fc3a7528987a139f7629682",
+    "status": "PASS"
+  },
+  "raw_artifact_sha256": "7fd3de126f480af6995a120125ba872206545a3681303d57d3b206fb10ccec5b",
+  "stdout": "{\r\n  \"mode\": \"classic\",\r\n  \"fault\": \"ack_without_effect\",\r\n  \"evaluator_unchanged\": true,\r\n  \"observer_unchanged\": true,\r\n  \"observed_effect_count\": 0,\r\n  \"false_positive_reproduced\": false,\r\n  \"expectation_met\": true\r\n}\r\n",
+  "stderr": ""
+}

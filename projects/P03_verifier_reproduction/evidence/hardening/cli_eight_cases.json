@@ -1,0 +1,1244 @@
+{
+  "scope": "isolated unchanged upstream aggregation method + actual public task queries + SQLite fixture; no full gym or LLM run",
+  "source_blob_sha": "43f45a0423b6fffc1640e6e93b824890b9e1d034",
+  "task_blob_sha": "bac32e3dcdc21d14ec7aa6d9e98461d41537871a",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "cases": {
+    "marc=False;tonya=False;reversed=False": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "3:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "Verify Notification Sent _1": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      }
+    },
+    "marc=False;tonya=False;reversed=True": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "3:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "Verify Notification Sent _1": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      }
+    },
+    "marc=False;tonya=True;reversed=False": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": false,
+        "reported_success": true,
+        "false_positive": true,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "3:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "Verify Notification Sent _1": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      }
+    },
+    "marc=False;tonya=True;reversed=True": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "3:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent _1": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      }
+    },
+    "marc=True;tonya=False;reversed=False": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "3:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent _1": {
+            "passed": false,
+            "actual_count": 0
+          }
+        }
+      }
+    },
+    "marc=True;tonya=False;reversed=True": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": false,
+        "reported_success": true,
+        "false_positive": true,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "3:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": false,
+        "reported_success": false,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": false,
+            "actual_count": 0
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": false,
+            "actual_count": 0
+          },
+          "Verify Notification Sent _1": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      }
+    },
+    "marc=True;tonya=True;reversed=False": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": true,
+        "reported_success": true,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": true,
+        "reported_success": true,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "3:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": true,
+        "reported_success": true,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent _1": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      }
+    },
+    "marc=True;tonya=True;reversed=True": {
+      "upstream": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 3,
+        "all_executed_pass": true,
+        "reported_success": true,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "stable_index_candidate": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": true,
+        "reported_success": true,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "0:Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "1:Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "2:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "3:Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      },
+      "pr24": {
+        "configured_checks": 4,
+        "executed_checks": 4,
+        "retained_checks": 4,
+        "all_executed_pass": true,
+        "reported_success": true,
+        "false_positive": false,
+        "oracle": [
+          {
+            "name": "Verify Updated Installed Product",
+            "query": "SELECT COUNT(*) \nFROM installed_product AS ip\nWHERE ip.installed_product_id = 40\n  AND ip.location_id = 692\n  AND ip.status = 'in_use';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Create New Case",
+            "query": "SELECT COUNT(*)\nFROM customer_case AS c\nWHERE c.account_id = 8\n  AND c.contact_id = 10\n  AND c.channel = 'alert'\n  AND c.priority = 'low'\n  AND c.state = 'closed';\n ",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'tonya.stevens@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          },
+          {
+            "name": "Verify Notification Sent ",
+            "query": "SELECT COUNT(*)\nFROM notification AS n\nWHERE n.case_id = 1233\n  AND n.email = 'marc.henry@stark-industries.com'\n  AND n.type = 'update';\n",
+            "passed": true,
+            "actual_count": 1
+          }
+        ],
+        "retained": {
+          "Verify Updated Installed Product": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Create New Case": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent ": {
+            "passed": true,
+            "actual_count": 1
+          },
+          "Verify Notification Sent _1": {
+            "passed": true,
+            "actual_count": 1
+          }
+        }
+      }
+    }
+  },
+  "upstream_false_positives": 2,
+  "candidate_false_positives": 0,
+  "pr24_false_positives": 0,
+  "interpretation": "Known issue #23 reproduced in pinned upstream source. Stable-index mitigation retains checks in these fixtures; no novelty, general alignment, adoption or production-readiness claim."
+}

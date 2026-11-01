@@ -85,5 +85,20 @@
     "sha256": "297a2c65fdee74cac811b84d4d2642099aa8fa5227feecd3e25b4997e149e908",
     "scope": "Selected actual AST paths with simulated resources; no real workflow.",
     "hash_basis": "Exact published bytes, including CRLF; see evidence/hardening/helper_identity.json for the corrected former LF-normalized hash."
+  },
+  "final_received_review": {
+    "packet_sha256": "03494fe3b2e77f5afe53b1b200bfdeebf8114d7fd6d42ab9b1d42b8c14a53305",
+    "packet_bytes": 209818,
+    "candidate_byte_identity": "30d4f25cf6ccb617499b2a848a2ad1bc87be4d051612ce6d194d6351b4dc4ac1",
+    "candidate_source_changed": false,
+    "public_compact_projection": "evidence/final_cloud_review.json",
+    "public_projection_sha256": "75629697a45e9af115b3639412c0bc9ef4c349b1e6d603a2c579d45e710d1f6a",
+    "provenance": "Received AI-assisted review with structured Linux runtime extracts; all27embedded text hashes checked locally. Raw cloud trace/JUnit/SQLite and observer were not delivered.",
+    "native_profile": "Linux Python3.12.14 DBOS3.4 baseline2PASS and native-mutantFAIL_B/dispatchPASS; profile retains one strict-typing diagnostic.",
+    "frozen_profile": "Linux Python3.12.14 DBOS2.29 fresh bootstrap and static Ruff/Pyright only, distinct from existing Windows/native and hosted Ubuntu results.",
+    "junit_correction": "Cloud utility only; existing repository gate already checks exact identities and aggregates.",
+    "source_oracle_limit": "Initial journal prefix is preserved but not required nonempty; source unchanged.",
+    "earlier_153_evidence_preserved": true,
+    "no_private_packet_or_raw_workstation_artifacts_added": true
   }
 }

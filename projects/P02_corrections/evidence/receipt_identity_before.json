@@ -1,0 +1,125 @@
+{
+  "project": "P02",
+  "finding": "P02-PUBLIC-R2-F01",
+  "case_records": 3,
+  "passed": 1,
+  "failed": 2,
+  "python": "3.11.9",
+  "platform": "Windows",
+  "sqlite": "3.45.1",
+  "python_site_import_disabled": true,
+  "source_sha256": {
+    "src/p02/engine.py": "a333872e81c6198b224fca4506e51c0b5cb1e8497dbf952fb167e8a0034cdc07",
+    "src/p02/audit.py": "df8a29ae459ba152d31237f0c742768443e3d71c9d6349888ed03e87906a4ab3",
+    "src/p02/wire.py": "ed775698599eab394241d3f88cdb1c28f562745e65e58d13f6b80b4b0523868e",
+    "tests/test_receipt_identity.py": "b9bf666018f56b5f39d6b9aba923297e47058b0791b6ca4999265ef461f2fe81",
+    "protocol/receipt_identity_regression.json": "8f11c164b8859367905878438b67eb310a4137e8dc09c63ca6a3223a5cfb631b"
+  },
+  "results": [
+    {
+      "case_id": "valid_string",
+      "mode": "portable_graph",
+      "status": "PASS",
+      "checks": {
+        "acceptance_matches_oracle": true,
+        "rejection_is_explicit": true,
+        "rejection_preserves_logical_store": true,
+        "rejection_precedes_sql": true,
+        "valid_receipt_has_supported_local_replay": true,
+        "coverage_and_external_action_remain_unknown": true
+      },
+      "evidence": {
+        "signature_valid_in_test_registry": true,
+        "receipt_event_id_type": "str",
+        "expected_acceptance": true,
+        "receipt_accepted": true,
+        "returned_verification": "LOCAL_REPLAY",
+        "rejection": null,
+        "logical_store_unchanged": false,
+        "logical_store_before_sha256": "a021b6e095b4fd8b73c97c4a8f259faabcdcbcfe1e216452e0e3a1ee3d8b0d24",
+        "logical_store_after_sha256": "16bcf5e863183da58b160336146077cc478b5e86c598642d79eb555f5b1f0594",
+        "admission_sql_statements": 9,
+        "engine_status": "COMPLETE_REGISTERED_LOCAL_REPLAY",
+        "audit_closure": "CLOSED",
+        "known_obligations_closed": true,
+        "audit_finding_codes": [],
+        "actual_decision_coverage": "UNKNOWN",
+        "external_action_performed": "UNKNOWN"
+      }
+    },
+    {
+      "case_id": "integer_event_id",
+      "mode": "portable_graph",
+      "status": "FAIL",
+      "checks": {
+        "acceptance_matches_oracle": false,
+        "rejection_is_explicit": false,
+        "rejection_preserves_logical_store": false,
+        "rejection_precedes_sql": false,
+        "valid_receipt_has_supported_local_replay": true,
+        "coverage_and_external_action_remain_unknown": true
+      },
+      "evidence": {
+        "signature_valid_in_test_registry": true,
+        "receipt_event_id_type": "int",
+        "expected_acceptance": false,
+        "receipt_accepted": true,
+        "returned_verification": "LOCAL_REPLAY",
+        "rejection": null,
+        "logical_store_unchanged": false,
+        "logical_store_before_sha256": "a021b6e095b4fd8b73c97c4a8f259faabcdcbcfe1e216452e0e3a1ee3d8b0d24",
+        "logical_store_after_sha256": "866074ce39ba89a78c33b058f5d45eac9c6178102f2ce50edacf97939f28219e",
+        "admission_sql_statements": 9,
+        "engine_status": "COMPLETE_REGISTERED_LOCAL_REPLAY",
+        "audit_closure": "UNSUPPORTED_RECORDS",
+        "known_obligations_closed": false,
+        "audit_finding_codes": [
+          "INVALID_RECEIPT_RECORD"
+        ],
+        "actual_decision_coverage": "UNKNOWN",
+        "external_action_performed": "UNKNOWN"
+      }
+    },
+    {
+      "case_id": "boolean_event_id",
+      "mode": "portable_graph",
+      "status": "FAIL",
+      "checks": {
+        "acceptance_matches_oracle": false,
+        "rejection_is_explicit": false,
+        "rejection_preserves_logical_store": false,
+        "rejection_precedes_sql": false,
+        "valid_receipt_has_supported_local_replay": true,
+        "coverage_and_external_action_remain_unknown": true
+      },
+      "evidence": {
+        "signature_valid_in_test_registry": true,
+        "receipt_event_id_type": "bool",
+        "expected_acceptance": false,
+        "receipt_accepted": true,
+        "returned_verification": "LOCAL_REPLAY",
+        "rejection": null,
+        "logical_store_unchanged": false,
+        "logical_store_before_sha256": "a021b6e095b4fd8b73c97c4a8f259faabcdcbcfe1e216452e0e3a1ee3d8b0d24",
+        "logical_store_after_sha256": "9df9805ab31d42ab1d0a179e0aad28beb3244aef3ee38c8f05a0f45fe5a06a49",
+        "admission_sql_statements": 9,
+        "engine_status": "COMPLETE_REGISTERED_LOCAL_REPLAY",
+        "audit_closure": "UNSUPPORTED_RECORDS",
+        "known_obligations_closed": false,
+        "audit_finding_codes": [
+          "INVALID_RECEIPT_RECORD"
+        ],
+        "actual_decision_coverage": "UNKNOWN",
+        "external_action_performed": "UNKNOWN"
+      }
+    }
+  ],
+  "scope": "Receipt admission is shared by both modes. Three signed event identity cases only; no impact-algorithm comparison.",
+  "limits": [
+    "Authentic public test signer and correct computed score; no cryptographic break is alleged.",
+    "No new decision_id restriction; the existing registered-decision contract is preserved.",
+    "Rejecting future malformed receipts does not repair invalid records already stored."
+  ],
+  "prior_38_cases_rerun": false,
+  "runtime_or_interop_controls_added": false
+}

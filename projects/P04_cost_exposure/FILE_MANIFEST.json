@@ -9,8 +9,8 @@
     },
     {
       "path": "AUTHOR_HANDOFF.json",
-      "bytes": 2145,
-      "sha256": "4d69c437f1c49c1f660a6add505f427001577cd172d02af94da88fb413af5717"
+      "bytes": 2773,
+      "sha256": "877208af4333c58f0da83780485cf52de7d8164c59b4d6d8acd65dd09be301d0"
     },
     {
       "path": "DEPENDENCIES.json",
@@ -21,6 +21,26 @@
       "path": "evidence/cleanup_delta_20261101.json",
       "bytes": 2973,
       "sha256": "eeb0e3930264bae4c3b6d04488f5fddc495e7e9c3c1a8c9343ad73e143c0735b"
+    },
+    {
+      "path": "evidence/ledger_hardening_after.json",
+      "bytes": 20753,
+      "sha256": "4ff63b2734c9488294d9a24eadfdee0997c9643c7faa59fbe12af9e6d2245b87"
+    },
+    {
+      "path": "evidence/ledger_hardening_before.json",
+      "bytes": 13752,
+      "sha256": "e89b3446de413bb550c5596d3519c055544b29d77e8da9ae7d6dbc31f4ba6285"
+    },
+    {
+      "path": "evidence/ledger_hardening_delta.json",
+      "bytes": 2766,
+      "sha256": "d5e219854290888a98fa199c7d27e03d2f3462a55a9e9f835fa0ffa678abf8da"
+    },
+    {
+      "path": "evidence/P04_MINIMAL_FIXES.patch",
+      "bytes": 1994,
+      "sha256": "e608f2291502e449e04ca4853da6c53df6afa1ae4fe72ea3503d24e431c3e044"
     },
     {
       "path": "evidence/reviewer_cleanup_after.json",
@@ -44,8 +64,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5460,
-      "sha256": "857fc01908e07388427fa5388bb2cfd7902ff97892496fce685e0a9f3b30867b"
+      "bytes": 8118,
+      "sha256": "10cfa3817c10d9e339b8cbe797e967bd810a01ac84a40fa42585d6a92de0f5d4"
     },
     {
       "path": "requirements.txt",
@@ -54,23 +74,33 @@
     },
     {
       "path": "run_tests.py",
-      "bytes": 3845,
-      "sha256": "f82b32e970a9b0dfd886f6c975c8b390706f1164a052ac9be06acd7d5e607798"
+      "bytes": 6268,
+      "sha256": "04f755d7e02f8c788bbeeee95b26f3b1d9f87c3592fdb8c1809ff47332a7e99a"
     },
     {
       "path": "SOURCES.json",
-      "bytes": 3946,
-      "sha256": "f917a29a3d39a816f43c32ce62fcf221c9c38ef30364e93e56e6f9d160627c36"
+      "bytes": 10469,
+      "sha256": "bcaf7ff4e3010de7936c0f67a1b2d04518858bf45d6a1875871b9292cf8615a6"
     },
     {
       "path": "src/exposure_ledger.py",
-      "bytes": 24309,
-      "sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188"
+      "bytes": 24455,
+      "sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f"
     },
     {
       "path": "tests/test_exposure_ledger.py",
       "bytes": 28756,
       "sha256": "384d45cccfddf3b06d75f92771c3722fe777fbdf1403ba57c07c76dd9084f8d0"
+    },
+    {
+      "path": "tests/test_finality_regression.py",
+      "bytes": 8430,
+      "sha256": "f0c0583e6834cd6a3b23643b9bf3c6676af7e8c3c8261ef495cd6bd89463ddd6"
+    },
+    {
+      "path": "tests/test_sqlite_regressions.py",
+      "bytes": 23614,
+      "sha256": "998e7939c78cc2b1248dfd5ac3344f505d42aa27530691c0a0a0efb38fffbf3e"
     }
   ]
 }

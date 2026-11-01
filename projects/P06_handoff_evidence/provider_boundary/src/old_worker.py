@@ -7,6 +7,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+import sys
 import time
 
 from p06_boundary.common import Refusal, canonical, read_json, rpc
@@ -45,7 +46,8 @@ def main():
     except Refusal as exc:
         output={'ok':False,'error':exc.code,'detail':exc.detail}
     output.update(pid=os.getpid(),submitted_at=submitted,completed_at=time.time(),mode=a.mode)
-    print(canonical(output),flush=True)
+    sys.stdout.buffer.write((canonical(output)+'\n').encode('utf-8'))
+    sys.stdout.buffer.flush()
 
 
 if __name__=='__main__':main()

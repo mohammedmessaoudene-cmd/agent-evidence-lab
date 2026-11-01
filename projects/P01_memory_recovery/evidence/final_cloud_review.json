@@ -1,0 +1,106 @@
+{
+  "schema": "p01-received-final-review-addendum/1",
+  "kind": "RECEIVED_REVIEW_READBACK_NOT_NEW_LOCAL_EXECUTION",
+  "candidate": {
+    "sha256": "30d4f25cf6ccb617499b2a848a2ad1bc87be4d051612ce6d194d6351b4dc4ac1",
+    "bytes": 6435,
+    "lines": 169,
+    "unchanged": true,
+    "upstream_commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b"
+  },
+  "received_packet": {
+    "sha256": "03494fe3b2e77f5afe53b1b200bfdeebf8114d7fd6d42ab9b1d42b8c14a53305",
+    "bytes": 209818,
+    "embedded_texts_hash_verified": 27
+  },
+  "profiles": {
+    "existing_windows_locked_dbos_2_29": {
+      "kind": "previously_recorded_local_execution",
+      "python": "3.11.9",
+      "baseline": "2PASS_NO_SKIP_ERROR",
+      "mutant": "NATIVE_FAIL_ON_B_DISPATCH_PASS",
+      "evidence": "hardening/summary.json",
+      "environment_control": "same interpreter/environment and 37 registered pytest modules in both lanes"
+    },
+    "existing_hosted_ubuntu_locked_profile": {
+      "kind": "previously_read_back_hosted_ci",
+      "commit": "fa7e46776cc5e0ea38ebe1bf11a78b23cdd13e49",
+      "run": 41327039712,
+      "url": "https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab/actions/runs/41327039712",
+      "dbos": "2.29.0 from frozen upstream lock",
+      "result": "native and selected dispatch2PASS; zero failures/errors/skips",
+      "junit_sha256": "5ed3a78571d9f460e3ea52129161ac6eb30df9653533100da14e0a9739cbd3d1"
+    },
+    "additional_received_linux_dbos_3_4": {
+      "kind": "reported_cloud_execution_structured_extracts_checked",
+      "python": "3.12.14",
+      "dbos": "3.4.0",
+      "baseline": "2PASS_NO_SKIP_ERROR",
+      "mutant": "NATIVE_FAIL_ON_B_DISPATCH_PASS",
+      "baseline_reads": {
+        "setup": 1,
+        "runtime_after_counter_reset": 1
+      },
+      "mutant_reads": {
+        "setup": 1,
+        "runtime_after_counter_reset": 2
+      },
+      "baseline_snapshots": "A in all five callbacks",
+      "mutant_snapshots": "A then four B callbacks",
+      "baseline_journal_operations": {
+        "initial": 2,
+        "final": 6,
+        "memory_load_present": true
+      },
+      "mutant_journal_operations": {
+        "initial": 1,
+        "final": 5,
+        "memory_load_present": false
+      },
+      "workflow_status_both_lanes": "SUCCESS; not the memory acceptance oracle",
+      "backend_restoration": "reported exact original SHA",
+      "plugin_inventory": "55 stable registration names equal between Linux lanes; distinct from the earlier Windows37 inventory",
+      "strict_typing": "FAIL_ONE_DBOSCONFIG_ERROR_run_admin_server_ABSENT",
+      "ruff_and_format": "reported PASS"
+    },
+    "received_linux_locked_static_only": {
+      "python": "3.12.14",
+      "dbos": "2.29.0",
+      "ruff": "0.17.2 check/format PASS",
+      "pyright": "1.1.414 one file0errors0warnings0information",
+      "native_workflows_executed": 0,
+      "bootstrap_qualification": "Fresh bootstrap and root editable install executed separately; final helper not rerun end-to-end after integration."
+    }
+  },
+  "additional_received_microchecks": {
+    "total": 21,
+    "fault_paths_passed": 7,
+    "journal_corruptions_rejected": 8,
+    "positive_controls": 3,
+    "limits_demonstrated": 3,
+    "new_native_workflows": 0
+  },
+  "junit_scope": {
+    "cloud_defect": "Its previous review/check_junit.py checked function names without class identity; corrected only in that cloud utility.",
+    "cloud_before_sha256": "dc959285c9e7c7cc3492399668d737d962f944fd99b065699ed7b1c18cf2fc25",
+    "cloud_corrected_sha256": "d0a8a2c1716cf4aa7ed0af23135323701cb01c43b03e2c7fd669524aafbe9f7d",
+    "repository_gate_sha256": "fbaf1a9a483e45b82f07fa456222d9fd18bec89dfc3653c7b2e72f4c1d515d57",
+    "repository_gate_already_checks": "exact two distinct class/name identities, zero per-case failure/error/skip and exact suite aggregates",
+    "repository_wrong_class_falsifier": "REJECTED",
+    "repository_archived_ci_positive_control": "PASS",
+    "repository_gate_changed": false,
+    "workflow_reruns": 0
+  },
+  "limits": [
+    "One setup read obtains original.version, then reads.clear resets the execution counter. One runtime read is not one total call.",
+    "The source preserves the returned initial journal prefix but does not require it to be nonempty. Initial Memory and model steps were observed in this run; an artificial empty prefix is accepted by the source assertion.",
+    "AnyIO10s bounds cooperative resume/get_result awaits only; it is not a hard whole-test timeout. Constructor and initial workflow execution lie outside it.",
+    "Cleanup paths after successful construction are checked; partial-constructor cleanup and every OS resource are not proven.",
+    "A broken optional DBOS import can request skip; exact native execution and zero skips remain required.",
+    "Runtime compatibility on DBOS3.4 does not close its real strict-typing failure. The frozen2.29 qualification is a separate profile.",
+    "Raw cloud traces, observer plugin, SQLite files and JUnit were not delivered in this packet; structured extracts retain their digests but cannot be independently rehashed here.",
+    "The initial skipped-install, sandbox-hang and microcheck-harness failures were invalidated for pass counts and remain recorded in the private source packet.",
+    "No fresh-process recovery, whole-upstream-suite advantage, production bug, adoption, maintainer agreement or independent institutional attestation."
+  ],
+  "status": "BOUNDED_ADDITIONAL_EVIDENCE_NO_CANDIDATE_SOURCE_PATCH_REQUIRED"
+}

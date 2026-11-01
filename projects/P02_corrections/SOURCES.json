@@ -19,11 +19,21 @@
       "origin_campaign": "CAMPAGNE_OPPORTUNITES_20261101_R1",
       "origin_path": "P02_corrections_interagents/src/R2_WORKING/src/p02/engine.py",
       "origin_sha256": "a333872e81c6198b224fca4506e51c0b5cb1e8497dbf952fb167e8a0034cdc07",
-      "public_sha256": "a333872e81c6198b224fca4506e51c0b5cb1e8497dbf952fb167e8a0034cdc07",
-      "exact_copy": true,
-      "changes": [],
+      "public_sha256": "d8113d1018df2c39d743faf6d21c4200fb57bd1cf4a279d3177b8d1f690374c2",
+      "exact_copy": false,
+      "changes": [
+        "P02-PUBLIC-R2-F01: two-line guard requires a nonempty string event_id after receipt schema validation and before SQL binding. No decision_id restriction added."
+      ],
       "license": "MIT",
-      "provenance": "User-authorized original AI-assisted campaign code; no upstream source vendored."
+      "provenance": "User-authorized original AI-assisted campaign code; no upstream source vendored.",
+      "review_proposal": {
+        "report_sha256": "0a722f3bfc352a5b5bcbc7eac32adb7347a190419c462bc9c87b88a2b369b2f2",
+        "embedded_path": "experiments/delta_identity_minimal/src/p02/engine.py",
+        "embedded_sha256": "d8113d1018df2c39d743faf6d21c4200fb57bd1cf4a279d3177b8d1f690374c2",
+        "public_patch": "evidence/receipt_identity.patch",
+        "patch_sha256": "1909eb30f3cc8156829604da147d9e3d8fe617b775dce5dbce9b36010b885db8",
+        "relationship": "Exact bytes of the final minimal proposal; earlier wider decision_id restriction was rejected and is not included."
+      }
     },
     {
       "public_path": "src/p02/wire.py",
@@ -152,7 +162,7 @@
   "new_original_files": [
     {
       "public_path": "run_tests.py",
-      "public_sha256": "7ba498bbaa1369d66dd9307e3a6adeb1583d5b7ca71ed32c6ed5aba7a4378a3a",
+      "public_sha256": "97a8d97598cacf5d19fcef930730d21bcf39f7ddbeb8014e40703b94ab253564",
       "license": "MIT",
       "authorship": "New AI-assisted publication assembly under user authorization"
     },
@@ -161,6 +171,35 @@
       "public_sha256": "a578907dc0a82f69f98f83f5895b9c69a164c2bca753eab90d4dcb37dfe582f5",
       "license": "MIT",
       "authorship": "New AI-assisted publication assembly under user authorization"
+    },
+    {
+      "public_path": "tests/test_receipt_identity.py",
+      "public_sha256": "b9bf666018f56b5f39d6b9aba923297e47058b0791b6ca4999265ef461f2fe81",
+      "license": "MIT",
+      "authorship": "Original AI-assisted targeted regression derived from the received review probe; only its three identity-admission cases selected."
+    },
+    {
+      "public_path": "protocol/receipt_identity_regression.json",
+      "public_sha256": "8f11c164b8859367905878438b67eb310a4137e8dc09c63ca6a3223a5cfb631b",
+      "license": "MIT",
+      "authorship": "Original AI-assisted targeted regression derived from the received review probe; only its three identity-admission cases selected."
     }
-  ]
+  ],
+  "receipt_identity_regression": {
+    "finding": "P02-PUBLIC-R2-F01",
+    "review_report_sha256": "0a722f3bfc352a5b5bcbc7eac32adb7347a190419c462bc9c87b88a2b369b2f2",
+    "reviewed_public_source_commit": "da6e193a2c3290eec3876c9139719b7ec12f3013",
+    "original_probe_sha256": "9f5ec0e052fd33619f15d729bf5700cc1b8436d12667ec9169d4afcd8888d453",
+    "portable_proposal_probe_sha256": "f7d0aa555ea9779a2b1aef494d8b692b9c53d8d29353bc0f63865b471bd092eb",
+    "adaptations": [
+      "Select only valid_string, integer_event_id and boolean_event_id.",
+      "Store the unchanged synthetic fixture semantics and the three-case contract as public protocol JSON.",
+      "Use public-kit-relative source/dependency paths and base Python -S; no executable/sys.path parameters in public receipts.",
+      "Match the runner case schema and retain logical-state hash, audit disagreement and admission SQL count.",
+      "Add the three-case suite to the runner; preserve the prior18/12/8 selections."
+    ],
+    "empty_string_case_executed": false,
+    "linux_review_controls_repeated_on_windows": false,
+    "public_patch_exact_copy": true
+  }
 }

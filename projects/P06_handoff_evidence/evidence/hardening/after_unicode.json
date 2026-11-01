@@ -1,0 +1,2719 @@
+{
+  "name": "after_unicode",
+  "command": [
+    "<python>\\python.exe",
+    "-S",
+    "-B",
+    "<project>\\review\\check_unicode_transport.py",
+    "--phase",
+    "after",
+    "--out",
+    "<run-root>\\after_unicode"
+  ],
+  "started_utc": "2026-11-01T16:57:04.948295+00:00",
+  "exit_code": 0,
+  "expected_exit": 0,
+  "probe_sha256": "37131492b05cd65d2c2ae74b9afc41ccc23c72794f0f974e549d0d645080471b",
+  "result": {
+    "project_id": "P06",
+    "phase": "after",
+    "observations": [
+      {
+        "case": "I03_TRANSPORT",
+        "mode": "classic",
+        "fixture": "ascii",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "eb7181bf857cd2191ac81cde4a734360c15854c0b18328ae8c77698ab59dac9f",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_ascii_ASCII",
+            "--mode",
+            "classic",
+            "--subject",
+            "A",
+            "--label",
+            "initial"
+          ],
+          "pid": 24824,
+          "returncode": 0,
+          "started_ns": 1793552225375478700,
+          "finished_ns": 1793552226014356700,
+          "result": {
+            "epoch": 1,
+            "mission": "P06-transport-ascii",
+            "mode": "classic",
+            "ok": true,
+            "pid": 24824,
+            "status": "COMPLETE",
+            "subject": "A"
+          },
+          "stdout_sha256": "ae93fb3cf2fbd332b56418fb10c842af727905294f0cea9760cbaab389f5f05e",
+          "stdout_bytes": 117,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 24824,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transport-ascii",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"synthetic-service\",\"unit\":\"mm\"},\"mission\":\"P06-transport-ascii\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"},\"required\":true}]}",
+              "contract_hash": "eb7181bf857cd2191ac81cde4a734360c15854c0b18328ae8c77698ab59dac9f",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552255.619883,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552345.3603039
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transport-ascii",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyMzliZWU2NmEwMmM4MTg5MTg4YThiZDVlMzAxM2M3NTY3OThlM2EyZWQzMDY0YzlhMmJjNmE3NjZiNGI5MWIiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.OfBfI6Sv08SjRALWnq5oBW-NByO1aGzllBjNqN5qzXU\"}"
+            },
+            {
+              "mission": "P06-transport-ascii",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjUyOWEzN2MzMzcwNDM0MTZkYTZmMzM0YmI0MDg0MTIzMWMxNjQ3N2Y2ZjE1YjIxOTExY2QxZjc0MTAxOGFlYTEiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDItZm9sbG93LXVwIiwicGF5bG9hZF9oYXNoIjoiNzhmZGUwODljOWI4MGU4MTFmNzYwMTA0YTE2ZjU5OWFjOTQxYjc1ZmRhYmNkNDczYWViNjVlMzUwYmQ2ZWMxZSIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.AJm6T6Kpu0BmSE9YLNaEDiqUpfmAipIABFIr3TTcpKI\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transport-ascii",
+              "obligation": "01-reserve",
+              "idempotency_key": "9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b",
+              "payload_hash": "be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552225.8625896,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyMzliZWU2NmEwMmM4MTg5MTg4YThiZDVlMzAxM2M3NTY3OThlM2EyZWQzMDY0YzlhMmJjNmE3NjZiNGI5MWIiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.OfBfI6Sv08SjRALWnq5oBW-NByO1aGzllBjNqN5qzXU\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transport-ascii",
+              "obligation": "02-follow-up",
+              "idempotency_key": "529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1",
+              "payload_hash": "78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552225.9922848,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjUyOWEzN2MzMzcwNDM0MTZkYTZmMzM0YmI0MDg0MTIzMWMxNjQ3N2Y2ZjE1YjIxOTExY2QxZjc0MTAxOGFlYTEiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDItZm9sbG93LXVwIiwicGF5bG9hZF9oYXNoIjoiNzhmZGUwODljOWI4MGU4MTFmNzYwMTA0YTE2ZjU5OWFjOTQxYjc1ZmRhYmNkNDczYWViNjVlMzUwYmQ2ZWMxZSIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.AJm6T6Kpu0BmSE9YLNaEDiqUpfmAipIABFIr3TTcpKI\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552225360303800,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552225601076300,
+              "pid": 36352,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552225732665700,
+              "pid": 33880,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transport-ascii\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552225732665700,
+              "pid": 33880,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transport-ascii\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552225860583200,
+              "pid": 30780,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transport-ascii\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552225862589600,
+              "pid": 30780,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552225989534000,
+              "pid": 39900,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transport-ascii\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552225992284700,
+              "pid": 39900,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":1,\"key\":\"529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": true
+      },
+      {
+        "case": "I03_TRANSPORT",
+        "mode": "classic",
+        "fixture": "unicode",
+        "encoding_selected": "UTF-8",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_unicode_UTF-8",
+            "--mode",
+            "classic",
+            "--subject",
+            "A",
+            "--label",
+            "initial"
+          ],
+          "pid": 14524,
+          "returncode": 0,
+          "started_ns": 1793552226041912800,
+          "finished_ns": 1793552226669152500,
+          "result": {
+            "epoch": 1,
+            "mission": "P06-transfert-é-🚀",
+            "mode": "classic",
+            "ok": true,
+            "pid": 14524,
+            "status": "COMPLETE",
+            "subject": "A"
+          },
+          "stdout_sha256": "c2aee4701c387a532b3be0de7bd84923028cc5b87ef086e130f358567a313afb",
+          "stdout_bytes": 119,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 14524,
+            "preferred_encoding": "utf-8",
+            "stdin_encoding": "utf-8",
+            "stdout_encoding": "utf-8",
+            "stderr_encoding": "utf-8",
+            "utf8_mode": 1,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "1",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552256.281371,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552346.0326145
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552226.5233178,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "02-follow-up",
+              "idempotency_key": "de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0",
+              "payload_hash": "e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552226.6511211,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552226026778100,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552226260017900,
+              "pid": 33516,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552226393599700,
+              "pid": 40724,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552226393599700,
+              "pid": 40724,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552226521005000,
+              "pid": 38504,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552226523317800,
+              "pid": 38504,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552226649015900,
+              "pid": 40668,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552226651121200,
+              "pid": 40668,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":1,\"key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": true
+      },
+      {
+        "case": "I03_TRANSPORT",
+        "mode": "classic",
+        "fixture": "unicode",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_unicode_ASCII",
+            "--mode",
+            "classic",
+            "--subject",
+            "A",
+            "--label",
+            "initial"
+          ],
+          "pid": 3484,
+          "returncode": 0,
+          "started_ns": 1793552226693285600,
+          "finished_ns": 1793552227342630300,
+          "result": {
+            "epoch": 1,
+            "mission": "P06-transfert-é-🚀",
+            "mode": "classic",
+            "ok": true,
+            "pid": 3484,
+            "status": "COMPLETE",
+            "subject": "A"
+          },
+          "stdout_sha256": "7f52c42ed07f6cba4ade8e95f4c157e19a691a1552e741956e50f6431fb5f647",
+          "stdout_bytes": 118,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 3484,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552256.9405084,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552346.6932857
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552227.1848116,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "02-follow-up",
+              "idempotency_key": "de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0",
+              "payload_hash": "e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552227.321642,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552226688959300,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552226923616100,
+              "pid": 37084,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552227051913000,
+              "pid": 32284,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552227053945500,
+              "pid": 32284,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552227183267800,
+              "pid": 32188,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552227184811600,
+              "pid": 32188,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552227319690300,
+              "pid": 34852,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552227321641900,
+              "pid": 34852,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":1,\"key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": true
+      },
+      {
+        "case": "I03_ATOMIC_ACK",
+        "mode": "classic",
+        "fixture": "unicode",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_atomic_ACK_ASCII",
+            "--mode",
+            "classic",
+            "--subject",
+            "A",
+            "--label",
+            "initial",
+            "--lose-ack"
+          ],
+          "pid": 32656,
+          "returncode": 2,
+          "started_ns": 1793552227359813400,
+          "finished_ns": 1793552227872839200,
+          "result": {
+            "detail": "provider exit=73; stderr=",
+            "error": "ACK_LOST",
+            "ok": false,
+            "pid": 32656,
+            "status": "BLOCKED"
+          },
+          "stdout_sha256": "3c64163fa2f26b13c2cecbca8befd6a6cfa365eebdad84ab7b1d89b254c44508",
+          "stdout_bytes": 100,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 32656,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552257.6144326,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552347.3598135
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "INTENT",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552227.8586085,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552227359813400,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552227592946500,
+              "pid": 40744,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552227726483200,
+              "pid": 21092,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552227726483200,
+              "pid": 21092,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552227856674300,
+              "pid": 39600,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552227858608400,
+              "pid": 39600,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": false,
+        "supervisor_releases": 1,
+        "restart": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_atomic_ACK_ASCII",
+            "--mode",
+            "classic",
+            "--subject",
+            "B",
+            "--label",
+            "restart"
+          ],
+          "pid": 30144,
+          "returncode": 0,
+          "started_ns": 1793552227887558300,
+          "finished_ns": 1793552228544924700,
+          "result": {
+            "epoch": 2,
+            "mission": "P06-transfert-é-🚀",
+            "mode": "classic",
+            "ok": true,
+            "pid": 30144,
+            "status": "COMPLETE",
+            "subject": "B"
+          },
+          "stdout_sha256": "18a45fd2281c2635f76de234698f643e6cbe4ddbf04c4b6445d64d4e5e112bf2",
+          "stdout_bytes": 119,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 30144,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "after_restart": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "B",
+              "epoch": 2,
+              "lease_until": 1793552258.1266577,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552347.3598135
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 2,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 2,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":2,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoyLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.1li5lboRq0nJU5jwBf6meDLlVv63CtU_fx3WFGPfoJI\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552227.8586085,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "02-follow-up",
+              "idempotency_key": "de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0",
+              "payload_hash": "e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 2,
+              "subject": "B",
+              "created": 1793552228.5245533,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":2,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoyLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.1li5lboRq0nJU5jwBf6meDLlVv63CtU_fx3WFGPfoJI\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552227359813400,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552227592946500,
+              "pid": 40744,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552227726483200,
+              "pid": 21092,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552227726483200,
+              "pid": 21092,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552227856674300,
+              "pid": 39600,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552227858608400,
+              "pid": 39600,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552228109021400,
+              "pid": 12888,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552228248199600,
+              "pid": 39484,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 9,
+              "wall_ns": 1793552228250223100,
+              "pid": 39484,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":2,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"B\"}"
+            },
+            {
+              "seq": 10,
+              "wall_ns": 1793552228387134000,
+              "pid": 36064,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"lookup\"}"
+            },
+            {
+              "seq": 11,
+              "wall_ns": 1793552228388137400,
+              "pid": 36064,
+              "event": "LOOKUP",
+              "detail": "{\"found\":true,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\"}"
+            },
+            {
+              "seq": 12,
+              "wall_ns": 1793552228522459000,
+              "pid": 14256,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 13,
+              "wall_ns": 1793552228524553300,
+              "pid": 14256,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":2,\"key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"subject\":\"B\"}"
+            }
+          ]
+        },
+        "provider_exit73_observed_in_rpc_error": true,
+        "atomic_reconciled_after_lost_ack": true
+      },
+      {
+        "case": "I03_OPAQUE_ACK",
+        "mode": "classic",
+        "fixture": "unicode",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_opaque_ACK_ASCII",
+            "--mode",
+            "classic",
+            "--subject",
+            "A",
+            "--label",
+            "initial",
+            "--lose-ack"
+          ],
+          "pid": 40856,
+          "returncode": 2,
+          "started_ns": 1793552228559908700,
+          "finished_ns": 1793552229078945700,
+          "result": {
+            "detail": "provider exit=73; stderr=",
+            "error": "ACK_LOST",
+            "ok": false,
+            "pid": 40856,
+            "status": "BLOCKED"
+          },
+          "stdout_sha256": "d7d8f78b0de7fdcdc54174b3bd5ff39019f7ebaee064414edb30fb3e4a7bde6e",
+          "stdout_bytes": 100,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 40856,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552258.82213,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552348.5599086
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "UNKNOWN",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552229.0597422,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552228559908700,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":false,\"lookup\":false}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552228809220500,
+              "pid": 34964,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552228932913700,
+              "pid": 15592,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552228932913700,
+              "pid": 15592,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552229059742100,
+              "pid": 33760,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552229059742100,
+              "pid": 33760,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": false,
+        "supervisor_releases": 1,
+        "restart": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_opaque_ACK_ASCII",
+            "--mode",
+            "classic",
+            "--subject",
+            "B",
+            "--label",
+            "restart"
+          ],
+          "pid": 40852,
+          "returncode": 2,
+          "started_ns": 1793552229092809500,
+          "finished_ns": 1793552229459407200,
+          "result": {
+            "detail": "",
+            "error": "UNRESOLVED_OUTCOME",
+            "ok": false,
+            "pid": 40852,
+            "status": "BLOCKED"
+          },
+          "stdout_sha256": "411c5179bd88d5b4dd1cb42ec25d04728035a3e7458b98c5dcc3b43993f90fb6",
+          "stdout_bytes": 85,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 40852,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "after_restart": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "B",
+              "epoch": 2,
+              "lease_until": 1793552259.3324401,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552348.5599086
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "UNKNOWN",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552229.0597422,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552228559908700,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":false,\"lookup\":false}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552228809220500,
+              "pid": 34964,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552228932913700,
+              "pid": 15592,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552228932913700,
+              "pid": 15592,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552229059742100,
+              "pid": 33760,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552229059742100,
+              "pid": 33760,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552229315346100,
+              "pid": 35856,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552229446267500,
+              "pid": 36496,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 9,
+              "wall_ns": 1793552229448035100,
+              "pid": 36496,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":2,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"B\"}"
+            }
+          ]
+        },
+        "provider_exit73_observed_in_rpc_error": true,
+        "unknown_preserved_without_retry": true
+      },
+      {
+        "case": "I03_OLD_CLI",
+        "mode": "classic",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\classic_old_cli_ASCII",
+            "--mode",
+            "classic",
+            "--subject",
+            "A",
+            "--label",
+            "old-cli",
+            "--old-cli"
+          ],
+          "pid": 39844,
+          "returncode": 0,
+          "started_ns": 1793552229626111800,
+          "finished_ns": 1793552229888727200,
+          "result": {
+            "completed_at": 1793552229.8788426,
+            "mode": "classic",
+            "ok": true,
+            "pid": 39844,
+            "response": {
+              "ok": true,
+              "receipt": {
+                "record": {
+                  "aud": "p06-coordinator",
+                  "effect_id": 1,
+                  "epoch": 1,
+                  "idempotency_key": "ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7",
+                  "kind": "receipt",
+                  "mission": "P06-old-cli-é-🚀",
+                  "obligation": "01-reserve",
+                  "payload_hash": "be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a",
+                  "provider": "local-fixture"
+                },
+                "signature": "eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImNhMGM2ZTI1MDI4ZjEzNjBlNDg3NDI2MjQ2ZTMxOGU2OWFkNDMxNDhmN2ZhMDBjN2IyNmJjYzM2NmJkMWUxZjciLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtb2xkLWNsaS3DqS3wn5qAIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.b30xQjtHfnrx6siO0AXdyTP-9zbUTtBIgSfW-34K77A"
+              },
+              "replayed": false
+            },
+            "submitted_at": 1793552229.7444336
+          },
+          "stdout_sha256": "b4631ee56ca549ce44bd88a84c8ad32f1515198d791a8f3da8fff971d39e0e77",
+          "stdout_bytes": 1006,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 39844,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-old-cli-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"synthetic-service\",\"unit\":\"mm\"},\"mission\":\"P06-old-cli-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"},\"required\":true}]}",
+              "contract_hash": "f467fd3b095182a1cb74c455da07756ff939cfaf4e51ef5436dbaa94d3e12bc4",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552259.492575,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552349.492575
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-old-cli-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "status": "INTENT",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-old-cli-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-old-cli-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7",
+              "payload_hash": "be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552229.86317,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7\",\"kind\":\"receipt\",\"mission\":\"P06-old-cli-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImNhMGM2ZTI1MDI4ZjEzNjBlNDg3NDI2MjQ2ZTMxOGU2OWFkNDMxNDhmN2ZhMDBjN2IyNmJjYzM2NmJkMWUxZjciLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtb2xkLWNsaS3DqS3wn5qAIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.b30xQjtHfnrx6siO0AXdyTP-9zbUTtBIgSfW-34K77A\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552229487136600,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552229612358400,
+              "pid": 34192,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-old-cli-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552229613825400,
+              "pid": 34192,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-old-cli-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552229861211500,
+              "pid": 39604,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-old-cli-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552229863169800,
+              "pid": 39604,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7\",\"mission\":\"P06-old-cli-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "old_cli_utf8_reply_received": true,
+        "scope": "Transport only; gate already released, no old-owner handover property tested."
+      },
+      {
+        "case": "I03_TRANSPORT",
+        "mode": "adapter",
+        "fixture": "ascii",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "eb7181bf857cd2191ac81cde4a734360c15854c0b18328ae8c77698ab59dac9f",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_ascii_ASCII",
+            "--mode",
+            "adapter",
+            "--subject",
+            "A",
+            "--label",
+            "initial"
+          ],
+          "pid": 39040,
+          "returncode": 0,
+          "started_ns": 1793552229919990400,
+          "finished_ns": 1793552230592695500,
+          "result": {
+            "epoch": 1,
+            "mission": "P06-transport-ascii",
+            "mode": "adapter",
+            "ok": true,
+            "pid": 39040,
+            "status": "COMPLETE",
+            "subject": "A"
+          },
+          "stdout_sha256": "10c8f3671109248b5486a6c62cc12a9588cf583161e167eb3dd726fafea68953",
+          "stdout_bytes": 117,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 39040,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transport-ascii",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"synthetic-service\",\"unit\":\"mm\"},\"mission\":\"P06-transport-ascii\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"},\"required\":true}]}",
+              "contract_hash": "eb7181bf857cd2191ac81cde4a734360c15854c0b18328ae8c77698ab59dac9f",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552260.1978614,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552349.9155283
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transport-ascii",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyMzliZWU2NmEwMmM4MTg5MTg4YThiZDVlMzAxM2M3NTY3OThlM2EyZWQzMDY0YzlhMmJjNmE3NjZiNGI5MWIiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.OfBfI6Sv08SjRALWnq5oBW-NByO1aGzllBjNqN5qzXU\"}"
+            },
+            {
+              "mission": "P06-transport-ascii",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjUyOWEzN2MzMzcwNDM0MTZkYTZmMzM0YmI0MDg0MTIzMWMxNjQ3N2Y2ZjE1YjIxOTExY2QxZjc0MTAxOGFlYTEiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDItZm9sbG93LXVwIiwicGF5bG9hZF9oYXNoIjoiNzhmZGUwODljOWI4MGU4MTFmNzYwMTA0YTE2ZjU5OWFjOTQxYjc1ZmRhYmNkNDczYWViNjVlMzUwYmQ2ZWMxZSIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.AJm6T6Kpu0BmSE9YLNaEDiqUpfmAipIABFIr3TTcpKI\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transport-ascii",
+              "obligation": "01-reserve",
+              "idempotency_key": "9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b",
+              "payload_hash": "be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552230.455498,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyMzliZWU2NmEwMmM4MTg5MTg4YThiZDVlMzAxM2M3NTY3OThlM2EyZWQzMDY0YzlhMmJjNmE3NjZiNGI5MWIiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.OfBfI6Sv08SjRALWnq5oBW-NByO1aGzllBjNqN5qzXU\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transport-ascii",
+              "obligation": "02-follow-up",
+              "idempotency_key": "529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1",
+              "payload_hash": "78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552230.5816448,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1\",\"kind\":\"receipt\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjUyOWEzN2MzMzcwNDM0MTZkYTZmMzM0YmI0MDg0MTIzMWMxNjQ3N2Y2ZjE1YjIxOTExY2QxZjc0MTAxOGFlYTEiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNwb3J0LWFzY2lpIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDItZm9sbG93LXVwIiwicGF5bG9hZF9oYXNoIjoiNzhmZGUwODljOWI4MGU4MTFmNzYwMTA0YTE2ZjU5OWFjOTQxYjc1ZmRhYmNkNDczYWViNjVlMzUwYmQ2ZWMxZSIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.AJm6T6Kpu0BmSE9YLNaEDiqUpfmAipIABFIr3TTcpKI\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552229908233400,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552230180933500,
+              "pid": 38280,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552230319111000,
+              "pid": 39152,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transport-ascii\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552230321115800,
+              "pid": 39152,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transport-ascii\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552230453442800,
+              "pid": 39204,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transport-ascii\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552230455498000,
+              "pid": 39204,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"9239bee66a02c8189188a8bd5e3013c756798e3a2ed3064c9a2bc6a766b4b91b\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552230579373200,
+              "pid": 40304,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transport-ascii\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552230581644700,
+              "pid": 40304,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":1,\"key\":\"529a37c337043416da6f334bb40841231c16477f6f15b21911cd1f741018aea1\",\"mission\":\"P06-transport-ascii\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"78fde089c9b80e811f760104a16f599ac941b75fdabcd473aeb65e350bd6ec1e\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": true
+      },
+      {
+        "case": "I03_TRANSPORT",
+        "mode": "adapter",
+        "fixture": "unicode",
+        "encoding_selected": "UTF-8",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_unicode_UTF-8",
+            "--mode",
+            "adapter",
+            "--subject",
+            "A",
+            "--label",
+            "initial"
+          ],
+          "pid": 27088,
+          "returncode": 0,
+          "started_ns": 1793552230625808600,
+          "finished_ns": 1793552231258769100,
+          "result": {
+            "epoch": 1,
+            "mission": "P06-transfert-é-🚀",
+            "mode": "adapter",
+            "ok": true,
+            "pid": 27088,
+            "status": "COMPLETE",
+            "subject": "A"
+          },
+          "stdout_sha256": "de47cf2ecacc702130fb097f2ced264554bed46b8542178dae3549cb97cbfbfc",
+          "stdout_bytes": 119,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 27088,
+            "preferred_encoding": "utf-8",
+            "stdin_encoding": "utf-8",
+            "stdout_encoding": "utf-8",
+            "stderr_encoding": "utf-8",
+            "utf8_mode": 1,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "1",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552260.8788884,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552350.6258087
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552231.1189103,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "02-follow-up",
+              "idempotency_key": "de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0",
+              "payload_hash": "e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552231.24942,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552230620980900,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552230859374000,
+              "pid": 14692,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552230992070200,
+              "pid": 38420,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552230992668100,
+              "pid": 38420,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552231117054400,
+              "pid": 17280,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552231118910300,
+              "pid": 17280,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552231248419900,
+              "pid": 40656,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552231249420100,
+              "pid": 40656,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":1,\"key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": true
+      },
+      {
+        "case": "I03_TRANSPORT",
+        "mode": "adapter",
+        "fixture": "unicode",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_unicode_ASCII",
+            "--mode",
+            "adapter",
+            "--subject",
+            "A",
+            "--label",
+            "initial"
+          ],
+          "pid": 30016,
+          "returncode": 0,
+          "started_ns": 1793552231300866500,
+          "finished_ns": 1793552231954717800,
+          "result": {
+            "epoch": 1,
+            "mission": "P06-transfert-é-🚀",
+            "mode": "adapter",
+            "ok": true,
+            "pid": 30016,
+            "status": "COMPLETE",
+            "subject": "A"
+          },
+          "stdout_sha256": "1101673dd3cbede9e9aed7b160427fb12bc51ed8945650bd72841d707fe6b462",
+          "stdout_bytes": 119,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 30016,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552261.5526097,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552351.2964385
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 1,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552231.80927,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "02-follow-up",
+              "idempotency_key": "de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0",
+              "payload_hash": "e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552231.93396,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":1,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.JT7skir1mVf1s2bpsQPynngvfxS6FL2zhLyD1Uo8U7g\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552231290266400,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552231533380100,
+              "pid": 15508,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552231669120400,
+              "pid": 39920,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552231669120400,
+              "pid": 39920,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552231807464300,
+              "pid": 36220,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552231809270100,
+              "pid": 36220,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552231925803700,
+              "pid": 38484,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552231933959900,
+              "pid": 38484,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":1,\"key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": true
+      },
+      {
+        "case": "I03_ATOMIC_ACK",
+        "mode": "adapter",
+        "fixture": "unicode",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_atomic_ACK_ASCII",
+            "--mode",
+            "adapter",
+            "--subject",
+            "A",
+            "--label",
+            "initial",
+            "--lose-ack"
+          ],
+          "pid": 27100,
+          "returncode": 2,
+          "started_ns": 1793552231983474400,
+          "finished_ns": 1793552232482160100,
+          "result": {
+            "detail": "provider exit=73; stderr=",
+            "error": "ACK_LOST",
+            "ok": false,
+            "pid": 27100,
+            "status": "BLOCKED"
+          },
+          "stdout_sha256": "dfe960351a1601dbe4bdd4f976a2855563ba910db0145e7272c7f2c369f2c0a7",
+          "stdout_bytes": 100,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 27100,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552262.2236526,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552351.9806519
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "INTENT",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552232.4587939,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552231974433600,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552232205846800,
+              "pid": 39072,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552232334527300,
+              "pid": 36540,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552232334527300,
+              "pid": 36540,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552232458794000,
+              "pid": 20168,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552232458794000,
+              "pid": 20168,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": false,
+        "supervisor_releases": 1,
+        "restart": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_atomic_ACK_ASCII",
+            "--mode",
+            "adapter",
+            "--subject",
+            "B",
+            "--label",
+            "restart"
+          ],
+          "pid": 40584,
+          "returncode": 0,
+          "started_ns": 1793552232497179300,
+          "finished_ns": 1793552233151202600,
+          "result": {
+            "epoch": 2,
+            "mission": "P06-transfert-é-🚀",
+            "mode": "adapter",
+            "ok": true,
+            "pid": 40584,
+            "status": "COMPLETE",
+            "subject": "B"
+          },
+          "stdout_sha256": "558fc2d11aa731435aabe485143bf3be3d568c988445088f92d108e9e5b9a9fd",
+          "stdout_bytes": 119,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 40584,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "after_restart": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "B",
+              "epoch": 2,
+              "lease_until": 1793552262.7467413,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552351.9806519
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 2,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "DONE",
+              "prepared_epoch": 2,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":2,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoyLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.1li5lboRq0nJU5jwBf6meDLlVv63CtU_fx3WFGPfoJI\"}"
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552232.4587939,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            },
+            {
+              "id": 2,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "02-follow-up",
+              "idempotency_key": "de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0",
+              "payload_hash": "e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 2,
+              "subject": "B",
+              "created": 1793552233.1251843,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":2,\"epoch\":2,\"idempotency_key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjIsImVwb2NoIjoyLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImRlMmZhY2ZiYjU1OGExYjVmNTQ1OWI3NzFhYWJhMWRmZTBmNTc4ODZkMjY2NWExMzViMjY1NWNiMWQ3NzZkYzAiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMi1mb2xsb3ctdXAiLCJwYXlsb2FkX2hhc2giOiJlODdjODQ1NzQ1ZTNhNDk1ZGU0YmM4YzQ5ZGFlYmUwYWRjOGJmNDBhZDgxYmU5N2ZlYjJkMDZlOTI2ZWFhMGI2IiwicHJvdmlkZXIiOiJsb2NhbC1maXh0dXJlIn0.1li5lboRq0nJU5jwBf6meDLlVv63CtU_fx3WFGPfoJI\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552231974433600,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552232205846800,
+              "pid": 39072,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552232334527300,
+              "pid": 36540,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552232334527300,
+              "pid": 36540,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552232458794000,
+              "pid": 20168,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552232458794000,
+              "pid": 20168,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552232725443000,
+              "pid": 36804,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552232869551300,
+              "pid": 38172,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 9,
+              "wall_ns": 1793552232871553600,
+              "pid": 38172,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":2,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"B\"}"
+            },
+            {
+              "seq": 10,
+              "wall_ns": 1793552232992209400,
+              "pid": 39928,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"lookup\"}"
+            },
+            {
+              "seq": 11,
+              "wall_ns": 1793552232992209400,
+              "pid": 39928,
+              "event": "LOOKUP",
+              "detail": "{\"found\":true,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\"}"
+            },
+            {
+              "seq": 12,
+              "wall_ns": 1793552233125184200,
+              "pid": 39760,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 13,
+              "wall_ns": 1793552233125184200,
+              "pid": 39760,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":2,\"epoch\":2,\"key\":\"de2facfbb558a1b5f5459b771aaba1dfe0f57886d2665a135b2655cb1d776dc0\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"02-follow-up\",\"payload_hash\":\"e87c845745e3a495de4bc8c49daebe0adc8bf40ad81be97feb2d06e926eaa0b6\",\"subject\":\"B\"}"
+            }
+          ]
+        },
+        "provider_exit73_observed_in_rpc_error": true,
+        "atomic_reconciled_after_lost_ack": true
+      },
+      {
+        "case": "I03_OPAQUE_ACK",
+        "mode": "adapter",
+        "fixture": "unicode",
+        "encoding_selected": "ASCII",
+        "contract_valid": true,
+        "normalized_contract_sha256": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_opaque_ACK_ASCII",
+            "--mode",
+            "adapter",
+            "--subject",
+            "A",
+            "--label",
+            "initial",
+            "--lose-ack"
+          ],
+          "pid": 39140,
+          "returncode": 2,
+          "started_ns": 1793552233179394200,
+          "finished_ns": 1793552233673701600,
+          "result": {
+            "detail": "provider exit=73; stderr=",
+            "error": "ACK_LOST",
+            "ok": false,
+            "pid": 39140,
+            "status": "BLOCKED"
+          },
+          "stdout_sha256": "3bc8e4ceb73018cf261e12fb7173199610ed09f41e0e5a4dbc901dc844ac073a",
+          "stdout_bytes": 100,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 39140,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552263.4216251,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552353.1759915
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "UNKNOWN",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552233.6579626,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552233158916300,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":false,\"lookup\":false}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552233402181700,
+              "pid": 38852,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552233528042900,
+              "pid": 12900,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552233528042900,
+              "pid": 12900,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552233655907000,
+              "pid": 34172,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552233657962600,
+              "pid": 34172,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "completed_two": false,
+        "supervisor_releases": 1,
+        "restart": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_opaque_ACK_ASCII",
+            "--mode",
+            "adapter",
+            "--subject",
+            "B",
+            "--label",
+            "restart"
+          ],
+          "pid": 27116,
+          "returncode": 2,
+          "started_ns": 1793552233687584100,
+          "finished_ns": 1793552234082161400,
+          "result": {
+            "detail": "",
+            "error": "UNRESOLVED_OUTCOME",
+            "ok": false,
+            "pid": 27116,
+            "status": "BLOCKED"
+          },
+          "stdout_sha256": "a899dd577a706436a27faf7bf3813a6b4942c43021651e2ea0759fde22bac4a0",
+          "stdout_bytes": 85,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 27116,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "after_restart": {
+          "missions": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"service-é-🚀\",\"unit\":\"mm\"},\"mission\":\"P06-transfert-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"},\"required\":true}]}",
+              "contract_hash": "5d5fcb1bb0d305ab53c9b3d4671a7712e3c499a2dcec201ef2e8be1e141fd299",
+              "owner": "B",
+              "epoch": 2,
+              "lease_until": 1793552263.9412577,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552353.1759915
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "UNKNOWN",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-transfert-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-transfert-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24",
+              "payload_hash": "d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve-confirmé-🚀\",\"subject\":\"service-é-🚀\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552233.6579626,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"kind\":\"receipt\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6IjkyZGM2ODIxMDg3N2E2Zjc1OWE3MWZhZTAzZmZmZmZlMzg4NWJjOTEyNDQyOTAyMDkxODBkMGY5MTVjNjViMjQiLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtdHJhbnNmZXJ0LcOpLfCfmoAiLCJuYmYiOjAsIm9ibGlnYXRpb24iOiIwMS1yZXNlcnZlIiwicGF5bG9hZF9oYXNoIjoiZDBmOGIyOTA1OGM1MzNmYzY3YWU0Nzc0YTk4OGY1MTIxMDY0YmNiOTA4MTI4N2Y4MGE0ODczM2E1NDY2NTkwZiIsInByb3ZpZGVyIjoibG9jYWwtZml4dHVyZSJ9.DNqFUJdQppBepIg0SqFUZTYzt2S8rFReE0tcRvH_vhM\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552233158916300,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":false,\"lookup\":false}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552233402181700,
+              "pid": 38852,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552233528042900,
+              "pid": 12900,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552233528042900,
+              "pid": 12900,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552233655907000,
+              "pid": 34172,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 6,
+              "wall_ns": 1793552233657962600,
+              "pid": 34172,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"92dc68210877a6f759a71fae03fffffe3885bc91244290209180d0f915c65b24\",\"mission\":\"P06-transfert-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"d0f8b29058c533fc67ae4774a988f5121064bcb9081287f80a48733a5466590f\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 7,
+              "wall_ns": 1793552233921375500,
+              "pid": 26532,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":null,\"operation\":\"capabilities\"}"
+            },
+            {
+              "seq": 8,
+              "wall_ns": 1793552234056320700,
+              "pid": 38580,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-transfert-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 9,
+              "wall_ns": 1793552234057806600,
+              "pid": 38580,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":2,\"mission\":\"P06-transfert-é-🚀\",\"subject\":\"B\"}"
+            }
+          ]
+        },
+        "provider_exit73_observed_in_rpc_error": true,
+        "unknown_preserved_without_retry": true
+      },
+      {
+        "case": "I03_OLD_CLI",
+        "mode": "adapter",
+        "worker": {
+          "argv": [
+            "<python>\\python.exe",
+            "-S",
+            "-B",
+            "<project>\\review\\check_unicode_transport.py",
+            "--source",
+            "<project>\\provider_boundary\\src",
+            "--child",
+            "<run-root>\\after_unicode\\adapter_old_cli_ASCII",
+            "--mode",
+            "adapter",
+            "--subject",
+            "A",
+            "--label",
+            "old-cli",
+            "--old-cli"
+          ],
+          "pid": 36672,
+          "returncode": 0,
+          "started_ns": 1793552234242410300,
+          "finished_ns": 1793552234483748900,
+          "result": {
+            "completed_at": 1793552234.4755607,
+            "mode": "adapter",
+            "ok": true,
+            "pid": 36672,
+            "response": {
+              "ok": true,
+              "receipt": {
+                "record": {
+                  "aud": "p06-coordinator",
+                  "effect_id": 1,
+                  "epoch": 1,
+                  "idempotency_key": "ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7",
+                  "kind": "receipt",
+                  "mission": "P06-old-cli-é-🚀",
+                  "obligation": "01-reserve",
+                  "payload_hash": "be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a",
+                  "provider": "local-fixture"
+                },
+                "signature": "eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImNhMGM2ZTI1MDI4ZjEzNjBlNDg3NDI2MjQ2ZTMxOGU2OWFkNDMxNDhmN2ZhMDBjN2IyNmJjYzM2NmJkMWUxZjciLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtb2xkLWNsaS3DqS3wn5qAIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.b30xQjtHfnrx6siO0AXdyTP-9zbUTtBIgSfW-34K77A"
+              },
+              "replayed": false
+            },
+            "submitted_at": 1793552234.353462
+          },
+          "stdout_sha256": "817cf4f240ed802c513707a43e24c817756de52c0e8285fae9e839b5965aaddc",
+          "stdout_bytes": 1005,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_bytes": 0,
+          "stderr_text": "",
+          "encodings": {
+            "pid": 36672,
+            "preferred_encoding": "cp1252",
+            "stdin_encoding": "cp1252",
+            "stdout_encoding": "cp1252",
+            "stderr_encoding": "cp1252",
+            "utf8_mode": 0,
+            "no_site": 1,
+            "encoding_label_note": "ASCII labels request UTF8 disabled; actual Windows locale encoding is recorded, not assumed ASCII",
+            "LC_ALL": "C",
+            "LANG": "C",
+            "PYTHONUTF8": "0",
+            "PYTHONCOERCECLOCALE": "0"
+          }
+        },
+        "state": {
+          "missions": [
+            {
+              "mission": "P06-old-cli-é-🚀",
+              "manifest": "{\"memory\":{\"distance\":1200000,\"schema\":\"ticket-memory/2\",\"subject\":\"synthetic-service\",\"unit\":\"mm\"},\"mission\":\"P06-old-cli-é-🚀\",\"obligations\":[{\"id\":\"01-reserve\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"},\"required\":true},{\"id\":\"02-follow-up\",\"kind\":\"create_ticket\",\"payload\":{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"},\"required\":true}]}",
+              "contract_hash": "f467fd3b095182a1cb74c455da07756ff939cfaf4e51ef5436dbaa94d3e12bc4",
+              "owner": "A",
+              "epoch": 1,
+              "lease_until": 1793552264.1125083,
+              "phase": "ACTIVE",
+              "delegation_until": 1793552354.1079278
+            }
+          ],
+          "obligations": [
+            {
+              "mission": "P06-old-cli-é-🚀",
+              "id": "01-reserve",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "status": "INTENT",
+              "prepared_epoch": 1,
+              "receipt": null
+            },
+            {
+              "mission": "P06-old-cli-é-🚀",
+              "id": "02-follow-up",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"02-follow-up\",\"subject\":\"synthetic-service\"}",
+              "status": "PENDING",
+              "prepared_epoch": null,
+              "receipt": null
+            }
+          ],
+          "effects": [
+            {
+              "id": 1,
+              "mission": "P06-old-cli-é-🚀",
+              "obligation": "01-reserve",
+              "idempotency_key": "ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7",
+              "payload_hash": "be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a",
+              "payload": "{\"distance_mm\":1200000,\"label\":\"01-reserve\",\"subject\":\"synthetic-service\"}",
+              "epoch": 1,
+              "subject": "A",
+              "created": 1793552234.458092,
+              "receipt": "{\"record\":{\"aud\":\"p06-coordinator\",\"effect_id\":1,\"epoch\":1,\"idempotency_key\":\"ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7\",\"kind\":\"receipt\",\"mission\":\"P06-old-cli-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"provider\":\"local-fixture\"},\"signature\":\"eyJhdWQiOiJwMDYtcHJvdmlkZXIiLCJlZmZlY3RfaWQiOjEsImVwb2NoIjoxLCJleHAiOjEwMDAwMDAwMDAwMDAsImlkZW1wb3RlbmN5X2tleSI6ImNhMGM2ZTI1MDI4ZjEzNjBlNDg3NDI2MjQ2ZTMxOGU2OWFkNDMxNDhmN2ZhMDBjN2IyNmJjYzM2NmJkMWUxZjciLCJraW5kIjoicmVjZWlwdCIsIm1pc3Npb24iOiJQMDYtb2xkLWNsaS3DqS3wn5qAIiwibmJmIjowLCJvYmxpZ2F0aW9uIjoiMDEtcmVzZXJ2ZSIsInBheWxvYWRfaGFzaCI6ImJlMDNhODJkYzYyZjg2ZjdhYzE3MGM5NTM5MzQwZTFhNDRmNzBjYzdkOTkyNTZmMDA3MzgxMTRjYmQ3ZmIxMWEiLCJwcm92aWRlciI6ImxvY2FsLWZpeHR1cmUifQ.b30xQjtHfnrx6siO0AXdyTP-9zbUTtBIgSfW-34K77A\"}"
+            }
+          ],
+          "provider_events": [
+            {
+              "seq": 1,
+              "wall_ns": 1793552234101548000,
+              "pid": 36700,
+              "event": "PROVIDER_INITIALIZED",
+              "detail": "{\"features\":{\"expiry\":true,\"fencing\":true,\"fixture_enforcement\":\"atomic\",\"idempotency\":true,\"lookup\":true}}"
+            },
+            {
+              "seq": 2,
+              "wall_ns": 1793552234224703800,
+              "pid": 37196,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-old-cli-é-🚀\",\"operation\":\"fence\"}"
+            },
+            {
+              "seq": 3,
+              "wall_ns": 1793552234225310000,
+              "pid": 37196,
+              "event": "FENCE_COMMIT",
+              "detail": "{\"epoch\":1,\"mission\":\"P06-old-cli-é-🚀\",\"subject\":\"A\"}"
+            },
+            {
+              "seq": 4,
+              "wall_ns": 1793552234458092100,
+              "pid": 34492,
+              "event": "RPC_RECEIVED",
+              "detail": "{\"mission\":\"P06-old-cli-é-🚀\",\"operation\":\"execute\"}"
+            },
+            {
+              "seq": 5,
+              "wall_ns": 1793552234458092100,
+              "pid": 34492,
+              "event": "EFFECT_COMMIT",
+              "detail": "{\"effect_id\":1,\"epoch\":1,\"key\":\"ca0c6e25028f1360e487426246e318e69ad43148f7fa00c7b26bcc366bd1e1f7\",\"mission\":\"P06-old-cli-é-🚀\",\"obligation\":\"01-reserve\",\"payload_hash\":\"be03a82dc62f86f7ac170c9539340e1a44f70cc7d99256f00738114cbd7fb11a\",\"subject\":\"A\"}"
+            }
+          ]
+        },
+        "old_cli_utf8_reply_received": true,
+        "scope": "Transport only; gate already released, no old-owner handover property tested."
+      }
+    ],
+    "case_observations": 12,
+    "completed_two": 6,
+    "unknown_preserved": 2,
+    "atomic_reconciled": 2,
+    "old_cli_utf8_reply_received": 2,
+    "finished_ns": 1793552234491950200,
+    "status": "PASS"
+  },
+  "raw_artifact_sha256": "ca0842d3d61b9915e89bde8db82b70e9090d1ef2cfe0361ae59ccbcfa33e8629",
+  "stdout": "{\"project_id\": \"P06\", \"phase\": \"after\", \"case_observations\": 12, \"completed_two\": 6, \"unknown_preserved\": 2, \"atomic_reconciled\": 2, \"old_cli_utf8_reply_received\": 2, \"finished_ns\": 1793552234491950200, \"status\": \"PASS\"}\r\n",
+  "stderr": ""
+}

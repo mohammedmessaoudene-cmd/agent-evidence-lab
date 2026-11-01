@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "project": "P04",
+  "status": "AUTHOR_TARGETED_FIXES_PASS_REVIEW_CI_PENDING",
+  "production_before_sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188",
+  "production_after_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+  "changed_production_methods": [
+    "__init__",
+    "_connect",
+    "_event"
+  ],
+  "schema_migration": false,
+  "selected_review_source": {
+    "report_sha256": "a84f3bb879540e45011f8c91342b6fe6a3dd0627a442da5b8a7689bfac639f2a",
+    "embedded_path": "candidate/src/exposure_ledger.py",
+    "source_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+    "patch_sha256": "e608f2291502e449e04ca4853da6c53df6afa1ae4fe72ea3503d24e431c3e044"
+  },
+  "before": {
+    "sqlite_defects_reproduced": 3,
+    "finality_assertions_failed": 3,
+    "finality_assertions_total": 19
+  },
+  "after": {
+    "sqlite_cases_passed": 6,
+    "finality_assertions_passed": 19,
+    "finality_scenarios": 1
+  },
+  "preserved_historical_artifacts_sha256": {
+    "evidence/cleanup_delta_20261101.json": "eeb0e3930264bae4c3b6d04488f5fddc495e7e9c3c1a8c9343ad73e143c0735b",
+    "evidence/reviewer_cleanup_after.json": "cb423597304bf77712ce5fdb6794b32d9abc92d3802490fe081b6d6713a43a0b",
+    "evidence/reviewer_cleanup_before.json": "e1a0300db6e18e6a92ee8c8326da272063e74efee35529e04099e1ce681d3aec",
+    "evidence/verification_20261101.json": "dfb7c13704261b81d3147b2513cba472a2f86c56ad445ab0cd0d5c88d94524d2",
+    "tests/test_exposure_ledger.py": "384d45cccfddf3b06d75f92771c3722fe777fbdf1403ba57c07c76dd9084f8d0"
+  },
+  "new_probe_bodies_equal_selected_original_ast": {
+    "tests/test_sqlite_regressions.py": [
+      "close_workers",
+      "collect_worker",
+      "digest",
+      "error_record",
+      "evidence",
+      "load_target",
+      "portable_path",
+      "probe_connection_setup_cleanup",
+      "probe_normalized_memory_alias",
+      "probe_relative_path_rebinding",
+      "probe_same_attempt_concurrency",
+      "probe_snapshot_interleaving",
+      "probe_sql_integer_boundaries",
+      "spawn_worker",
+      "wait_for",
+      "worker_main"
+    ],
+    "tests/test_finality_regression.py": [
+      "Probe",
+      "digest",
+      "final_overcap_then_stale_observation",
+      "gate",
+      "reserve",
+      "serializable"
+    ]
+  },
+  "historical_allocation_comparison": {
+    "candidate": {
+      "successes": 15,
+      "total": 75
+    },
+    "simple_rule": {
+      "successes": 15,
+      "total": 75
+    },
+    "rerun_or_refit": false
+  },
+  "full_23_suite_on_new_production": "NOT_RUN_DURING_AUTHOR_DELTA_PENDING_CI",
+  "technical_review": "PENDING",
+  "strategic_review": "PENDING",
+  "public_ci_readback": "PENDING",
+  "no_publication_performed_by_author": true
+}

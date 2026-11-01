@@ -1,0 +1,29 @@
+{
+  "kind": "Portable copy of runtime metadata written before the twelve observed Unicode cases",
+  "raw_artifact_sha256": "3df1c2d57ea6ef2c4a201b6ae7c3ccec61e156b1971973b8cd4402b01c110f41",
+  "result": {
+    "argv": [
+      "<project>\\review\\check_unicode_transport.py",
+      "--phase",
+      "after",
+      "--out",
+      "<run-root>\\after_unicode"
+    ],
+    "phase": "after",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "started_ns": 1793552225324963700,
+    "source": "<project>\\provider_boundary\\src",
+    "protocol_sha256": "d15a5df400843336fa9919d7b984a004d9d3b626055fda7d3aef06fb3e404972",
+    "probe_sha256": "37131492b05cd65d2c2ae74b9afc41ccc23c72794f0f974e549d0d645080471b",
+    "source_sha256": {
+      "old_worker.py": "550dea28f437e1bf1422146c96757a618a7704f966c4657cdb3336fbaa63fed4",
+      "p06_boundary\\__init__.py": "ef666fa458e23b62d20bf83330c2fa73805a89eb8d8734ffa34f053ff3057bc8",
+      "p06_boundary\\common.py": "9fb4acc39eab75cfaf0aa0ea1dbc816ff03d907dee540e889033a60a79ebe515",
+      "p06_boundary\\contract.py": "e7dd274626cbeaf1d3886502986b9b31f8e2ec3ae708551628f64ac31f6b1fe1",
+      "p06_boundary\\coordinator.py": "b98b596f1138aa1969e2ebcf43cc641e10ab5caa6db50e00ffafe5b178e4fb76",
+      "p06_boundary\\provider.py": "bde16d1060674c9e3753f3046c76db687608706fd0ee33c6c5718a2aeb1636dc",
+      "p06_boundary\\worker.py": "835cbb99c09a678580a54c2466566e9c5d982c772e0fbca52471cc8c90fde2f2"
+    }
+  }
+}

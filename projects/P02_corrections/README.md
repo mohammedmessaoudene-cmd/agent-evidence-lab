@@ -6,7 +6,7 @@ The central counterexample is preserved: an already registered consumer can clos
 
 ## Contract
 
-- `src/p02/engine.py` uses one local SQLite store and a fixed declared graph/participant epoch. A later correction invalidates an old receipt frontier. It does not discover undeclared applications or dependencies.
+- `src/p02/engine.py` uses one local SQLite store and a fixed declared graph/participant epoch. A later correction invalidates an old receipt frontier. Signed review receipts must carry a nonempty string `event_id`; other types are rejected before SQL binding. It does not discover undeclared applications or dependencies.
 - `src/p02/audit.py` reads the store and reports separate signature, local replay, declared semantic consistency, and coverage states. Missing semantic expectations and coherent false declarations remain unresolved.
 - `src/p02/wire.py` accepts ASCII JSON and safe integers, rejects ambiguous or unsupported values, and uses deterministic Ed25519 **test identities derived from public labels**. These keys are intentionally reproducible, not credentials. This is not a general JCS, COSE, SCITT, or production trust implementation.
 - `src/node_peer.mjs` uses Node's standard library and assumes one writer per store. It synchronizes the file and renames it. On Windows, directory-sync `EPERM` produces `UNSUPPORTED_EPERM_WIN32` and `power_loss_durability: NOT_ESTABLISHED`; other I/O errors propagate.
@@ -35,21 +35,34 @@ python3.11 -S -B run_tests.py
 
 Installation is an explicit preparation step; the test runner never installs or downloads anything. It creates a new ignored `.local/runs/<timestamp>/` directory for every run. To write an additional sanitized summary, pass `--summary path/to/summary.json`. That option intentionally writes the selected destination.
 
-The runner checks three expected cardinalities and returns nonzero for incomplete or failed suites:
+The runner checks four expected cardinalities and returns nonzero for incomplete or failed suites:
 
 | Suite | Cases | Purpose |
 | --- | ---: | --- |
 | Scope and semantics | 18 | Nine synthetic cases in each of two shared-engine modes |
 | Receipt records | 12 | Six corruption/evidence-state probes in each mode |
 | Recovery and interop | 8 | Six actual child-process exits/restarts and two Python/Node exchanges |
+| Receipt identity | 3 | Valid string accepted; signed integer/boolean identities rejected with no logical store change |
 
-The historical scope specification and its byte hash are retained under `protocol/`. Its original local timestamp is not an independent timestamp or a new preregistration. This is a fresh execution of selected public copies, not a replay of the historical random-graph or NASA campaigns. The total of 38 checks is not 38 independent real-world experiments.
+The historical scope specification and its byte hash are retained under `protocol/`. Its original local timestamp is not an independent timestamp or a new preregistration. The new receipt-identity contract is explicitly a post-finding regression. The full runner now selects 41 checks; those are synthetic software cases, not independent real-world experiments. The previous 38-case evidence remains associated with the earlier source. Only the three new identity cases were run locally on this corrected engine; a future complete CI run must report its own result.
+
+For the targeted identity suite alone, with the same installed dependencies:
+
+```sh
+python3.11 -S -B tests/test_receipt_identity.py --out .local/identity_fresh
+```
+
+Use a new output directory. On Windows, use the same direct base interpreter as above. The fixture uses the shared `portable_graph` receipt-admission path; it does not claim a new concurrency or Python/Node interoperability test.
 
 ## Evidence and provenance
 
 `evidence/verification_20261101.json` records the fresh author execution, source hashes, actual runtime versions, all case outcomes and selected negative observations. It contains no absolute personal paths or private conversation links. The detailed local artifacts are intentionally excluded from publication. This is the preserved author snapshot; separate internal AI technical and strategic reviews examine the publication copy. These reviews are not independent external attestation, maintainer acceptance or deployment validation.
 
-`SOURCES.json` maps copied files to their historical origin hashes and records every public-copy modification. Core engine, wire, auditor, synthetic fixtures, worker and the corrected Node peer are exact copies. The scope driver only changes child interpreter isolation and explicit dependency-path propagation. The recovery/interop driver is a smaller new selection of the historical synthetic checks, with explicit durability-receipt assertions.
+`SOURCES.json` maps copied files to their historical origin hashes and records every public-copy modification. Wire, auditor, original synthetic fixtures, worker and the corrected Node peer remain exact copies. The engine adds the two-line receipt identity guard. The scope driver only changes child interpreter isolation and explicit dependency-path propagation. The recovery/interop driver is a smaller new selection of the historical synthetic checks, with explicit durability-receipt assertions.
+
+The AI-assisted counter-review found **P02-PUBLIC-R2-F01**: SQLite coerced a signed integer `1` or boolean `true` into a match for registered event string `"1"`. The engine then reported local closure while the unchanged auditor rejected the stored receipt's identity. The valid signer and computed score were not the defect. The minimal fix requires a nonempty string `event_id` before any SQL; it adds no restriction to `decision_id`.
+
+`evidence/receipt_identity_before.json` preserves one passing control and two failing identity cases on the old engine. `evidence/receipt_identity_after.json` records all three passing on the corrected bytes under Windows CPython 3.11.9 with `-S`. The malformed receipts now cause zero admission SQL statements and preserve the complete logical SQLite dump hash. `evidence/receipt_identity_delta.json` binds both receipts to the exact source change and records the pending review/publication state. The full earlier suite was not rerun for these records. This guard prevents future malformed admissions; it does not migrate or remove invalid records already stored. The original graph-coverage and semantic-truth limits remain.
 
 ## Licenses
 

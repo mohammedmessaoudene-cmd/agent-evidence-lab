@@ -8,9 +8,14 @@
       "origin_campaign": "CAMPAGNE_OPPORTUNITES_20261101_R1",
       "origin_path": "P04_allocation_budget_agents/src/R2_WORKING/src/exposure_ledger.py",
       "origin_sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188",
-      "public_sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188",
-      "exact_copy": true,
-      "changes": [],
+      "public_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+      "exact_copy": false,
+      "changes": [
+        "Normalize the path before rejecting :memory: aliases and store its absolute form at construction.",
+        "Include initial connection configuration inside the try/finally that closes SQLite connections.",
+        "Do not recreate unbounded exposure for already-FINAL billing after an older cost observation; retain known cost and freeze.",
+        "No schema migration or repair of previously persisted anomalous rows."
+      ],
       "license": "MIT",
       "provenance": "User-authorized original AI-assisted campaign code; no upstream source vendored."
     },
@@ -36,9 +41,63 @@
   "new_original_files": [
     {
       "public_path": "run_tests.py",
-      "public_sha256": "f82b32e970a9b0dfd886f6c975c8b390706f1164a052ac9be06acd7d5e607798",
+      "public_sha256": "04f755d7e02f8c788bbeeee95b26f3b1d9f87c3592fdb8c1809ff47332a7e99a",
       "license": "MIT",
       "authorship": "New AI-assisted publication assembly under user authorization"
+    },
+    {
+      "public_path": "tests/test_sqlite_regressions.py",
+      "public_sha256": "998e7939c78cc2b1248dfd5ac3344f505d42aa27530691c0a0a0efb38fffbf3e",
+      "license": "MIT",
+      "authorship": "User-authorized original AI-assisted review probes, selected and adapted for publication.",
+      "review_report_sha256": "a84f3bb879540e45011f8c91342b6fe6a3dd0627a442da5b8a7689bfac639f2a",
+      "embedded_origin": "technical_sqlite/sqlite_local_probes.py",
+      "embedded_origin_sha256": "fe6001e75cd102e453f0c0dbf0afbdad6d9f41d4b3730a207fde473caaa34e1b",
+      "unchanged_selected_ast_bodies": [
+        "close_workers",
+        "collect_worker",
+        "digest",
+        "error_record",
+        "evidence",
+        "load_target",
+        "portable_path",
+        "probe_connection_setup_cleanup",
+        "probe_normalized_memory_alias",
+        "probe_relative_path_rebinding",
+        "probe_same_attempt_concurrency",
+        "probe_snapshot_interleaving",
+        "probe_sql_integer_boundaries",
+        "spawn_worker",
+        "wait_for",
+        "worker_main"
+      ],
+      "wrapper_changes": [
+        "Relative package source paths and explicit source identity checks.",
+        "Require -S and enabled assertions, a new explicit report path, and strict result statuses.",
+        "Emit runtime versions without user paths or command-line metadata."
+      ]
+    },
+    {
+      "public_path": "tests/test_finality_regression.py",
+      "public_sha256": "f0c0583e6834cd6a3b23643b9bf3c6676af7e8c3c8261ef495cd6bd89463ddd6",
+      "license": "MIT",
+      "authorship": "User-authorized original AI-assisted review probes, selected and adapted for publication.",
+      "review_report_sha256": "a84f3bb879540e45011f8c91342b6fe6a3dd0627a442da5b8a7689bfac639f2a",
+      "embedded_origin": "technical_ledger/probe_ledger_state_machine.py",
+      "embedded_origin_sha256": "b54f97846789960e3d14eb58711482fc526496cae27ca4b7bc6be1dc4cce154d",
+      "unchanged_selected_ast_bodies": [
+        "Probe",
+        "digest",
+        "final_overcap_then_stale_observation",
+        "gate",
+        "reserve",
+        "serializable"
+      ],
+      "wrapper_changes": [
+        "Relative package source paths and explicit source identity checks.",
+        "Require -S and enabled assertions, a new explicit report path, and strict result statuses.",
+        "Emit runtime versions without user paths or command-line metadata."
+      ]
     }
   ],
   "cleanup_review_delta": {
@@ -72,6 +131,96 @@
       "public_sha256": "cb423597304bf77712ce5fdb6794b32d9abc92d3802490fe081b6d6713a43a0b",
       "exact_copy": true,
       "scope": "Separate AI-assisted technical review using simulated children; not institutional independent attestation."
+    },
+    {
+      "public_path": "evidence/P04_MINIMAL_FIXES.patch",
+      "origin_report_sha256": "a84f3bb879540e45011f8c91342b6fe6a3dd0627a442da5b8a7689bfac639f2a",
+      "embedded_origin": "patches/P04_MINIMAL_FIXES.patch",
+      "origin_sha256": "e608f2291502e449e04ca4853da6c53df6afa1ae4fe72ea3503d24e431c3e044",
+      "public_sha256": "e608f2291502e449e04ca4853da6c53df6afa1ae4fe72ea3503d24e431c3e044",
+      "exact_copy": true,
+      "license": "MIT",
+      "scope": "Exact original AI-assisted three-method patch under user authorization."
     }
-  ]
+  ],
+  "ledger_hardening_delta": {
+    "schema": 1,
+    "project": "P04",
+    "status": "AUTHOR_TARGETED_FIXES_PASS_REVIEW_CI_PENDING",
+    "production_before_sha256": "f2fbac1c10923adc300ee1ad6d394bdcc91fe2b6cb1564ea4356d97960b3c188",
+    "production_after_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+    "changed_production_methods": [
+      "__init__",
+      "_connect",
+      "_event"
+    ],
+    "schema_migration": false,
+    "selected_review_source": {
+      "report_sha256": "a84f3bb879540e45011f8c91342b6fe6a3dd0627a442da5b8a7689bfac639f2a",
+      "embedded_path": "candidate/src/exposure_ledger.py",
+      "source_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+      "patch_sha256": "e608f2291502e449e04ca4853da6c53df6afa1ae4fe72ea3503d24e431c3e044"
+    },
+    "before": {
+      "sqlite_defects_reproduced": 3,
+      "finality_assertions_failed": 3,
+      "finality_assertions_total": 19
+    },
+    "after": {
+      "sqlite_cases_passed": 6,
+      "finality_assertions_passed": 19,
+      "finality_scenarios": 1
+    },
+    "preserved_historical_artifacts_sha256": {
+      "evidence/cleanup_delta_20261101.json": "eeb0e3930264bae4c3b6d04488f5fddc495e7e9c3c1a8c9343ad73e143c0735b",
+      "evidence/reviewer_cleanup_after.json": "cb423597304bf77712ce5fdb6794b32d9abc92d3802490fe081b6d6713a43a0b",
+      "evidence/reviewer_cleanup_before.json": "e1a0300db6e18e6a92ee8c8326da272063e74efee35529e04099e1ce681d3aec",
+      "evidence/verification_20261101.json": "dfb7c13704261b81d3147b2513cba472a2f86c56ad445ab0cd0d5c88d94524d2",
+      "tests/test_exposure_ledger.py": "384d45cccfddf3b06d75f92771c3722fe777fbdf1403ba57c07c76dd9084f8d0"
+    },
+    "new_probe_bodies_equal_selected_original_ast": {
+      "tests/test_sqlite_regressions.py": [
+        "close_workers",
+        "collect_worker",
+        "digest",
+        "error_record",
+        "evidence",
+        "load_target",
+        "portable_path",
+        "probe_connection_setup_cleanup",
+        "probe_normalized_memory_alias",
+        "probe_relative_path_rebinding",
+        "probe_same_attempt_concurrency",
+        "probe_snapshot_interleaving",
+        "probe_sql_integer_boundaries",
+        "spawn_worker",
+        "wait_for",
+        "worker_main"
+      ],
+      "tests/test_finality_regression.py": [
+        "Probe",
+        "digest",
+        "final_overcap_then_stale_observation",
+        "gate",
+        "reserve",
+        "serializable"
+      ]
+    },
+    "historical_allocation_comparison": {
+      "candidate": {
+        "successes": 15,
+        "total": 75
+      },
+      "simple_rule": {
+        "successes": 15,
+        "total": 75
+      },
+      "rerun_or_refit": false
+    },
+    "full_23_suite_on_new_production": "NOT_RUN_DURING_AUTHOR_DELTA_PENDING_CI",
+    "technical_review": "PENDING",
+    "strategic_review": "PENDING",
+    "public_ci_readback": "PENDING",
+    "no_publication_performed_by_author": true
+  }
 }

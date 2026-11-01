@@ -1,0 +1,39 @@
+--- a/projects/P04_cost_exposure/src/exposure_ledger.py
++++ b/projects/P04_cost_exposure/src/exposure_ledger.py
+@@ -110,9 +110,10 @@
+     """
+ 
+     def __init__(self, path: str | Path, budget_microusd: int | None = None):
+-        if str(path) == ":memory:":
++        normalized_path = Path(path)
++        if str(normalized_path) == ":memory:":
+             raise ValueError("persistent SQLite file required")
+-        self.path = str(Path(path))
++        self.path = str(normalized_path.resolve())
+         if budget_microusd is not None:
+             _money(budget_microusd, "budget_microusd")
+         with self._connect() as conn:
+@@ -153,10 +154,10 @@
+     @contextmanager
+     def _connect(self) -> Iterator[sqlite3.Connection]:
+         conn = sqlite3.connect(self.path, timeout=30.0, isolation_level=None)
+-        conn.row_factory = sqlite3.Row
+-        conn.execute("PRAGMA busy_timeout=30000")
+-        conn.execute("PRAGMA synchronous=FULL")
+         try:
++            conn.row_factory = sqlite3.Row
++            conn.execute("PRAGMA busy_timeout=30000")
++            conn.execute("PRAGMA synchronous=FULL")
+             yield conn
+         finally:
+             conn.close()
+@@ -317,7 +318,8 @@
+                         conn.execute("UPDATE attempts SET known=?,cost_evidence_seen=1,dispatch_state='POSSIBLE',unbounded=?,updated_ns=? WHERE id=?",
+                                      (known, int(unbounded), time.time_ns(), attempt_id))
+                         if known > row["authorized_max"]:
+-                            conn.execute("UPDATE attempts SET unbounded=1 WHERE id=?", (attempt_id,))
++                            if row["billing_finality"] != "FINAL":
++                                conn.execute("UPDATE attempts SET unbounded=1 WHERE id=?", (attempt_id,))
+                             self._freeze(conn, "observed expense exceeds the authorized per-attempt maximum")
+                 elif kind == "final_invoice":
+                     if amount < row["known"]:

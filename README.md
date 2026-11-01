@@ -34,13 +34,13 @@ Historical experiment results and checks of the extracted publication package ar
 
 Code, documentation, experiment preparation and reviews used AI assistance. The review process uses two AI-assisted passes: technical examination and strategic review of claims, alternatives and usefulness. These are internal reviews within the same project, not independent validation, certification, or human maintainer approval. Review conclusions apply to the artifact version and scope stated in their records.
 
-Recorded executions are local and bounded. A test of a real library can still use a simulated provider, synthetic data or a deterministic model. Those substitutions are described in the project notes. Where publication copies redact local paths or machine names, their provenance records distinguish the original and published bytes.
+Recorded executions are bounded local or hosted CI checks tied to their stated source version and environment. A real library may still use a simulated provider, synthetic data or a deterministic model. The linked P01 CI run qualifies its two selected cases; subsequent edits require their own checks. Where publication copies redact local paths or machine names, their provenance records distinguish the original and published bytes.
 
-Hashes and manifests check artifact consistency. They do not prove scientific validity, independent origin, external delivery or adoption. Instructions for a clean installation are not themselves proof that such an installation was tested; P01 explicitly records that distinction.
+Hashes and manifests check artifact consistency. They do not prove scientific validity, independent origin, external delivery or adoption. P01's initial installation limitation is retained as history; the frozen upstream installation and its two selected tests subsequently passed in [hosted Ubuntu CI at fa7e467](https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab/actions/runs/41327039712). That run does not qualify later corrective sources in the other projects.
 
 ## Upstream contribution
 
-P01 is an illustrative proposal for [Pydantic AI #11191](https://github.com/pydantic/pydantic-ai/issues/11191). The intended route is one focused discussion of its scope, followed by an upstream PR only after maintainer agreement and assignment. P03 credits the existing [EnterpriseOps-Gym PR24](https://github.com/ServiceNow/EnterpriseOps-Gym/pull/24); a reproduction does not justify a duplicate fix.
+P01 is an illustrative proposal for [Pydantic AI #11191](https://github.com/pydantic/pydantic-ai/issues/11191). A [single focused scope proposal](https://github.com/pydantic/pydantic-ai/issues/11191#issuecomment-6560812372) has been posted and read back; maintainer agreement and assignment precede a non-trivial upstream PR. The next evidence is a maintainer response. P03 credits the existing [EnterpriseOps-Gym PR24](https://github.com/ServiceNow/EnterpriseOps-Gym/pull/24); a reproduction does not justify a duplicate fix.
 
 Publishing a package or posting an issue comment is not upstream acceptance. No funding award, customer deployment or institutional endorsement is claimed.
 

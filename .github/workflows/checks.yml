@@ -30,12 +30,25 @@ jobs:
         run: python -B tools/verify_manifest.py
       - name: Run bounded cases and assert JSON contracts
         run: python -B tools/run_checks.py --out .local/ci-results
+      - name: Check corrective P03 source and verifier boundaries
+        run: python -S -B projects/P03_verifier_reproduction/review/check_boundaries.py --out .local/ci-review/P03.json
+      - name: Check corrective P05 paths and archive verifier
+        run: python -S -B tools/review/run_p05_review.py --out .local/ci-review/P05
+      - name: Reject four contradictory P06 synthetic reports
+        run: python -S -B tools/review/check_p06_reports.py --verifier tools/run_checks.py --out .local/ci-review/P06_reports
+      - name: Check corrective P06 effect oracle profiles and Unicode
+        run: python -S -B tools/review/run_p06_review.py --out .local/ci-review/P06
       - name: Preserve structured summary
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: bounded-summary-${{ matrix.os }}
-          path: .local/ci-results/SUMMARY_ALL.json
+          path: |
+            .local/ci-results/SUMMARY_ALL.json
+            .local/ci-review/P03.json
+            .local/ci-review/P05/SUMMARY.json
+            .local/ci-review/P06_reports/result.json
+            .local/ci-review/P06/SUMMARY.json
           if-no-files-found: warn
           retention-days: 30
   p01-native:

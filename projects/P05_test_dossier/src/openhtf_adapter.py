@@ -74,9 +74,13 @@ def convert(input_dir: Path | str) -> dict:
     Attachment data stays inline; attachment names never become filesystem paths.
     Errors are documentary issues, not crashes or default-PASS outcomes.
     """
-    root = Path(input_dir).resolve()
     packet = {"schema": "p05-openhtf-packet/2", "sources": [], "runs": [],
               "conversion_issues": [], "source_byte_authentication": "NOT_IMPLEMENTED"}
+    try:
+        root = Path(input_dir).resolve()
+    except (OSError, ValueError, TypeError, RuntimeError) as exc:
+        packet["conversion_issues"].append(problem("INPUT_DIRECTORY", "input", type(exc).__name__ + ": " + str(exc)))
+        return packet
     if not root.is_dir():
         packet["conversion_issues"].append(problem("INPUT_DIRECTORY", "input", "Directory absent"))
         return packet
@@ -157,7 +161,7 @@ def convert(input_dir: Path | str) -> dict:
                     except (KeyError, TypeError, ValueError, binascii.Error):
                         packet["conversion_issues"].append(problem("ATTACHMENT_ENCODING", label + ":" + name,
                                                                   "Inline base64 bytes absent or invalid"))
-        except (OSError, ValueError, TypeError, KeyError, OverflowError, RecursionError) as exc:
+        except (OSError, ValueError, TypeError, KeyError, OverflowError, RecursionError, RuntimeError) as exc:
             packet["conversion_issues"].append(problem("SOURCE_REJECTED", label, str(exc)))
     return packet
 
@@ -269,8 +273,9 @@ def review_packet(contract: Any, packet: dict, actual_contract_hash: str,
         if not valid_time:
             issue("RUN_TIME", loc, "Finite integer epoch milliseconds ordered within representable range required")
         for field in ["subtests", "branches", "checkpoints", "diagnoses", "diagnosers", "outcome_details"]:
-            if raw.get(field):
-                issue("UNSUPPORTED_RUN_SEMANTICS", loc + ":" + field, "Retained but outside scalar profile")
+            value = raw.get(field)
+            if field in raw and (not isinstance(value, list) or bool(value)):
+                issue("UNSUPPORTED_RUN_SEMANTICS", loc + ":" + field, "Only an absent field or an empty native list is within this profile")
         if raw.get("marginal") is not None and (type(raw["marginal"]) is not bool or raw["marginal"]):
             issue("UNSUPPORTED_MARGINAL", loc, "Marginal results require explicit policy")
         instruments = declared.get("instruments")
@@ -280,7 +285,7 @@ def review_packet(contract: Any, packet: dict, actual_contract_hash: str,
         else:
             inst = instruments[0]
             for key, expected_value in contract["instrument_policy"].items():
-                if inst.get(key) != expected_value:
+                if key not in inst or canonical(inst[key]) != canonical(expected_value):
                     issue("INSTRUMENT_IDENTITY", loc + ":" + key, "Missing/conflicting declared instrument field")
             cf, cu = inst.get("calibration_valid_from_millis"), inst.get("calibration_valid_until_millis")
             if not millis(cf) or not millis(cu) or cf > cu:
@@ -304,9 +309,12 @@ def review_packet(contract: Any, packet: dict, actual_contract_hash: str,
                 issue("PHASE_TIME", ploc, "Phase range must fit run; no individual measurement time inferred")
             if ph["native_result"] != {"phase_result": "CONTINUE"}:
                 issue("PHASE_CONTROL_FLOW", ploc, "Control flow is not the supported CONTINUE profile")
-            for field in ["diagnosers", "diagnosis_results", "failure_diagnosis_results", "subtest_name"]:
-                if raw_ph.get(field):
-                    issue("UNSUPPORTED_PHASE_SEMANTICS", ploc + ":" + field, "Retained; not interpreted as scalar-only proof")
+            for field in ["diagnosers", "diagnosis_results", "failure_diagnosis_results"]:
+                value = raw_ph.get(field)
+                if field in raw_ph and (not isinstance(value, list) or bool(value)):
+                    issue("UNSUPPORTED_PHASE_SEMANTICS", ploc + ":" + field, "Only an absent field or an empty native list is within this profile")
+            if raw_ph.get("subtest_name") is not None:
+                issue("UNSUPPORTED_PHASE_SEMANTICS", ploc + ":subtest_name", "A subtest association requires a separate profile")
             ms = ph["measurements"]
             if len(ms) != 1 or ms[0]["key"] != spec["name"] or ms[0]["name"] != spec["name"]:
                 issue("MEASUREMENT_COVERAGE", ploc, "Required measurement absent, extra or renamed")
@@ -359,8 +367,54 @@ def review_packet(contract: Any, packet: dict, actual_contract_hash: str,
     return finish()
 
 
-def review(contract_path: Path | str, expected_contract_sha256: str, input_dir: Path | str,
-           packet_out: Path | str | None = None) -> dict:
+def _write_json_outputs(outputs):
+    """Create fresh UTF-8 reports only; never replace an existing evidence file."""
+    prepared = []
+    seen = set()
+    for destination, value in outputs:
+        path = Path(destination)
+        if path.exists() or path.is_symlink():
+            raise FileExistsError("Output destination already exists: " + str(path))
+        try:
+            resolved = path.resolve()
+        except RuntimeError as exc:
+            raise ValueError("Output destination cannot be resolved") from exc
+        if resolved in seen:
+            raise ValueError("Output destinations must be distinct")
+        seen.add(resolved)
+        # ASCII escaping preserves every JSON string, including escaped surrogate
+        # code units, while UTF-8 bytes and LF are independent of locale.
+        raw = (json.dumps(value, indent=2, ensure_ascii=True, allow_nan=False) + "\n").encode("utf-8")
+        prepared.append((path, raw))
+    created = []
+    try:
+        for path, raw in prepared:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            with path.open("xb") as stream:
+                created.append(path)
+                stream.write(raw)
+    except (OSError, ValueError):
+        # Only files exclusively created by this invocation are removed. A
+        # preexisting or concurrently created destination is never overwritten.
+        for path in reversed(created):
+            try:
+                path.unlink()
+            except OSError:
+                pass
+        raise
+
+
+def _output_failure(result, error):
+    failed = dict(result)
+    failed.update(status="INCOMPLETE", measurement_summary="UNKNOWN",
+                  material_release_authorized=False)
+    failed["issues"] = list(result.get("issues", [])) + [
+        {"code": "OUTPUT_PERSISTENCE", "location": "output",
+         "detail": type(error).__name__ + ": " + str(error)}]
+    return failed
+
+
+def _review_data(contract_path: Path | str, expected_contract_sha256: str, input_dir: Path | str):
     packet = convert(input_dir)
     try:
         raw = Path(contract_path).read_bytes()
@@ -372,9 +426,18 @@ def review(contract_path: Path | str, expected_contract_sha256: str, input_dir: 
                   "evidence_authentication": "NOT_IMPLEMENTED", "instrument_equivalence": "NOT_ESTABLISHED",
                   "clock_authentication": "UNKNOWN", "calibration_authentication": "UNKNOWN",
                   "issues": packet["conversion_issues"] + [problem("INPUT_REJECTED", "review", str(exc))]}
+    return result, packet
+
+
+def review(contract_path: Path | str, expected_contract_sha256: str, input_dir: Path | str,
+           packet_out: Path | str | None = None) -> dict:
+    result, packet = _review_data(contract_path, expected_contract_sha256, input_dir)
     if packet_out is not None:
         packet["review"] = result
-        Path(packet_out).write_text(json.dumps(packet, indent=2, ensure_ascii=False, allow_nan=False) + "\n")
+        try:
+            _write_json_outputs([(packet_out, packet)])
+        except (OSError, ValueError, TypeError, RecursionError) as exc:
+            return _output_failure(result, exc)
     return result
 
 
@@ -386,10 +449,18 @@ def main() -> int:
     p.add_argument("--out", type=Path)
     p.add_argument("--packet-out", type=Path)
     args = p.parse_args()
-    result = review(args.contract, args.expected_contract_sha256, args.input_dir, args.packet_out)
-    text = json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
-    if args.out:
-        args.out.write_text(text)
+    result, packet = _review_data(args.contract, args.expected_contract_sha256, args.input_dir)
+    packet["review"] = result
+    outputs = []
+    if args.out is not None:
+        outputs.append((args.out, result))
+    if args.packet_out is not None:
+        outputs.append((args.packet_out, packet))
+    try:
+        _write_json_outputs(outputs)
+    except (OSError, ValueError, TypeError, RecursionError) as exc:
+        result = _output_failure(result, exc)
+    text = json.dumps(result, ensure_ascii=True, indent=2, allow_nan=False) + "\n"
     print(text, end="")
     return 0 if result["status"] == "READY_FOR_REVIEW" else 2
 
