@@ -24,7 +24,8 @@ jobs:
         with:
           node-version: '20'
       - name: Install only P02's pinned public dependencies
-        run: python -I -m pip --isolated --disable-pip-version-check install --only-binary=:all: --no-compile --target projects/P02_corrections/.local/deps -r projects/P02_corrections/requirements.txt
+        run: >-
+          python -I -m pip --isolated --disable-pip-version-check install --only-binary=:all: --no-compile --target projects/P02_corrections/.local/deps -r projects/P02_corrections/requirements.txt
       - name: Verify portable source identities
         run: python -B tools/verify_manifest.py
       - name: Run bounded cases and assert JSON contracts
