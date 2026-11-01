@@ -58,7 +58,7 @@ jobs:
       - run: python -I -m pip --isolated --disable-pip-version-check install uv==0.13.6
       - name: Install pinned upstream development packages
         working-directory: .local/pydantic-ai
-        run: uv sync --frozen --package pydantic-ai-harness --extra dbos --extra anthropic --group dev --group lint
+        run: uv sync --frozen --package pydantic-ai-harness --extra dbos --extra anthropic --extra logfire --group dev --group lint
       - name: Apply illustrative test only
         working-directory: .local/pydantic-ai
         run: git apply ../../projects/P01_memory_recovery/P01_DBOS_MEMORY_MINIMAL.patch

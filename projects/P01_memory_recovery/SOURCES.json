@@ -56,10 +56,34 @@
   ],
   "candidate": {
     "file": "test_dbos_recovery.py",
-    "sha256": "23000a86179287de8ce2d292e9d19b9ac33a72fa5f75598328bc5f009a456075",
+    "sha256": "30d4f25cf6ccb617499b2a848a2ad1bc87be4d051612ce6d194d6351b4dc4ac1",
     "patch": "P01_DBOS_MEMORY_MINIMAL.patch",
-    "patch_sha256": "980a07abbd45e832fa8b7c9753203519d6f2c108b11857e06e249e40b40322b1",
-    "local_commit": "f66bd76d0087610649710a462e1496277d816155",
-    "upstream_submission": "NOT_SUBMITTED"
+    "patch_sha256": "e19bb658e10ead3aec0f123fd8d501ce3c055a2d568f21091d32aac347edf918",
+    "local_commit": "0434aa7514f766e5c739f7f3ce00377a164645a9",
+    "upstream_submission": "NOT_SUBMITTED",
+    "lines": 169
+  },
+  "candidate_history": [
+    {
+      "file": "history/test_dbos_recovery_153.py.txt",
+      "sha256": "23000a86179287de8ce2d292e9d19b9ac33a72fa5f75598328bc5f009a456075",
+      "patch": "history/P01_DBOS_MEMORY_153.patch",
+      "patch_sha256": "980a07abbd45e832fa8b7c9753203519d6f2c108b11857e06e249e40b40322b1",
+      "local_commit": "f66bd76d0087610649710a462e1496277d816155",
+      "upstream_submission": "NOT_SUBMITTED"
+    }
+  ],
+  "hardening_changes": [
+    "Only optional dependency import is suppressed; integration failures propagate.",
+    "Ten-second public anyio timeout around resume/result.",
+    "Nested cleanup covers launch/destroy errors.",
+    "Small public DBOS journal checks for original snapshot, unchanged prefix and final success."
+  ],
+  "hardening_evidence": "evidence/hardening/summary.json",
+  "failure_path_probe": {
+    "file": "review/check_failure_paths.py",
+    "sha256": "297a2c65fdee74cac811b84d4d2642099aa8fa5227feecd3e25b4997e149e908",
+    "scope": "Selected actual AST paths with simulated resources; no real workflow.",
+    "hash_basis": "Exact published bytes, including CRLF; see evidence/hardening/helper_identity.json for the corrected former LF-normalized hash."
   }
 }

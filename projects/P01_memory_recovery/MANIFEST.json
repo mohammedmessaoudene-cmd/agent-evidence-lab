@@ -36,6 +36,61 @@
       "sha256": "deea3c2ee5f020fa0cd4fd5f3faacd7ccd0e08ec333abf2a182e7420f332496d"
     },
     {
+      "path": "evidence/hardening/baseline.log",
+      "bytes": 7901,
+      "sha256": "95d2cb0add6ab16e0f8563549bbe786f05c2eb35d6030aab38caf6a17affa58c"
+    },
+    {
+      "path": "evidence/hardening/baseline.xml",
+      "bytes": 533,
+      "sha256": "bc0fd71a4ae13bbfc2822e86a604ce1587e752e05d0f0c95a6cdab50b03daed4"
+    },
+    {
+      "path": "evidence/hardening/error_paths.json",
+      "bytes": 3244,
+      "sha256": "23c3b4fff623ce16c62582620ebc9b977fddd1439e2ee5404837b4fd65f81380"
+    },
+    {
+      "path": "evidence/hardening/helper_identity.json",
+      "bytes": 1518,
+      "sha256": "ef02220c7945c5cb2099f1eb319582be549afad3dd76b696a35f783f7c27a20a"
+    },
+    {
+      "path": "evidence/hardening/mutant.log",
+      "bytes": 18083,
+      "sha256": "03f628ef451b89fb6382a22512c82b8ab885dfbc810e04a6249fda3836824e20"
+    },
+    {
+      "path": "evidence/hardening/mutant.xml",
+      "bytes": 4717,
+      "sha256": "e7f3bdc719bc911f0e565fbc6cd6759fb8a304c0b8750ed9ddf6c8017a8890d7"
+    },
+    {
+      "path": "evidence/hardening/pyright.json",
+      "bytes": 251,
+      "sha256": "fa8e7c223da78cf723fe545d4ae847e1c2d9dbfc2c07b42ef41094ff69e0e5a4"
+    },
+    {
+      "path": "evidence/hardening/redactions.json",
+      "bytes": 3665,
+      "sha256": "d895191239c6d0519fbdc150be2a2562b149215064608baf6899ee27b49d0314"
+    },
+    {
+      "path": "evidence/hardening/ruff_format.log",
+      "bytes": 29,
+      "sha256": "659d3b8367cec43957aa9e0bf4e831c18f9fb4fb1ce69c47c70452f611987f8b"
+    },
+    {
+      "path": "evidence/hardening/ruff_repository.log",
+      "bytes": 4631,
+      "sha256": "7850e1d18b394af666a638ba08bed7a361c8f9b8e02a494c38c14b8c7d58c86f"
+    },
+    {
+      "path": "evidence/hardening/summary.json",
+      "bytes": 5374,
+      "sha256": "be5b3e14e7a3f7ef93f82b8e20de423ab982203ed77c67c7241b0dba0ea1205c"
+    },
+    {
       "path": "evidence/initial_teardown_error.log",
       "bytes": 11726,
       "sha256": "9e8862de767bea6549000105ba0fda3e11c4d6c5228b36cf4fbd8c0ef197d2f7"
@@ -86,19 +141,29 @@
       "sha256": "d97c06e9b55d3f90dc93dd952878e94f3366c21da1b109245fc7cdaa9658cc24"
     },
     {
+      "path": "history/P01_DBOS_MEMORY_153.patch",
+      "bytes": 6012,
+      "sha256": "980a07abbd45e832fa8b7c9753203519d6f2c108b11857e06e249e40b40322b1"
+    },
+    {
+      "path": "history/test_dbos_recovery_153.py.txt",
+      "bytes": 5633,
+      "sha256": "23000a86179287de8ce2d292e9d19b9ac33a72fa5f75598328bc5f009a456075"
+    },
+    {
       "path": "LICENSE",
       "bytes": 1121,
       "sha256": "398f82aee5bd500f39ec1cc84e2b878a34a78be1bc1e6da038f7e73a758bca0a"
     },
     {
       "path": "P01_DBOS_MEMORY_MINIMAL.patch",
-      "bytes": 6012,
-      "sha256": "980a07abbd45e832fa8b7c9753203519d6f2c108b11857e06e249e40b40322b1"
+      "bytes": 6830,
+      "sha256": "e19bb658e10ead3aec0f123fd8d501ce3c055a2d568f21091d32aac347edf918"
     },
     {
       "path": "README.md",
-      "bytes": 7607,
-      "sha256": "d056ddd6f8123d19f9c5c45338b68b5ab37c336d19898a76c0a111c884cbaa41"
+      "bytes": 8375,
+      "sha256": "2d51bb5f39e5659a90656df4368bfe4afc5687a2022e18014b9925fd3513c873"
     },
     {
       "path": "requirements-observed.txt",
@@ -106,14 +171,19 @@
       "sha256": "2f3ee38dbd8ebcc619149de163eebd200331fd0b441c15faabfd3b8189fa4db1"
     },
     {
+      "path": "review/check_failure_paths.py",
+      "bytes": 6627,
+      "sha256": "297a2c65fdee74cac811b84d4d2642099aa8fa5227feecd3e25b4997e149e908"
+    },
+    {
       "path": "SOURCES.json",
-      "bytes": 3559,
-      "sha256": "85586d845d2591a4b51184958c6d33cffbab43717096e15012ecdf566e5a49af"
+      "bytes": 4813,
+      "sha256": "100af51274bbc7b71fc1bcc1c017c4427fb6f407e0e2cb6ebc4b284a56287f18"
     },
     {
       "path": "test_dbos_recovery.py",
-      "bytes": 5633,
-      "sha256": "23000a86179287de8ce2d292e9d19b9ac33a72fa5f75598328bc5f009a456075"
+      "bytes": 6435,
+      "sha256": "30d4f25cf6ccb617499b2a848a2ad1bc87be4d051612ce6d194d6351b4dc4ac1"
     }
   ]
 }

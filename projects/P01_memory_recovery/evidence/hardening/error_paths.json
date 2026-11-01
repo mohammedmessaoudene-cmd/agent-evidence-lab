@@ -1,0 +1,127 @@
+{
+  "before": {
+    "source_sha256": "23000a86179287de8ce2d292e9d19b9ac33a72fa5f75598328bc5f009a456075",
+    "checks": [
+      {
+        "case": "dependency_missing",
+        "observed": "OPTIONAL_DEPENDENCY_SKIP",
+        "expectation_met": true
+      },
+      {
+        "case": "integration_broken",
+        "observed": "OPTIONAL_DEPENDENCY_SKIP",
+        "expectation_met": false
+      },
+      {
+        "case": "imports_succeed",
+        "observed": "IMPORT_SUCCEEDED",
+        "expectation_met": true
+      },
+      {
+        "case": "launch_fails",
+        "events": [
+          "construct",
+          "launch"
+        ],
+        "observed": "launch failure",
+        "expectation_met": false
+      },
+      {
+        "case": "destroy_fails",
+        "events": [
+          "construct",
+          "launch",
+          "destroy"
+        ],
+        "observed": "destroy failure",
+        "expectation_met": false
+      },
+      {
+        "case": "normal_teardown",
+        "events": [
+          "construct",
+          "launch",
+          "destroy",
+          "detach"
+        ],
+        "observed": "CLEAN_EXIT",
+        "expectation_met": true
+      },
+      {
+        "case": "bounded_result_wait",
+        "observed": "NO_TIMEOUT_SCOPE",
+        "events": [],
+        "expectation_met": false
+      }
+    ],
+    "passed": 3,
+    "total": 7,
+    "scope": "Selected exact AST paths, simulated imports/DBOS/handle; no real workflow, provider or wait."
+  },
+  "after": {
+    "source_sha256": "30d4f25cf6ccb617499b2a848a2ad1bc87be4d051612ce6d194d6351b4dc4ac1",
+    "checks": [
+      {
+        "case": "dependency_missing",
+        "observed": "OPTIONAL_DEPENDENCY_SKIP",
+        "expectation_met": true
+      },
+      {
+        "case": "integration_broken",
+        "observed": "PROPAGATED_IMPORT_ERROR",
+        "expectation_met": true
+      },
+      {
+        "case": "imports_succeed",
+        "observed": "IMPORT_SUCCEEDED",
+        "expectation_met": true
+      },
+      {
+        "case": "launch_fails",
+        "events": [
+          "construct",
+          "launch",
+          "destroy",
+          "detach"
+        ],
+        "observed": "launch failure",
+        "expectation_met": true
+      },
+      {
+        "case": "destroy_fails",
+        "events": [
+          "construct",
+          "launch",
+          "destroy",
+          "detach"
+        ],
+        "observed": "destroy failure",
+        "expectation_met": true
+      },
+      {
+        "case": "normal_teardown",
+        "events": [
+          "construct",
+          "launch",
+          "destroy",
+          "detach"
+        ],
+        "observed": "CLEAN_EXIT",
+        "expectation_met": true
+      },
+      {
+        "case": "bounded_result_wait",
+        "observed": "TIMEOUT_RAISED",
+        "events": [
+          "configured_10_seconds_injected_zero_for_probe",
+          "get_result_started",
+          "get_result_cancelled_and_cleaned"
+        ],
+        "expectation_met": true
+      }
+    ],
+    "passed": 7,
+    "total": 7,
+    "scope": "Selected exact AST paths, simulated imports/DBOS/handle; no real workflow, provider or wait."
+  }
+}

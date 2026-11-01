@@ -1,0 +1,92 @@
+error[I001][*]: Import block is un-sorted or un-formatted
+  --> tests\clai2\test_web_client.py:3:1
+   |
+ 1 |   """`web.client` against the real web app: a headless shell served on loopback, in this process, driven as a page would."""
+ 2 |
+ 3 | / import io
+ 4 | | from collections.abc import AsyncGenerator
+ 5 | | from contextlib import asynccontextmanager
+ 6 | | from dataclasses import dataclass
+ 7 | | from pathlib import Path
+ 8 | |
+ 9 | | import anyio
+10 | | import httpx
+11 | | import pytest
+12 | | from pydantic import TypeAdapter
+13 | | from rich.console import Console
+14 | |
+15 | | from pydantic_ai import Agent
+16 | | from pydantic_ai.capabilities import Capability
+17 | | from pydantic_ai.models.test import TestModel
+18 | | from pydantic_ai_harness.ask_user import AskUserAnswer
+19 | | from pydantic_clai2.builtin_plugins.web import WebPlugin
+20 | | from pydantic_clai2.builtin_plugins.web.app import HEADER
+21 | | from pydantic_clai2.builtin_plugins.web.client import SessionView, WebClient, _error  # pyright: ignore[reportPrivateUsage]
+22 | | from pydantic_clai2.builtin_plugins.web.protocol import MenuEdited, TitleChanged, TurnEnded, TurnStarted
+23 | | from pydantic_clai2.config import PluginSettings
+24 | | from pydantic_clai2.config.project_settings import ProjectSettings
+25 | | from pydantic_clai2.config.settings_store import SettingsStore
+26 | | from pydantic_clai2.runtime.session_runtime import SessionRuntime, create_shell
+27 | | from tests.clai2.test_web import QuestionModel
+   | |______________________________________________^
+28 |
+29 |   pytestmark = pytest.mark.anyio
+   |
+help: Organize imports
+18 | from pydantic_ai_harness.ask_user import AskUserAnswer
+19 | from pydantic_clai2.builtin_plugins.web import WebPlugin
+20 | from pydantic_clai2.builtin_plugins.web.app import HEADER
+   - from pydantic_clai2.builtin_plugins.web.client import SessionView, WebClient, _error  # pyright: ignore[reportPrivateUsage]
+21 + from pydantic_clai2.builtin_plugins.web.client import (  # pyright: ignore[reportPrivateUsage]
+22 +     SessionView,
+23 +     WebClient,
+24 +     _error,
+25 + )
+26 | from pydantic_clai2.builtin_plugins.web.protocol import MenuEdited, TitleChanged, TurnEnded, TurnStarted
+27 | from pydantic_clai2.config import PluginSettings
+28 | from pydantic_clai2.config.project_settings import ProjectSettings
+
+error[I001][*]: Import block is un-sorted or un-formatted
+    --> tests\durable_exec\test_prefect.py:3399:5
+     |
+3397 |     The projection is what it was when the toolset had no `id`, so a flow run before the upgrade still finds its tasks.
+3398 |     """
+3399 |     from pydantic_ai.durable_exec.prefect._cache_policies import _replace_toolset_tools  # pyright: ignore[reportPrivateUsage]
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3400 |
+3401 |     def projection(toolset: MCPToolset[None]) -> object:
+     |
+help: Organize imports
+3396 |
+3397 |     The projection is what it was when the toolset had no `id`, so a flow run before the upgrade still finds its tasks.
+3398 |     """
+     -     from pydantic_ai.durable_exec.prefect._cache_policies import _replace_toolset_tools  # pyright: ignore[reportPrivateUsage]
+3399 +     from pydantic_ai.durable_exec.prefect._cache_policies import (
+3400 +         _replace_toolset_tools,  # pyright: ignore[reportPrivateUsage]
+3401 +     )
+3402 |
+3403 |     def projection(toolset: MCPToolset[None]) -> object:
+3404 |         tool = ToolsetTool(
+
+error[I001][*]: Import block is un-sorted or un-formatted
+   --> tests\harness\modal_sandbox\test_modal_sandbox.py:456:9
+    |
+454 | def test_removed_name_fails_a_from_import_with_the_guidance() -> None:
+455 |     with pytest.raises(ImportError, match='ModalSandboxBackend'):
+456 |         from pydantic_ai_harness.modal_sandbox import ModalSandboxSession  # noqa: F401  # pyright: ignore[reportUnusedImport]
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+help: Organize imports
+453 |
+454 | def test_removed_name_fails_a_from_import_with_the_guidance() -> None:
+455 |     with pytest.raises(ImportError, match='ModalSandboxBackend'):
+    -         from pydantic_ai_harness.modal_sandbox import ModalSandboxSession  # noqa: F401  # pyright: ignore[reportUnusedImport]
+456 +         from pydantic_ai_harness.modal_sandbox import (
+457 +             ModalSandboxSession,  # noqa: F401  # pyright: ignore[reportUnusedImport]
+458 +         )
+459 |
+460 |
+461 | def test_other_missing_names_are_attribute_errors() -> None:
+
+Found 3 errors.
+[*] 3 fixable with the `--fix` option.

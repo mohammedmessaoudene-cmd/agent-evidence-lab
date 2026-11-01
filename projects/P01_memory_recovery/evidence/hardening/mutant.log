@@ -1,0 +1,265 @@
+CONTROLLED_RUNTIME {"executable": "{LOCAL_PATH}", "no_site": 1, "sources": {"pydantic_ai": "{LOCAL_PATH}", "pydantic_graph": "{LOCAL_PATH}", "pydantic_ai_harness": "{LOCAL_PATH}", "dbos": "{LOCAL_PATH}"}}
+PLUGIN registered: <_pytest.config.PytestPluginManager object at 0xREDACTED>
+PLUGIN registered: <_pytest.config.Config object at 0xREDACTED>
+PLUGIN registered: <module '_pytest.mark' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.main' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.runner' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.fixtures' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.helpconfig' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.python' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.terminal' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.debugging' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.unittest' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.capture' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.skipping' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.legacypath' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.tmpdir' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.monkeypatch' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.recwarn' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.pastebin' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.assertion' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.junitxml' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.doctest' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.setuponly' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.setupplan' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.unraisableexception' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.threadexception' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.warnings' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.logging' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.reports' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.faulthandler' from '{LOCAL_PATH}'>
+PLUGIN registered: <module '_pytest.subtests' from '{LOCAL_PATH}'>
+PLUGIN registered: <module 'anyio.pytest_plugin' from '{LOCAL_PATH}'>
+PLUGIN registered: <module 'cassetter.pytest_plugin' from '{LOCAL_PATH}'>
+PLUGIN registered: <module 'inline_snapshot.pytest_plugin' from '{LOCAL_PATH}'>
+PLUGIN registered: <module 'pytest_mock' from '{LOCAL_PATH}'>
+PLUGIN registered: <module 'xdist.plugin' from '{LOCAL_PATH}'>
+PLUGIN registered: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=5 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0xREDACTED>' mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=7 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0xREDACTED>' mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=3 _state='started' tmpfile=<_io.TextIOWrapper name='nul' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+PLUGIN registered: <module 'tests.conftest' from '{LOCAL_PATH}'>
+PLUGIN registered: <module 'tests.harness.conftest' from '{LOCAL_PATH}'>
+PLUGIN registered: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+PLUGIN registered: <module 'tests.cost_guards' from '{LOCAL_PATH}'>
+PLUGIN registered: <inline_snapshot.pytest_plugin.InlineSnapshotPlugin object at 0xREDACTED>
+PLUGIN registered: <_pytest.junitxml.LogXML object at 0xREDACTED>
+PLUGIN registered: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+PLUGIN registered: <_pytest.terminal.TerminalReporter object at 0xREDACTED>
+PLUGIN registered: <module '_pytest.terminalprogress' from '{LOCAL_PATH}'>
+PLUGIN registered: <_pytest.logging.LoggingPlugin object at 0xREDACTED>
+PLUGIN registered: <_pytest.fixtures.FixtureManager object at 0xREDACTED>
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
+using: pytest-9.1.1
+registered third-party plugins:
+  pytest-mock-3.17.0 at {LOCAL_PATH}
+active plugins:
+    2029697775952       : <_pytest.config.PytestPluginManager object at 0xREDACTED>
+    pytestconfig        : <_pytest.config.Config object at 0xREDACTED>
+    stepwise            : None
+    pytest_stepwise     : None
+    cacheprovider       : None
+    pytest_cacheprovider: None
+    mark                : {LOCAL_PATH}
+    main                : {LOCAL_PATH}
+    runner              : {LOCAL_PATH}
+    fixtures            : {LOCAL_PATH}
+    helpconfig          : {LOCAL_PATH}
+    python              : {LOCAL_PATH}
+    terminal            : {LOCAL_PATH}
+    debugging           : {LOCAL_PATH}
+    unittest            : {LOCAL_PATH}
+    capture             : {LOCAL_PATH}
+    skipping            : {LOCAL_PATH}
+    legacypath          : {LOCAL_PATH}
+    tmpdir              : {LOCAL_PATH}
+    monkeypatch         : {LOCAL_PATH}
+    recwarn             : {LOCAL_PATH}
+    pastebin            : {LOCAL_PATH}
+    assertion           : {LOCAL_PATH}
+    junitxml            : {LOCAL_PATH}
+    doctest             : {LOCAL_PATH}
+    setuponly           : {LOCAL_PATH}
+    setupplan           : {LOCAL_PATH}
+    unraisableexception : {LOCAL_PATH}
+    threadexception     : {LOCAL_PATH}
+    warnings            : {LOCAL_PATH}
+    logging             : {LOCAL_PATH}
+    reports             : {LOCAL_PATH}
+    faulthandler        : {LOCAL_PATH}
+    subtests            : {LOCAL_PATH}
+    anyio.pytest_plugin : {LOCAL_PATH}
+    cassetter.pytest_plugin: {LOCAL_PATH}
+    inline_snapshot.pytest_plugin: {LOCAL_PATH}
+    pytest_mock         : {LOCAL_PATH}
+    xdist.plugin        : {LOCAL_PATH}
+    capturemanager      : <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=5 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0xREDACTED>' mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=7 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0xREDACTED>' mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=3 _state='started' tmpfile=<_io.TextIOWrapper name='nul' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+    {CHECKOUT}\tests\conftest.py: {CHECKOUT}\tests\conftest.py
+    {CHECKOUT}\tests\harness\conftest.py: {CHECKOUT}\tests\harness\conftest.py
+    session             : <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+    pydantic_ai_cost_guards: {CHECKOUT}\tests\cost_guards.py
+    inline-snapshot-plugin: <inline_snapshot.pytest_plugin.InlineSnapshotPlugin object at 0xREDACTED>
+    2029792110224       : <_pytest.junitxml.LogXML object at 0xREDACTED>
+    legacypath-tmpdir   : <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+    terminalreporter    : <_pytest.terminal.TerminalReporter object at 0xREDACTED>
+    terminalprogress    : {LOCAL_PATH}
+    logging-plugin      : <_pytest.logging.LoggingPlugin object at 0xREDACTED>
+    funcmanage          : <_pytest.fixtures.FixtureManager object at 0xREDACTED>
+rootdir: {CHECKOUT}
+configfile: pyproject.toml
+plugins: mock-3.17.0
+collected 2 items
+
+tests\harness\memory\test_dbos_recovery.py F                             [ 50%]
+tests\harness\memory\test_memory.py .                                    [100%]
+
+================================== FAILURES ===================================
+___ TestMemoryDBOSRecovery.test_recovery_restores_snapshot_after_compaction ___
+
+self = <tests.harness.memory.test_dbos_recovery.TestMemoryDBOSRecovery object at 0xREDACTED>
+dbos = <dbos._dbos.DBOS object at 0xREDACTED>
+
+    async def test_recovery_restores_snapshot_after_compaction(self, dbos: DBOS) -> None:
+        reads: list[str] = []
+        sent: list[list[str]] = []
+        compacted: list[tuple[list[str], list[str]]] = []
+        interrupted = False
+    
+        class CountingStore(InMemoryStore):
+            async def read(self, path: str, *, max_chars: int) -> MemoryFile | None:
+                reads.append(path)
+                return await super().read(path, max_chars=max_chars)
+    
+        class InterruptThenCompact(SlidingWindowCompaction[object]):
+            async def before_model_request(
+                self, ctx: RunContext[object], request_context: ModelRequestContext
+            ) -> ModelRequestContext:
+                nonlocal interrupted
+                if ctx.run_step == 2 and not interrupted:
+                    interrupted = True
+                    raise _Crash
+                return await super().before_model_request(ctx, request_context)
+    
+            async def compact(self, messages: list[ModelMessage], ctx: RunContext[object]) -> list[ModelMessage]:
+                before = _snapshots(messages)
+                result = await super().compact(messages, ctx)
+                compacted.append((before, _snapshots(result)))
+                return result
+    
+        store = CountingStore({'main/MEMORY.md': '- version A'})
+        original = await store.read('main/MEMORY.md', max_chars=100)
+        assert original is not None
+        reads.clear()
+    
+        def model(messages: list[ModelMessage], info: AgentInfo) -> ModelResponse:
+            sent.append(_snapshots(messages))
+            if len(sent) < 5:
+                return ModelResponse(parts=[ToolCallPart('lookup', {}, tool_call_id=f'call-{len(sent)}')])
+            return ModelResponse(parts=[TextPart('done')])
+    
+        def lookup() -> str:
+            return 'found'
+    
+        agent = Agent(
+            FunctionModel(model),
+            name='memory_recovery',
+            tools=[lookup],
+            capabilities=[
+                InterruptThenCompact(max_messages=4, keep_messages=2, preserve_first_user_message=False),
+                Memory(store=store),
+                DBOSDurability(),
+            ],
+        )
+    
+        @DBOS.workflow(name='memory_recovery')
+        async def workflow() -> str:
+            return (await agent.run('what do I like?')).output
+    
+        workflow_id = uuid4().hex
+        with SetWorkflowID(workflow_id), pytest.raises(_Crash):
+            await workflow()
+    
+        assert len(sent) == 1
+        assert reads == ['main/MEMORY.md']
+        assert compacted == []
+        status = await DBOS.get_workflow_status_async(workflow_id)
+        assert status is not None and status.status == 'PENDING'
+        initial_steps = await DBOS.list_workflow_steps_async(workflow_id)
+        await store.write('main/MEMORY.md', '- version B', expected_version=original.version)
+    
+        with fail_after(10):
+            handle = await DBOS.resume_workflow_async(workflow_id)
+            assert await handle.get_result() == 'done'
+        [snapshot] = sent[0]
+        assert '- version A' in snapshot
+>       assert sent == [[snapshot]] * 5
+E       AssertionError: assert [['<memory>\n...\n</memory>']] == [['<memory>\n...\n</memory>']]
+E         
+E         At index 1 diff: ['<memory>\n### MEMORY.md\n\n- version B\n</memory>'] != ['<memory>\n### MEMORY.md\n\n- version A\n</memory>']
+E         Use -v to get more diff
+
+tests\harness\memory\test_dbos_recovery.py:158: AssertionError
+---------------------------- Captured stderr setup ----------------------------
+17:23:53 [    INFO] (dbos:_dbos.py:492) Initializing DBOS (v2.29.0)
+17:23:53 [    INFO] (dbos:_dbos.py:558) Executor ID: local
+17:23:53 [    INFO] (dbos:_dbos.py:559) Application version: d0a275c3c0fe2d8ef7d904cdcbd64120
+17:23:53 [    INFO] (dbos:_sys_db.py:596) Initializing DBOS system database with URL: sqlite:///{LOCAL_DATABASE_PATH} (schema: dbos)
+17:23:53 [    INFO] (dbos:_sys_db.py:600) Using SQLite as a system database. The SQLite system database is for development and testing. PostgreSQL is recommended for production use.
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 1
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 2
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 3
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 4
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 5
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 6
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 7
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 8
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 9
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 10
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 11
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 12
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 13
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 14
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 15
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 16
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 17
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 18
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 19
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 20
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 21
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 22
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 23
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 24
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 25
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 26
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 27
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 28
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 29
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 30
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 31
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 32
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 33
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 34
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 35
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 36
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 37
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 38
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 39
+17:23:53 [    INFO] (dbos:_sys_db_sqlite.py:87) Applying DBOS SQLite system database schema migration 40
+17:23:53 [    INFO] (dbos:_dbos.py:655) No workflows to recover from application version d0a275c3c0fe2d8ef7d904cdcbd64120
+17:23:53 [    INFO] (dbos:_queue.py:717) Listening to 0 queues:
+17:23:53 [    INFO] (dbos:_dbos.py:758) DBOS launched!
+17:23:53 [    INFO] (dbos:_dbos.py:766) To view and manage workflows, connect to DBOS Conductor at: https://console.dbos.dev/self-host?appname=memory_recovery
+---------------------------- Captured stderr call -----------------------------
+17:23:53 [    INFO] (dbos:_dbos.py:2179) Resuming workflow: a7745c49ea9b4b0ca3208fb840d68d23
+------------------------------ Captured log call ------------------------------
+INFO     dbos:_dbos.py:2179 Resuming workflow: a7745c49ea9b4b0ca3208fb840d68d23
+-------------------------- Captured stderr teardown ---------------------------
+17:23:55 [    INFO] (dbos:_queue.py:664) Stopping queue manager, joining all worker threads...
+17:23:55 [    INFO] (dbos:_dbos.py:399) DBOS successfully shut down
+---------------------------- Captured log teardown ----------------------------
+INFO     dbos:_queue.py:664 Stopping queue manager, joining all worker threads...
+INFO     dbos:_dbos.py:399 DBOS successfully shut down
+- generated xml file: {WORKDIR}\hardening_20261101_01\controlled_final\mutant.xml -
+collection of 2 tests took 1.7s
+slowest test modules to collect: tests/harness/memory/test_dbos_recovery.py (1.10s), tests/harness/memory/test_memory.py (0.45s)
+=========================== short test summary info ===========================
+FAILED tests/harness/memory/test_dbos_recovery.py::TestMemoryDBOSRecovery::test_recovery_restores_snapshot_after_compaction
+========================= 1 failed, 1 passed in 7.35s =========================

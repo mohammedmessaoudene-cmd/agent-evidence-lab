@@ -1,9 +1,9 @@
 diff --git a/tests/harness/memory/test_dbos_recovery.py b/tests/harness/memory/test_dbos_recovery.py
 new file mode 100644
-index 0000000..ade4e47
+index 0000000..5548180
 --- /dev/null
 +++ b/tests/harness/memory/test_dbos_recovery.py
-@@ -0,0 +1,153 @@
+@@ -0,0 +1,169 @@
 +"""Recover a pending DBOS workflow from its journal, then compact its memory snapshot.
 +
 +The interruption is in-process, following the other DBOS recovery tests. A deterministic
@@ -14,9 +14,11 @@ index 0000000..ade4e47
 +
 +from collections.abc import Generator
 +from pathlib import Path
++from typing import TYPE_CHECKING
 +from uuid import uuid4
 +
 +import pytest
++from anyio import fail_after
 +
 +from pydantic_ai import Agent, RunContext
 +from pydantic_ai.messages import (
@@ -37,6 +39,7 @@ index 0000000..ade4e47
 +with try_import() as imports_successful:
 +    from dbos import DBOS, DBOSConfig, SetWorkflowID
 +
++if TYPE_CHECKING or imports_successful():
 +    from pydantic_ai.durable_exec.dbos import DBOSDurability
 +
 +pytestmark = [
@@ -60,12 +63,14 @@ index 0000000..ade4e47
 +        'enable_otlp': False,
 +    }
 +    instance = DBOS(config=config)
-+    DBOS.launch()
 +    try:
++        DBOS.launch()
 +        yield instance
 +    finally:
-+        DBOS.destroy()
-+        detach_dbos_logging()
++        try:
++            DBOS.destroy()
++        finally:
++            detach_dbos_logging()
 +
 +
 +def _snapshots(messages: list[ModelMessage]) -> list[str]:
@@ -148,12 +153,23 @@ index 0000000..ade4e47
 +        assert compacted == []
 +        status = await DBOS.get_workflow_status_async(workflow_id)
 +        assert status is not None and status.status == 'PENDING'
++        initial_steps = await DBOS.list_workflow_steps_async(workflow_id)
 +        await store.write('main/MEMORY.md', '- version B', expected_version=original.version)
 +
-+        handle = await DBOS.resume_workflow_async(workflow_id)
-+        assert await handle.get_result() == 'done'
++        with fail_after(10):
++            handle = await DBOS.resume_workflow_async(workflow_id)
++            assert await handle.get_result() == 'done'
 +        [snapshot] = sent[0]
 +        assert '- version A' in snapshot
 +        assert sent == [[snapshot]] * 5
 +        assert compacted == [([snapshot], [])] * 3
 +        assert reads == ['main/MEMORY.md']
++        steps = await DBOS.list_workflow_steps_async(workflow_id)
++        assert steps[: len(initial_steps)] == initial_steps
++        [loaded] = [
++            step for step in steps if step['function_name'] == 'memory_recovery__capability__memory.load_snapshot'
++        ]
++        assert loaded['error'] is None and loaded['output'] is not None
++        assert loaded['output'].value == (original, [], False, None)
++        status = await DBOS.get_workflow_status_async(workflow_id)
++        assert status is not None and status.status == 'SUCCESS'

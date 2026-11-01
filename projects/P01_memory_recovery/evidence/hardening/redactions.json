@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "source_record": "hardening_20261101_01/controlled_final/baseline.log",
+      "published_file": "evidence/hardening/baseline.log",
+      "original_sha256": "52f941a96a4d6e011b806927f6eed725d2923d05a89d1da1c8bc5e3c285ae4a4",
+      "published_sha256": "95d2cb0add6ab16e0f8563549bbe786f05c2eb35d6030aab38caf6a17affa58c",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    },
+    {
+      "source_record": "hardening_20261101_01/controlled_final/baseline.xml",
+      "published_file": "evidence/hardening/baseline.xml",
+      "original_sha256": "8f83a283c36ce9cf54221c449cb4537bc0cb2d80ed88933a5a6b26bacf1e694b",
+      "published_sha256": "bc0fd71a4ae13bbfc2822e86a604ce1587e752e05d0f0c95a6cdab50b03daed4",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    },
+    {
+      "source_record": "hardening_20261101_01/controlled_final/mutant.log",
+      "published_file": "evidence/hardening/mutant.log",
+      "original_sha256": "2c44d3ffacdd1b03bef0b501ad372e2f333524c3ab59f5a4d4d75e205a9e4ce0",
+      "published_sha256": "03f628ef451b89fb6382a22512c82b8ab885dfbc810e04a6249fda3836824e20",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    },
+    {
+      "source_record": "hardening_20261101_01/controlled_final/mutant.xml",
+      "published_file": "evidence/hardening/mutant.xml",
+      "original_sha256": "0abc68f915cc00feb966ed7196c1a18b44634a04f11a04d291539b3abf7ab908",
+      "published_sha256": "e7f3bdc719bc911f0e565fbc6cd6759fb8a304c0b8750ed9ddf6c8017a8890d7",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    },
+    {
+      "source_record": "hardening_20261101_01/pyright_final.json",
+      "published_file": "evidence/hardening/pyright.json",
+      "original_sha256": "fa8e7c223da78cf723fe545d4ae847e1c2d9dbfc2c07b42ef41094ff69e0e5a4",
+      "published_sha256": "fa8e7c223da78cf723fe545d4ae847e1c2d9dbfc2c07b42ef41094ff69e0e5a4",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    },
+    {
+      "source_record": "hardening_20261101_01/ruff_check.log",
+      "published_file": "evidence/hardening/ruff_repository.log",
+      "original_sha256": "7850e1d18b394af666a638ba08bed7a361c8f9b8e02a494c38c14b8c7d58c86f",
+      "published_sha256": "7850e1d18b394af666a638ba08bed7a361c8f9b8e02a494c38c14b8c7d58c86f",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    },
+    {
+      "source_record": "hardening_20261101_01/ruff_format.log",
+      "published_file": "evidence/hardening/ruff_format.log",
+      "original_sha256": "659d3b8367cec43957aa9e0bf4e831c18f9fb4fb1ce69c47c70452f611987f8b",
+      "published_sha256": "659d3b8367cec43957aa9e0bf4e831c18f9fb4fb1ce69c47c70452f611987f8b",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    },
+    {
+      "source_record": "hardening_20261101_01/error_paths.json",
+      "published_file": "evidence/hardening/error_paths.json",
+      "original_sha256": "23c3b4fff623ce16c62582620ebc9b977fddd1439e2ee5404837b4fd65f81380",
+      "published_sha256": "23c3b4fff623ce16c62582620ebc9b977fddd1439e2ee5404837b4fd65f81380",
+      "transformation": "Private absolute paths, host identifiers and object addresses redacted; UTF-8 without BOM."
+    }
+  ]
+}
