@@ -1,0 +1,6 @@
+cases.json
+fixtures/
+results/
+.local/
+__pycache__/
+*.pyc
