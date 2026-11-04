@@ -95,3 +95,51 @@ The original eighteen generated cases and historical reports remain unchanged.
 The scenario and three dispatch-guard mutations were proposed by
 [piiiico](https://github.com/probityai/agent-evidence-vectors/issues/352#issuecomment-6601133451).
 A surviving equivalent mutation is not counted as a detected defect.
+
+## Required dispatch-state output (v0.2 proposal, 2026-11-04)
+
+Decision in response to [Pico's M4 witness](https://github.com/probityai/agent-evidence-vectors/issues/435#issuecomment-6626271127):
+`dispatch_state` is a required observable output in the **state-aware extension**,
+not an internal detail. Its identifier is `execution-billing-finality/v0.2-proposal`.
+The eighteen v0.1 fixtures, their seven-field reader, and their historical evidence
+remain unchanged. The v0.2 observer/reader are `p04_state_adapter.py` and
+`run_m4_review.py`; a v0.1 pass alone does not establish this additional requirement.
+
+For X1's existing reserved attempt and accepted trusted final invoice, the required
+projection is execution UNKNOWN, billing FINAL, known cost 1, held cost 0,
+available 2, unbounded false, frozen false, and **dispatch_state POSSIBLE**.
+POSSIBLE is conservative local bookkeeping: no absence of external execution has
+been established. It is neither proof that a dispatch occurred nor an external
+effect verdict. `external_effect` must remain NOT_EVALUATED. RESERVED is likewise
+not general-purpose evidence that an external action never occurred.
+
+The required projection must be visible immediately after the invoice, after
+normal fresh-process reopening, after the refused same-attempt dispatch, after
+replaying the identical invoice event, and after a later equal cost observation.
+The identical invoice replay must be non-new/non-finalizing. The equal cost
+observation must not repair a previously RESERVED attempt or report a change to
+its attempt-state projection. `state_changed` describes that projection, not the
+append-only events table. This is a source-specific proposed profile, not a
+universal billing protocol.
+
+The v0.2 adapter takes `scenario.json --json`, optionally `--source PATH` for
+isolated mutation testing. Input contains exactly contract, id, budget, steps
+and probes; no oracle fields. It reports contract, case, source_sha256, initial,
+steps, observed, reopened, probes, end, end_reopened, external_effect and
+must_not_claim. Every observed projection includes dispatch_state. Each action
+record carries exception, return and observed. Probes execute in a new interpreter;
+end_reopened is an additional ledger instance in that interpreter, not another
+host or crash test. A successful observation exits 0; operational failures exit 2.
+
+The reader checks identity and claim boundaries, exact projected keys/types,
+initial state, post-invoice/reopened/end state, action counts, each action's
+state and exception, and selected exact-boolean returns. Missing, null, wrong-type
+or RESERVED dispatch_state must fail. A correct first-dispatch positive control
+prevents an always-refuse implementation from being endorsed. The original
+parser/resource-limit exclusions continue to apply.
+
+M4 is now a distinguishable contract defect: the unchanged source satisfies this
+output, whereas deleting the invoice's POSSIBLE write violates it. M3 remains a
+surviving control under the unchanged source's reachable-state invariant. M5
+remains detected. No claim of unsafe execution in the original source follows.
+Credit for the public-API witness and this contract question remains with piiiico.

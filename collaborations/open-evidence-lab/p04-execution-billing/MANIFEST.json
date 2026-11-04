@@ -18,8 +18,8 @@
     },
     {
       "path": "INPUT_CONTRACT.md",
-      "bytes": 7986,
-      "sha256": "f6741aa297b5117f109f9e00265b37e9b02c01aacb2c2314eec7a4b3b794f4e5"
+      "bytes": 11206,
+      "sha256": "ecaa5c6097e6d4acfe6fcc1e3722e64edb27161f5baa1b5ac675f61850ee6ee8"
     },
     {
       "path": "LICENSE",
@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5600,
-      "sha256": "cc31769642b948b662ce2d1ddacb43008e82dcc7ac8ea9dd1420871c15a989a7"
+      "bytes": 7417,
+      "sha256": "e84bbce3644e75d231b0becb41bb216f4eef9857bb20ab30ff1135056b8e28dd"
     },
     {
       "path": "REVIEW_X1.md",
@@ -62,6 +62,11 @@
       "sha256": "376e899ba840678838f209ad909ae81859e04df09007ec3da8fa6ec7ce73756f"
     },
     {
+      "path": "evidence/m4_summary.json",
+      "bytes": 4177,
+      "sha256": "bf940c53be8784ef6dca30558d330f9bb739a8360cd0f2bd1812220ea0b157d6"
+    },
+    {
       "path": "evidence/native_summary.json",
       "bytes": 2641,
       "sha256": "2dedf4ef7a72f235e76ae5cbe100a1bcb375a338a8d54b76525e668813d68bc7"
@@ -87,9 +92,19 @@
       "sha256": "d25c6e9a2e59bd27e61f2c44a7e7efa817eae01a9b40f07d121f77e266eca418"
     },
     {
+      "path": "p04_state_adapter.py",
+      "bytes": 3765,
+      "sha256": "ce364326c439159f43154cfdbda3f0b265dac0af5a9716bada3a33f06bf49a3b"
+    },
+    {
       "path": "run_adapter_contract.py",
       "bytes": 4088,
       "sha256": "82b7b658f189965b06e29a0f95698b794bb3338200aedf9f8ea8d8cc2495c4ed"
+    },
+    {
+      "path": "run_m4_review.py",
+      "bytes": 9599,
+      "sha256": "a28ab35f33c11e42196cc4c12ef7d3824f380667ab09b716d1b25c5921e56549"
     },
     {
       "path": "run_review.py",

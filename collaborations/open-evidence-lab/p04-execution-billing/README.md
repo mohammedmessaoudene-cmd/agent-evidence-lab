@@ -45,11 +45,11 @@ The source was rerun on **2026-11-03, Linux, Python 3.13.5, SQLite 3.46.1**:
 
 ## Limits and provenance
 
-This is a same-team, AI-assisted local experiment, not independent validation. Normal reopening is not abrupt-crash, power-loss or distributed durability testing. The original full P04 suite, Windows, real billing/effect providers, P06, ZTI-MCP and the Probity CLI were **not** run in this candidate. P04's own historical results retain their original scope.
+This is a same-team, AI-assisted local experiment, not independent validation. Normal reopening is not abrupt-crash, power-loss or distributed durability testing. The original 3 November candidate run did **not** exercise the full P04 suite, Windows, real billing/effect providers, P06, ZTI-MCP or the Probity CLI. Later hosted Ubuntu/Windows checks have their own commit-specific receipts; they do not rewrite that historical run. P04's own historical results retain their original scope.
 
 A successful fixture does not prove invoice authenticity, an external business effect, global exactly-once execution, a production cost ceiling or upstream acceptance. See [SOURCE_PIN.json](SOURCE_PIN.json), [NOTICE.md](NOTICE.md) and the scoped [MANIFEST.json](MANIFEST.json). The manifest checks bytes, not authenticity or scientific validity.
 
-This proposal lives on a separate branch. The root publication manifest now inventories this subtree as well as the original files. The historical manifest and reports remain available at the pinned parent commits; this directory's manifest also checks the candidate in isolation. Related P06 and ZTI-MCP ideas are listed separately in [FOLLOWUPS.md](FOLLOWUPS.md), not presented as integrations.
+This proposal was developed on a separate branch; merging it in this author repository is not upstream adoption. The root publication manifest now inventories this subtree as well as the original files. The historical manifest and reports remain available at the pinned parent commits; this directory's manifest also checks the candidate in isolation. Related P06 and ZTI-MCP ideas are listed separately in [FOLLOWUPS.md](FOLLOWUPS.md), not presented as integrations.
 
 ## X1 follow-up
 
@@ -71,3 +71,32 @@ is retained as a surviving control, not reported as a kill. The X1 adapter run,
 two malformed-output checks and four boundary controls are reported separately.
 See [REVIEW_X1.md](REVIEW_X1.md) and [the new local record](evidence/x1_summary.json).
 Historical evidence files above are not rewritten to claim these new checks.
+
+## M4 follow-up: required public state, not a ledger repair
+
+The state-aware **v0.2 proposal** makes dispatch_state=POSSIBLE normative after
+X1's accepted pre-dispatch invoice, through normal reopening, refused dispatch,
+invoice replay and a later equal cost observation. This does not claim an external
+effect. Credit: [piiiico's M4 witness](https://github.com/probityai/agent-evidence-vectors/issues/435#issuecomment-6626271127).
+The ledger, generator, original eighteen inputs and earlier results are unchanged.
+The old seven-field v0.1 reader remains a historical/baseline control; it cannot
+qualify the additional output requirement.
+
+After the existing commands, run:
+
+```sh
+python -S -B run_m4_review.py --out results/m4
+```
+
+The command freezes its expectations before executing an observer in separate
+processes. The original and M3 meet the new contract; M1, M2, M4 and M5 do not.
+It checks missing/incorrect state outputs, exact boolean types, unsupported effect
+claims and an ordinary-dispatch positive control. The [local summary](evidence/m4_summary.json)
+records actual versions and source hashes. `results/m4` contains the full observations
+and isolated mutation sources; reruns require a new output path.
+
+This extension tightens a test contract, not the P04 implementation. Its repeated
+stages and mutation observations are not additional independent scenarios.
+Historical `evidence/x1_summary.json` describes the earlier seven-field judgment,
+including the formerly surviving M4; it has not been rewritten. Current hosted
+CI results must be read from the actual run on the corresponding commit.
