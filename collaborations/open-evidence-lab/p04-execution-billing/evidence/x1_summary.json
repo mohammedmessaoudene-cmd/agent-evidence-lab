@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "run_utc": "2026-11-04T00:11:32.612437+00:00",
+  "os": "Linux",
+  "python": "3.13.5",
+  "sqlite": "3.46.1",
+  "historical_candidate_commit": "c7edf5abbdb920e115d791f686bc04cf0524b481",
+  "upstream_git_blob": "3b9599c4fa1063156b28aea0588634f9ca04cefe",
+  "upstream_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+  "runner_sha256": "e5ba43b40641ab144a6af6cee3f1a0266ddfe115ec054e06fa93db846a4a685c",
+  "cases_sha256": "38b7a100b029232449463b4d31c8eb2ec0ffe96ce71a23a879f882bb1d3e1929",
+  "X1_sha256": "5de8f5a1fe41281f67013ca98d16936ade7e35095cbcabd45adba4af8845f650",
+  "distinct_scenarios": 19,
+  "variants_including_baseline": 6,
+  "matrix_observations": 114,
+  "rows": [
+    {
+      "variant": "baseline",
+      "source_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+      "original_cases": 18,
+      "original_cases_matching": 18,
+      "X1_matches_expected_refusal": true,
+      "X1_dispatch_allowed": false,
+      "X1_dispatch_state_after_invoice": "POSSIBLE",
+      "failed_cases": [],
+      "matches_predeclared_mutation_behavior": true,
+      "operational_errors": []
+    },
+    {
+      "variant": "M1_guard_removed",
+      "source_sha256": "6d1b40813ea303355eed2a27d5266175766282ad27bf96a43be472eca81e1c0e",
+      "original_cases": 18,
+      "original_cases_matching": 14,
+      "X1_matches_expected_refusal": false,
+      "X1_dispatch_allowed": true,
+      "X1_dispatch_state_after_invoice": "POSSIBLE",
+      "failed_cases": [
+        "F03",
+        "F04",
+        "F08",
+        "F09",
+        "X1"
+      ],
+      "matches_predeclared_mutation_behavior": true,
+      "operational_errors": []
+    },
+    {
+      "variant": "M2_final_billing_bypasses_guard",
+      "source_sha256": "33b32e212337fd073d982e3d9c5c390819a90074d422f80f90bd6006ef30a565",
+      "original_cases": 18,
+      "original_cases_matching": 15,
+      "X1_matches_expected_refusal": false,
+      "X1_dispatch_allowed": true,
+      "X1_dispatch_state_after_invoice": "POSSIBLE",
+      "failed_cases": [
+        "F04",
+        "F08",
+        "F09",
+        "X1"
+      ],
+      "matches_predeclared_mutation_behavior": true,
+      "operational_errors": []
+    },
+    {
+      "variant": "M3_billing_clause_removed",
+      "source_sha256": "9eb322942918eddc70879a6690275962c8e20d71532f804b230efd8ba0f84eec",
+      "original_cases": 18,
+      "original_cases_matching": 18,
+      "X1_matches_expected_refusal": true,
+      "X1_dispatch_allowed": false,
+      "X1_dispatch_state_after_invoice": "POSSIBLE",
+      "failed_cases": [],
+      "matches_predeclared_mutation_behavior": true,
+      "operational_errors": []
+    },
+    {
+      "variant": "M4_invoice_possible_write_removed",
+      "source_sha256": "3431d1e34fd4521b1145383c0ed214d639ab18ee82b5676cc2ba4d2923e3e0b2",
+      "original_cases": 18,
+      "original_cases_matching": 18,
+      "X1_matches_expected_refusal": true,
+      "X1_dispatch_allowed": false,
+      "X1_dispatch_state_after_invoice": "RESERVED",
+      "failed_cases": [],
+      "matches_predeclared_mutation_behavior": true,
+      "operational_errors": []
+    },
+    {
+      "variant": "M5_M3_plus_M4",
+      "source_sha256": "6227987ef6563e2e1e4d648fd7d2b83e908d35cc36868334443863c4e191b0bc",
+      "original_cases": 18,
+      "original_cases_matching": 18,
+      "X1_matches_expected_refusal": false,
+      "X1_dispatch_allowed": true,
+      "X1_dispatch_state_after_invoice": "RESERVED",
+      "failed_cases": [
+        "X1"
+      ],
+      "matches_predeclared_mutation_behavior": true,
+      "operational_errors": []
+    }
+  ],
+  "X1_adapter_failures": [],
+  "X1_reader_probes": [
+    {
+      "probe": "unsafe_dispatch",
+      "failures": [
+        "probes"
+      ]
+    },
+    {
+      "probe": "integer_is_not_boolean",
+      "failures": [
+        "probes"
+      ]
+    }
+  ],
+  "boundary_controls": [
+    {
+      "control": "ordinary_first_dispatch",
+      "observed": "allowed",
+      "pass": true
+    },
+    {
+      "control": "invoice_unknown_attempt",
+      "observed": "UnknownAttempt",
+      "pass": true
+    },
+    {
+      "control": "invoice_wrong_role",
+      "observed": "EvidenceValidationError",
+      "pass": true
+    },
+    {
+      "control": "invoice_after_fenced_non_dispatch",
+      "observed": "EvidenceConflict",
+      "pass": true
+    }
+  ],
+  "interpretation": {
+    "invoice_before_recorded_dispatch": "ACCEPTED_FOR_EXISTING_RESERVED_ATTEMPT_WITH_TRUSTED_VALID_EVIDENCE",
+    "baseline_has_demonstrated_safety_bug": false,
+    "new_case_detects_previously_uncovered_double_mutation": true,
+    "M3": "equivalent for public-API reachable states in unchanged source; not a killed mutant",
+    "M4": "survives the selected gate test, but changes internal dispatch_state; not globally equivalent",
+    "external_effect": "NOT_EVALUATED"
+  },
+  "limits": [
+    "same-assistant local reproduction, not independent validation",
+    "normal fresh-process reopen, not crash or power-loss proof",
+    "no real invoice or external effect; trusted synthetic evidence",
+    "no Probity CLI, no other operating systems in this execution, no full P04 suite",
+    "test runner performs no remote code modification or publication",
+    "114 matrix observations are not 114 independent experiments"
+  ]
+}

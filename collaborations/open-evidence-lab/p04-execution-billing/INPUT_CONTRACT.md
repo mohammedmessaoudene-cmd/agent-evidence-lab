@@ -65,3 +65,33 @@ F01 is the other direction: observed SUCCEEDED without an invoice leaves billing
 ## Route to Probity
 
 Start as a Lab example or scoped discussion. Do not change `uncertain-effect/v1`, its reason codes or existing expectations. A future sibling corpus would require a proposal-labeled pinned specification, generated fixtures, derived manifests/counts, condition registration where required, appropriate release wiring, upstream tests and maintainer review. No such integration is claimed by this kit.
+
+## Invoice before a locally recorded dispatch (X1 clarification, 2026-11-04)
+
+Yes: a valid final-invoice observation for an **already registered and reserved
+attempt** is an admitted input even when this ledger has not recorded a dispatch
+for that attempt. The fixture does not require a prior `dispatch` or `unknown`
+command before `invoice`. This clarifies the existing implementation; it does
+not assert a real provider event or authorize bypassing a dispatch gate.
+
+"No dispatch recorded here" is not a verified claim that no external action
+occurred. A valid invoice settles the billing axis only: the execution outcome
+remains UNKNOWN, `external_effect` remains NOT_EVALUATED, and the same attempt
+must not gain permission to dispatch. The implementation conservatively stores
+`dispatch_state=POSSIBLE`; that marker is not evidence of a real dispatch.
+These restrictions must survive normal process reopening.
+
+This is not unconditional acceptance of every invoice. An invoice for an
+unregistered attempt is rejected. Wrong evidence role or attempt binding is
+rejected. Contradiction of established finality, including prior fenced
+non-dispatch, remains a conflict; it does not reopen the gate. Real invoice
+authentication and reliable association with an attempt remain outside the fixture.
+
+X1 reserves A for two units under budget three, accepts an invoice for one unit,
+then probes dispatch in a fresh process. Expected: execution UNKNOWN, billing
+FINAL, known cost one, held zero, available two, and dispatch_allowed=false.
+The original eighteen generated cases and historical reports remain unchanged.
+`run_x1_review.py` freezes X1 separately and evaluates that nineteen-case extension.
+The scenario and three dispatch-guard mutations were proposed by
+[piiiico](https://github.com/probityai/agent-evidence-vectors/issues/352#issuecomment-6601133451).
+A surviving equivalent mutation is not counted as a detected defect.

@@ -1,6 +1,6 @@
 # P04: execution completion is not billing finality
 
-A focused candidate for [Open Evidence Lab #352](https://github.com/probityai/agent-evidence-vectors/issues/352), by Mohammed Messaoudene, prepared and checked with AI assistance. **Proposal only: not accepted or integrated upstream.**
+A focused candidate for [Open Evidence Lab #352](https://github.com/probityai/agent-evidence-vectors/issues/352), by Mohammed Messaoudene, prepared and checked with AI assistance. **Accepted in discussion as a Lab example; not merged into an upstream corpus.**
 
 ## The case
 
@@ -49,4 +49,25 @@ This is a same-team, AI-assisted local experiment, not independent validation. N
 
 A successful fixture does not prove invoice authenticity, an external business effect, global exactly-once execution, a production cost ceiling or upstream acceptance. See [SOURCE_PIN.json](SOURCE_PIN.json), [NOTICE.md](NOTICE.md) and the scoped [MANIFEST.json](MANIFEST.json). The manifest checks bytes, not authenticity or scientific validity.
 
-This proposal lives on a separate branch. The root historical publication manifest is unchanged and does not certify this added subtree; use this directory's manifest. Related P06 and ZTI-MCP ideas are listed separately in [FOLLOWUPS.md](FOLLOWUPS.md), not presented as integrations.
+This proposal lives on a separate branch. The root publication manifest now inventories this subtree as well as the original files. The historical manifest and reports remain available at the pinned parent commits; this directory's manifest also checks the candidate in isolation. Related P06 and ZTI-MCP ideas are listed separately in [FOLLOWUPS.md](FOLLOWUPS.md), not presented as integrations.
+
+## X1 follow-up
+
+The clarification in `INPUT_CONTRACT.md` admits an invoice before any **locally
+recorded** dispatch for an already reserved attempt. It does not infer a real
+external action from that invoice. Credit for X1 and the dispatch-guard mutation
+challenge belongs to piiiico in Open Evidence Lab #352.
+
+After the commands above, run:
+
+```sh
+python -S -B run_x1_review.py --out results/x1
+```
+
+This separately evaluates the eighteen unchanged historical cases plus X1, the
+three proposed guard mutations, an isolated invoice-state mutation and their
+combined mutation. A mutation that is equivalent on reachable public-API states
+is retained as a surviving control, not reported as a kill. The X1 adapter run,
+two malformed-output checks and four boundary controls are reported separately.
+See [REVIEW_X1.md](REVIEW_X1.md) and [the new local record](evidence/x1_summary.json).
+Historical evidence files above are not rewritten to claim these new checks.

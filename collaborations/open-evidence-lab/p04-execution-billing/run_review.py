@@ -160,7 +160,7 @@ def main():
        'fresh_process_reopens_matching':sum(r.get('fresh_process_snapshot_equal',False) for r in base),
        'fresh_process_probe_cases':sum(bool(c.get('probes')) for c in fixture['cases']),'selected_mutants':len(mutants),'detected_mutants':sum(m['detected'] for m in mutants),'mutants':mutants,
        'scope':'same-session AI-assisted targeted tests of unchanged P04 source; not original full suite; not independent external validation',
-       'not_run':['Probity CLI or corpus','P06 provider','ZTI MCP clients','original P04 full test suite','remote effect owner','real billing provider','Windows']}
+       'not_run':['Probity CLI or corpus','P06 provider','ZTI MCP clients','original P04 full test suite','remote effect owner','real billing provider','other operating systems in this execution']}
     (out/'summary.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))
     if result['status']!='PASS':raise SystemExit(1)

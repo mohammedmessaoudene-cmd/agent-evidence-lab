@@ -14,6 +14,11 @@
       "sha256": "ecc77cf76e5a8967987cda508a455cb1b9d6f9c4a1e95fc6ae071a5ef072b7ff"
     },
     {
+      "path": ".github/workflows/p04-candidate.yml",
+      "bytes": 2094,
+      "sha256": "7be1ce6c5d7e3766019f1a5c0e4aff0f3f2f90c9a6b837600e6d6156f4803659"
+    },
+    {
       "path": ".gitignore",
       "bytes": 99,
       "sha256": "bf65d81d6d5b62f7dd3487005f3d1d811c6d6ec630f9fa93553fc4cad4f1e4c7"
@@ -32,6 +37,121 @@
       "path": "THIRD_PARTY_NOTICES.md",
       "bytes": 2480,
       "sha256": "2de6e25c83955efa10d2674e860777742b321f119a39132b10cde6902b7c1ee6"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/.gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/.gitignore",
+      "bytes": 57,
+      "sha256": "94e55ea92f61f47f8cbd75dfa025a46868fa336bb59dd1dde11b1b2bad68b9df"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/FOLLOWUPS.md",
+      "bytes": 2059,
+      "sha256": "a6d885f7590aec1b7e1bf4ca65fb750f55c642b11fc7677a470772293d3d3d32"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/INPUT_CONTRACT.md",
+      "bytes": 7986,
+      "sha256": "f6741aa297b5117f109f9e00265b37e9b02c01aacb2c2314eec7a4b3b794f4e5"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/LICENSE",
+      "bytes": 1077,
+      "sha256": "c3ae75209c90a84492d3ecdf1e20cec31078c093d401fce0d5e1b665b26b284e"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/MANIFEST.json",
+      "bytes": 3477,
+      "sha256": "f12328185772769a255ce73e13cea085e1c68695901355a4379f96c04a8689de"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/NOTICE.md",
+      "bytes": 1455,
+      "sha256": "2a86387660071eb777f806843a654a653f8d1fb3b32f2d59a063619d3c1d65d1"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/README.md",
+      "bytes": 5600,
+      "sha256": "cc31769642b948b662ce2d1ddacb43008e82dcc7ac8ea9dd1420871c15a989a7"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/REVIEW_X1.md",
+      "bytes": 3501,
+      "sha256": "2ae8ef34008088b980b163fcaa984e2995fc37c93c7ee9506c6ae18e3c06dccc"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/SOURCE_PIN.json",
+      "bytes": 675,
+      "sha256": "160179bf1b11d3cec96a88c89dd3193d782114078cf4524e0513eb064eca5dc6"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/check_adapter_reader.py",
+      "bytes": 2500,
+      "sha256": "2feb859bf15b0c968df46119958c571b50f3f1c2f8f7aa0a2a5650f0553e53c5"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/evidence/adapter_summary.json",
+      "bytes": 267,
+      "sha256": "ba992bc3cac70be37a8556789514b6fbaab299041de30f4a903b6ffc17f9f3a1"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/evidence/case_observations.json",
+      "bytes": 1566,
+      "sha256": "376e899ba840678838f209ad909ae81859e04df09007ec3da8fa6ec7ce73756f"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/evidence/native_summary.json",
+      "bytes": 2641,
+      "sha256": "2dedf4ef7a72f235e76ae5cbe100a1bcb375a338a8d54b76525e668813d68bc7"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/evidence/reader_probes.json",
+      "bytes": 1483,
+      "sha256": "a24df238189c7a52313f0d4f3c1a5b4aed3db7c5321d771d495afbdb21b00e3c"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/evidence/x1_summary.json",
+      "bytes": 5295,
+      "sha256": "e280047a8331cb1f19d7de511fe9d13a1f459a71a5e0d50eb44d18afcfe34a09"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/generate_cases.py",
+      "bytes": 6250,
+      "sha256": "26feb7d9349ce417e83b865ec476223f4384b3d518206a73d891916a956bc9d7"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/p04_adapter.py",
+      "bytes": 2971,
+      "sha256": "d25c6e9a2e59bd27e61f2c44a7e7efa817eae01a9b40f07d121f77e266eca418"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/run_adapter_contract.py",
+      "bytes": 4088,
+      "sha256": "82b7b658f189965b06e29a0f95698b794bb3338200aedf9f8ea8d8cc2495c4ed"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/run_review.py",
+      "bytes": 10798,
+      "sha256": "2f0992a881c72c3454ba3dbb5f772c87f36670100dc53487d935e7e985cddb46"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/run_x1_review.py",
+      "bytes": 12730,
+      "sha256": "e5ba43b40641ab144a6af6cee3f1a0266ddfe115ec054e06fa93db846a4a685c"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/upstream/exposure_ledger.py",
+      "bytes": 24455,
+      "sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-execution-billing/verify_kit.py",
+      "bytes": 2502,
+      "sha256": "57222ac30f2bbcc7aac770cd14e848af932847c7b000ab81d44940eaad2dffbe"
     },
     {
       "path": "docs/PORTFOLIO.md",
