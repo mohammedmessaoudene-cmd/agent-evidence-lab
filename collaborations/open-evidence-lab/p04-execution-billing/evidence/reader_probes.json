@@ -1,0 +1,72 @@
+{
+  "scope": "8 malformed adapter-output probes, same-team; not extra P04 scenarios",
+  "positive_control_accepted": true,
+  "rejected": 8,
+  "total": 8,
+  "checks": [
+    {
+      "case": "boolean_money",
+      "rejected": true,
+      "reader_failures": [
+        "invalid_money_type"
+      ],
+      "crashed": false
+    },
+    {
+      "case": "float_money",
+      "rejected": true,
+      "reader_failures": [
+        "invalid_money_type"
+      ],
+      "crashed": false
+    },
+    {
+      "case": "integer_instead_of_boolean",
+      "rejected": true,
+      "reader_failures": [
+        "invalid_boolean_type"
+      ],
+      "crashed": false
+    },
+    {
+      "case": "duplicate_claim_boundary",
+      "rejected": true,
+      "reader_failures": [
+        "invalid_claim_boundaries"
+      ],
+      "crashed": false
+    },
+    {
+      "case": "missing_source_identity",
+      "rejected": true,
+      "reader_failures": [
+        "invalid_source_identity"
+      ],
+      "crashed": false
+    },
+    {
+      "case": "unsupported_effect_claim",
+      "rejected": true,
+      "reader_failures": [
+        "unsupported_effect_claim"
+      ],
+      "crashed": false
+    },
+    {
+      "case": "dropped_claim_boundary",
+      "rejected": true,
+      "reader_failures": [
+        "claim_boundaries"
+      ],
+      "crashed": false
+    },
+    {
+      "case": "integer_probe_flag",
+      "rejected": true,
+      "reader_failures": [
+        "probes"
+      ],
+      "crashed": false
+    }
+  ]
+}

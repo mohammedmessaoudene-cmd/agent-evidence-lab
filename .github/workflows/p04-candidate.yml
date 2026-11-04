@@ -1,0 +1,55 @@
+name: p04-candidate
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  p04-candidate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: collaborations/open-evidence-lab/p04-execution-billing
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13'
+      - name: Verify exact repository inventory
+        working-directory: .
+        run: python -S -B tools/verify_manifest.py
+      - name: Verify candidate source identities
+        run: python -S -B verify_kit.py
+      - name: Generate frozen cases
+        run: python -S -B generate_cases.py
+      - name: Check deterministic regeneration
+        run: python -S -B generate_cases.py --check
+      - name: Check original cases and selected mutants
+        run: python -S -B run_review.py --out results/native1
+      - name: Check separate adapter
+        run: python -S -B run_adapter_contract.py --out results/adapter1
+      - name: Reject malformed adapter outputs
+        run: python -S -B check_adapter_reader.py --out results/reader-probes.json
+      - name: Check X1 and dispatch mutations
+        run: python -S -B run_x1_review.py --out results/x1
+      - name: Check versioned M4 observable-state contract
+        run: python -S -B run_m4_review.py --out results/m4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: p04-candidate-${{ matrix.os }}
+          path: |
+            collaborations/open-evidence-lab/p04-execution-billing/results/native1/summary.json
+            collaborations/open-evidence-lab/p04-execution-billing/results/adapter1/report.json
+            collaborations/open-evidence-lab/p04-execution-billing/results/reader-probes.json
+            collaborations/open-evidence-lab/p04-execution-billing/results/x1/SUMMARY.json
+            collaborations/open-evidence-lab/p04-execution-billing/results/m4/*.json
+          if-no-files-found: error
+          retention-days: 14
