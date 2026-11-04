@@ -1,8 +1,0 @@
-{
-  "status": "PASS",
-  "cases": 18,
-  "matched": 18,
-  "runtime": "3.13.5",
-  "label": "same-team adapter contract run; same 18 scenarios, not 18 new independent experiments",
-  "expected_sha256": "8929b847e39760a6b63fb186cd1edc89ef5ba36bb613b1239b2ccdb08fe11b2a"
-}

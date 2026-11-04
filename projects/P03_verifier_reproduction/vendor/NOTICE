@@ -1,4 +1,0 @@
-ServiceNow EnterpriseOps-Gym source and benchmark task, Apache-2.0.
-Upstream and PR24 commits and byte identities are listed in UPSTREAM.json.
-The SQL database is a constructed fixture. Names and addresses come from the public benchmark; they are not contact targets or customer records.
-Only the AST method _run_verifiers is executed; the complete vendor modules are not imported.

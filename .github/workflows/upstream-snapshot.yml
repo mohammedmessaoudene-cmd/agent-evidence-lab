@@ -1,0 +1,33 @@
+name: pinned-upstream-source
+on:
+  push:
+    branches: [work/p04-upstream-source-20261104]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: probityai/agent-evidence-vectors
+          ref: 493d850f4bfde279fb91423f6c343078d50a3f02
+          path: source
+          persist-credentials: false
+      - name: Verify pin and retain public source
+        shell: bash
+        run: |
+          test "$(git -C source rev-parse HEAD)" = 493d850f4bfde279fb91423f6c343078d50a3f02
+          git -C source archive --format=tar HEAD | gzip -n > upstream-source.tar.gz
+          sha256sum upstream-source.tar.gz > upstream-source.sha256
+          printf '%s\n' 493d850f4bfde279fb91423f6c343078d50a3f02 > SOURCE_COMMIT.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pinned-probity-source
+          path: |
+            upstream-source.tar.gz
+            upstream-source.sha256
+            SOURCE_COMMIT.txt
+          if-no-files-found: error
+          retention-days: 7
