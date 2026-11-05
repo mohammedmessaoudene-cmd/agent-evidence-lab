@@ -1,0 +1,20 @@
+{
+  "purpose": "Original AI-assisted passive collection preparation;synthetic test data only",
+  "base_public_commit": "4514f652168e1e90c05e62d532bbeef3f01692af",
+  "calculator_sha256": "41bbc20cc82e8103db46619e39a29627c59aaca984223e2691d13ee084ea4e0e",
+  "original_code_license": "MIT",
+  "runtime": "Python3.11+standardlibrary;no thirdpartyframeworkrequired",
+  "baseline_controls": "Known TECH001/TECH002 corrections;precorrectionprivate source is not distributed",
+  "documentation_adaptation": {
+    "file": "COLLECTION_CONTRACT.md",
+    "received_source_sha256": "e02f7a60c83011f0aeedb9ac90897010669dd2c74ec9b6f5f58912fcde3a6231",
+    "distributed_sha256": "46f948aa59fc13c9d5bf077179da88965a9eb43bb70f65b09a3ada2935f152b7",
+    "change": "Clarify1syntheticexample/8distributedregressions;6historicalcloudcontrolreceiptsnotredistributed;noexecutablechange"
+  },
+  "counterexample_truth": "RegressionOBSERVED_DECLARATIONS tags do not authenticate the fabricated observations",
+  "old_P05_implementations_preserved": {
+    "A0": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743",
+    "A1": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38"
+  },
+  "historical_source_and_data_rights": "ParentP05noticesremain;no customer,radioorprivatearchiveincluded"
+}

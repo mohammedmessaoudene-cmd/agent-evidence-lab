@@ -32,9 +32,14 @@
       "sha256": "2a86387660071eb777f806843a654a653f8d1fb3b32f2d59a063619d3c1d65d1"
     },
     {
+      "path": "R3_REQUIRED_EXCEPTION.md",
+      "bytes": 2032,
+      "sha256": "6959f97bf4b224874f5372064182dcfc5eb58bc842601367d3fec900763d5208"
+    },
+    {
       "path": "README.md",
-      "bytes": 7417,
-      "sha256": "e84bbce3644e75d231b0becb41bb216f4eef9857bb20ab30ff1135056b8e28dd"
+      "bytes": 7673,
+      "sha256": "271bf737a4a9100b814b5ee150913bdc28574cae156e1c73fbaee681b7062739"
     },
     {
       "path": "REVIEW_X1.md",
@@ -50,6 +55,11 @@
       "path": "check_adapter_reader.py",
       "bytes": 2500,
       "sha256": "2feb859bf15b0c968df46119958c571b50f3f1c2f8f7aa0a2a5650f0553e53c5"
+    },
+    {
+      "path": "check_required_exception.py",
+      "bytes": 5750,
+      "sha256": "f0db34d96ba79ccd22ff75bd025dc52ebbe75fa98ebfb92683b4f4e9dbd21751"
     },
     {
       "path": "evidence/adapter_summary.json",
@@ -70,6 +80,16 @@
       "path": "evidence/native_summary.json",
       "bytes": 2641,
       "sha256": "2dedf4ef7a72f235e76ae5cbe100a1bcb375a338a8d54b76525e668813d68bc7"
+    },
+    {
+      "path": "evidence/r3_exception_after_windows.json",
+      "bytes": 3233,
+      "sha256": "a15b60202a792697dc3e3e11f9201e0f45de4e902eca73dea79a2a8d01bef576"
+    },
+    {
+      "path": "evidence/r3_exception_before_windows.json",
+      "bytes": 3050,
+      "sha256": "b75fbadb30d74416877a0811b680d72f75707668f9ffee50862bd0fbd2069b62"
     },
     {
       "path": "evidence/reader_probes.json",
@@ -98,13 +118,13 @@
     },
     {
       "path": "run_adapter_contract.py",
-      "bytes": 4088,
-      "sha256": "82b7b658f189965b06e29a0f95698b794bb3338200aedf9f8ea8d8cc2495c4ed"
+      "bytes": 4108,
+      "sha256": "fe9b497e649d8a04539f046e56da9eacdf60108a65b5c45d23beebcb6e301b92"
     },
     {
       "path": "run_m4_review.py",
-      "bytes": 9599,
-      "sha256": "a28ab35f33c11e42196cc4c12ef7d3824f380667ab09b716d1b25c5921e56549"
+      "bytes": 9627,
+      "sha256": "7d26bdc4a721be4528f765a079edfa0fd46716ed63108fc84af2a821ad0993f3"
     },
     {
       "path": "run_review.py",
