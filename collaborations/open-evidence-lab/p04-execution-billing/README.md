@@ -100,3 +100,9 @@ stages and mutation observations are not additional independent scenarios.
 Historical `evidence/x1_summary.json` describes the earlier seven-field judgment,
 including the formerly surviving M4; it has not been rewritten. Current hosted
 CI results must be read from the actual run on the corresponding commit.
+
+## R3 mandatory exception-field correction
+
+See [the correction and bounded regression](R3_REQUIRED_EXCEPTION.md). Both readers
+now distinguish an omitted exception member from explicit null. Historical evidence
+files and the source ledger are unchanged.

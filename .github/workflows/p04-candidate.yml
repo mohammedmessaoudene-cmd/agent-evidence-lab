@@ -41,6 +41,8 @@ jobs:
         run: python -S -B run_x1_review.py --out results/x1
       - name: Check versioned M4 observable-state contract
         run: python -S -B run_m4_review.py --out results/m4
+      - name: Reject missing mandatory exception fields
+        run: python -S -B check_required_exception.py --out results/required-exception
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -51,5 +53,7 @@ jobs:
             collaborations/open-evidence-lab/p04-execution-billing/results/reader-probes.json
             collaborations/open-evidence-lab/p04-execution-billing/results/x1/SUMMARY.json
             collaborations/open-evidence-lab/p04-execution-billing/results/m4/*.json
+            collaborations/open-evidence-lab/p04-execution-billing/results/required-exception/*
           if-no-files-found: error
           retention-days: 14
+

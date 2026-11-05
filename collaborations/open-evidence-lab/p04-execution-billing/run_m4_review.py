@@ -64,7 +64,7 @@ def judge(actual):
     if type(steps) is not list or len(steps) != 1 or type(probes) is not list or len(probes) != 3:
         return errors + ['events_shape']
     for i, (event, wanted) in enumerate(zip(steps + probes, [{'newly_finalized': True}] + RETURNS)):
-        if type(event) is not dict:
+        if type(event) is not dict or 'exception' not in event:
             errors.append('event_shape_' + str(i))
             continue
         if event.get('exception') is not None or not same_state(event.get('observed'), FINAL):
