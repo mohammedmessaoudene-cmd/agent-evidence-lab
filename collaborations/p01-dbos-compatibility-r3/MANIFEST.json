@@ -1,0 +1,46 @@
+{
+  "scope": "Exact additiveP01R3localnonCloudcompatibilitysupplement; no historical replacement",
+  "license": "OriginalMIT plus retainedPydanticMITnotice; SDKsources referenced only",
+  "files": [
+    {
+      "path": "candidate/capability_step_bypass.patch",
+      "bytes": 566,
+      "sha256": "4dcd84f9353ce88c1c825fa80dc7285108ac387fbee456243f623d29cc303066"
+    },
+    {
+      "path": "candidate/remove_retired_admin_option.patch",
+      "bytes": 347,
+      "sha256": "1b0507c29e68983eb94ab279744836d5bc8c76289448e8b943918d0ebaea13ca"
+    },
+    {
+      "path": "candidate/test_dbos_recovery.py",
+      "bytes": 6400,
+      "sha256": "742edc61b5e5a4107a6807ec06520b34e496c47f5e8df07a0540f093f46e576f"
+    },
+    {
+      "path": "evidence/compatibility_summary.json",
+      "bytes": 15073,
+      "sha256": "9bed79cab58bf4c5df3a7843b565d374331b957fcbbf3c26053c84fb5670d684"
+    },
+    {
+      "path": "evidence/source_identity.json",
+      "bytes": 4726,
+      "sha256": "4c39277c1a1274e557929bc106fb810b210b08ab2f4ab61f93fbeee46af26cef"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1077,
+      "sha256": "c3ae75209c90a84492d3ecdf1e20cec31078c093d401fce0d5e1b665b26b284e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6656,
+      "sha256": "db9b1b8c1ae6bf8e75bbff73bfc8e434a8244005351c2e068b194ef66412cd5d"
+    },
+    {
+      "path": "UPSTREAM_MIT_NOTICE.txt",
+      "bytes": 1101,
+      "sha256": "d565f1b1536612865cd0c78aaf59a1fff1a2f0b156ce0a9bce4f7a62c46f67d0"
+    }
+  ]
+}

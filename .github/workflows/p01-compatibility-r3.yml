@@ -1,0 +1,53 @@
+name: p01-compatibility-r3
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compatibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        dbos: ['2.29.0', '3.4.0']
+    env:
+      DBOS__CLOUD: 'false'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: pydantic/pydantic-ai
+          ref: d44704ec72744e4fc0bd5a3d5dd877462a24da5b
+          path: .local/p01-upstream
+          persist-credentials: false
+      - run: python -I -m pip --isolated --disable-pip-version-check install uv==0.13.6
+      - name: Prepare pinned upstream environment
+        working-directory: .local/p01-upstream
+        run: |
+          uv sync --frozen --package pydantic-ai-harness --extra dbos --extra logfire --group dev --group lint --python 3.11
+          uv pip install --python .venv/bin/python --no-deps --editable . --offline
+      - name: Select SDK override in isolated environment
+        if: matrix.dbos == '3.4.0'
+        working-directory: .local/p01-upstream
+        run: uv pip install --python .venv/bin/python --reinstall-package dbos --exclude-newer-package dbos=2026-11-01 dbos==3.4.0
+      - name: Verify published source identities
+        run: python -S -B tools/verify_manifest.py
+      - name: Qualify normal tests and causal mutant
+        run: python -S -B tools/check_p01_compatibility_r3.py --upstream .local/p01-upstream --kit collaborations/p01-dbos-compatibility-r3 --dbos ${{ matrix.dbos }} --out p01-r3-evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: p01-r3-${{ matrix.dbos }}
+          path: |
+            p01-r3-evidence/*.json
+            p01-r3-evidence/*.xml
+            p01-r3-evidence/*.txt
+          if-no-files-found: error
+          retention-days: 14

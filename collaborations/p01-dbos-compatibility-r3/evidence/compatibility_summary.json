@@ -1,0 +1,399 @@
+{
+  "schema": "p01-r3-public-compatibility/1",
+  "date": "2026-11-05",
+  "status": "BOUNDED_LOCAL_COMPATIBILITY_VERIFIED_PUBLICATION_PENDING",
+  "source_pin": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+  "candidate": {
+    "sha256": "742edc61b5e5a4107a6807ec06520b34e496c47f5e8df07a0540f093f46e576f",
+    "bytes": 6400,
+    "lines": 168,
+    "delta": "Only remove obsolete run_admin_server=False relative to historical169"
+  },
+  "scope": "Local nonCloud only; two exact SDK profiles. Neither currentPydanticmain nor arbitrary3.x/Cloud support.",
+  "linux_received": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "profiles": [
+      {
+        "profile": "dbos_2_29",
+        "mode": "mutant",
+        "returncode": 1,
+        "versions": {
+          "dbos": "2.29.0",
+          "pydantic-ai-slim": "0.0.1.dev1+d44704e",
+          "pydantic-ai-harness": "0.0.1.dev1+d44704e",
+          "pytest": "9.1.1",
+          "anyio": "4.15.1",
+          "ruff": "0.17.2",
+          "pyright": "1.1.414",
+          "opentelemetry-sdk": "1.45.1"
+        },
+        "native": "EXPECTED_ASSERTION_FAILURE_ON_B",
+        "selected_dispatch_comparator": "PASS",
+        "testcases": 2,
+        "errors": 0,
+        "skips": 0,
+        "compactions": 3,
+        "model_callbacks": 5,
+        "runtime_store_reads_after_setup_counter_clear": 2,
+        "setup_reads_separate": 1,
+        "journal_memory_rows": 0,
+        "backend_restored_exactly": true,
+        "junit_sha256": "bbd6047a09ab349ff61a1483bc3e59d6b9a13c690a75c69d2d48ee93c903e8e8"
+      },
+      {
+        "profile": "dbos_2_29",
+        "mode": "normal",
+        "returncode": 0,
+        "versions": {
+          "dbos": "2.29.0",
+          "pydantic-ai-slim": "0.0.1.dev1+d44704e",
+          "pydantic-ai-harness": "0.0.1.dev1+d44704e",
+          "pytest": "9.1.1",
+          "anyio": "4.15.1",
+          "ruff": "0.17.2",
+          "pyright": "1.1.414",
+          "opentelemetry-sdk": "1.45.1"
+        },
+        "native": "PASS",
+        "selected_dispatch_comparator": "PASS",
+        "testcases": 2,
+        "errors": 0,
+        "skips": 0,
+        "compactions": 3,
+        "model_callbacks": 5,
+        "runtime_store_reads_after_setup_counter_clear": 1,
+        "setup_reads_separate": 1,
+        "journal_memory_rows": 1,
+        "backend_restored_exactly": true,
+        "junit_sha256": "f22aa14df88af526c446e4a01f32df1aa6c9ed6bb4b2b81123baff000bd446cc"
+      },
+      {
+        "profile": "dbos_3_4",
+        "mode": "mutant",
+        "returncode": 1,
+        "versions": {
+          "dbos": "3.4.0",
+          "pydantic-ai-slim": "0.0.1.dev1+d44704e",
+          "pydantic-ai-harness": "0.0.1.dev1+d44704e",
+          "pytest": "9.1.1",
+          "anyio": "4.15.1",
+          "ruff": "0.17.2",
+          "pyright": "1.1.414",
+          "opentelemetry-sdk": "1.45.1"
+        },
+        "native": "EXPECTED_ASSERTION_FAILURE_ON_B",
+        "selected_dispatch_comparator": "PASS",
+        "testcases": 2,
+        "errors": 0,
+        "skips": 0,
+        "compactions": 3,
+        "model_callbacks": 5,
+        "runtime_store_reads_after_setup_counter_clear": 2,
+        "setup_reads_separate": 1,
+        "journal_memory_rows": 0,
+        "backend_restored_exactly": true,
+        "junit_sha256": "a108b3f707df1642d4657bc8b704bc547cf65bab5068312ebf2336ecd17f591c"
+      },
+      {
+        "profile": "dbos_3_4",
+        "mode": "normal",
+        "returncode": 0,
+        "versions": {
+          "dbos": "3.4.0",
+          "pydantic-ai-slim": "0.0.1.dev1+d44704e",
+          "pydantic-ai-harness": "0.0.1.dev1+d44704e",
+          "pytest": "9.1.1",
+          "anyio": "4.15.1",
+          "ruff": "0.17.2",
+          "pyright": "1.1.414",
+          "opentelemetry-sdk": "1.45.1"
+        },
+        "native": "PASS",
+        "selected_dispatch_comparator": "PASS",
+        "testcases": 2,
+        "errors": 0,
+        "skips": 0,
+        "compactions": 3,
+        "model_callbacks": 5,
+        "runtime_store_reads_after_setup_counter_clear": 1,
+        "setup_reads_separate": 1,
+        "journal_memory_rows": 1,
+        "backend_restored_exactly": true,
+        "junit_sha256": "84d89201ee2177c75387c0f48d6b34507e7dd025d49533fb311e04877b4b4230"
+      }
+    ],
+    "static": "Ruff check/format and strictPyright0 received for both168profiles; original169/DBOS3.4 reportAssignmentType retained",
+    "dependencies": "Separate source/venv copies of retained dependencies, not fresh registry installations",
+    "source_packet": {
+      "name": "P01_R3_T10_COMPATIBILITY.json",
+      "bytes": 446530,
+      "sha256": "0861ee1606798af750d95d0c247ed3e767c0fa3d06f95ee9d81059d590e33d3d",
+      "files_locally_verified": 79,
+      "raw_status": "Complete source text received and verified privately; binary SQLite and runtime trees not delivered"
+    }
+  },
+  "windows_actual": {
+    "source": "New source/venv copies; frozen public dependency provisioning and declaredDBOS3.4override",
+    "profiles": [
+      {
+        "profile": "dbos_2_29",
+        "environment": {
+          "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+          "platform": "Windows-10-10.0.26200-SP0",
+          "sqlite": "3.45.1",
+          "versions": {
+            "dbos": "2.29.0",
+            "pytest": "9.1.1",
+            "anyio": "4.15.1",
+            "ruff": "0.17.2",
+            "pyright": "1.1.414",
+            "pydantic-ai-harness": "0.0.1.dev1+d44704e"
+          }
+        },
+        "static": [
+          {
+            "tool": "ruff_check",
+            "returncode": 0
+          },
+          {
+            "tool": "ruff_format",
+            "returncode": 0
+          },
+          {
+            "tool": "pyright",
+            "returncode": 0,
+            "diagnostics": {
+              "filesAnalyzed": 1,
+              "errorCount": 0,
+              "warningCount": 0,
+              "informationCount": 0,
+              "timeInSec": 3.045
+            }
+          }
+        ],
+        "runs": [
+          {
+            "mode": "normal",
+            "process_returncode": 0,
+            "testcases": [
+              {
+                "classname": "tests.harness.memory.test_dbos_recovery.TestMemoryDBOSRecovery",
+                "name": "test_recovery_restores_snapshot_after_compaction",
+                "failed": false
+              },
+              {
+                "classname": "tests.harness.memory.test_memory",
+                "name": "test_snapshot_load_dispatches_as_durable_operation",
+                "failed": false
+              }
+            ],
+            "runtime_store_reads_after_setup_counter_clear": 1,
+            "setup_reads_separate": 1,
+            "model_callbacks": 5,
+            "versions_in_callbacks": [
+              "A",
+              "A",
+              "A",
+              "A",
+              "A"
+            ],
+            "compactions": 3,
+            "initial_journal_steps_observed": 2,
+            "initial_nonempty_not_asserted": true,
+            "journal_memory_rows": 1,
+            "workflow_statuses": [
+              "SUCCESS"
+            ],
+            "backend_restored_exactly": true,
+            "junit_sha256": "cf4fb3e1807cbbc4bbb08dfa8fbc734248bf279573f2fb45c5184d27c6a05f0e"
+          },
+          {
+            "mode": "mutant",
+            "process_returncode": 1,
+            "testcases": [
+              {
+                "classname": "tests.harness.memory.test_dbos_recovery.TestMemoryDBOSRecovery",
+                "name": "test_recovery_restores_snapshot_after_compaction",
+                "failed": true
+              },
+              {
+                "classname": "tests.harness.memory.test_memory",
+                "name": "test_snapshot_load_dispatches_as_durable_operation",
+                "failed": false
+              }
+            ],
+            "runtime_store_reads_after_setup_counter_clear": 2,
+            "setup_reads_separate": 1,
+            "model_callbacks": 5,
+            "versions_in_callbacks": [
+              "A",
+              "B",
+              "B",
+              "B",
+              "B"
+            ],
+            "compactions": 3,
+            "initial_journal_steps_observed": 1,
+            "initial_nonempty_not_asserted": true,
+            "journal_memory_rows": 0,
+            "workflow_statuses": [
+              "SUCCESS"
+            ],
+            "backend_restored_exactly": true,
+            "junit_sha256": "2524a4060f00817fcd806adcbd8b02422ec78872a2f2c7bcc37da6accff51445"
+          }
+        ],
+        "plugin_comparison": "Raw names equal after replacing only all-digit object IDs; preserved privately."
+      },
+      {
+        "profile": "dbos_3_4",
+        "environment": {
+          "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+          "platform": "Windows-10-10.0.26200-SP0",
+          "sqlite": "3.45.1",
+          "versions": {
+            "dbos": "3.4.0",
+            "pytest": "9.1.1",
+            "anyio": "4.15.1",
+            "ruff": "0.17.2",
+            "pyright": "1.1.414",
+            "pydantic-ai-harness": "0.0.1.dev1+d44704e"
+          }
+        },
+        "static": [
+          {
+            "tool": "ruff_check",
+            "returncode": 0
+          },
+          {
+            "tool": "ruff_format",
+            "returncode": 0
+          },
+          {
+            "tool": "pyright",
+            "returncode": 0,
+            "diagnostics": {
+              "filesAnalyzed": 1,
+              "errorCount": 0,
+              "warningCount": 0,
+              "informationCount": 0,
+              "timeInSec": 2.987
+            }
+          }
+        ],
+        "runs": [
+          {
+            "mode": "normal",
+            "process_returncode": 0,
+            "testcases": [
+              {
+                "classname": "tests.harness.memory.test_dbos_recovery.TestMemoryDBOSRecovery",
+                "name": "test_recovery_restores_snapshot_after_compaction",
+                "failed": false
+              },
+              {
+                "classname": "tests.harness.memory.test_memory",
+                "name": "test_snapshot_load_dispatches_as_durable_operation",
+                "failed": false
+              }
+            ],
+            "runtime_store_reads_after_setup_counter_clear": 1,
+            "setup_reads_separate": 1,
+            "model_callbacks": 5,
+            "versions_in_callbacks": [
+              "A",
+              "A",
+              "A",
+              "A",
+              "A"
+            ],
+            "compactions": 3,
+            "initial_journal_steps_observed": 2,
+            "initial_nonempty_not_asserted": true,
+            "journal_memory_rows": 1,
+            "workflow_statuses": [
+              "SUCCESS"
+            ],
+            "backend_restored_exactly": true,
+            "junit_sha256": "4ca3e85a2fffdb707254e02efbd067c4107685bf03d8a65afc5a651014c9df20"
+          },
+          {
+            "mode": "mutant",
+            "process_returncode": 1,
+            "testcases": [
+              {
+                "classname": "tests.harness.memory.test_dbos_recovery.TestMemoryDBOSRecovery",
+                "name": "test_recovery_restores_snapshot_after_compaction",
+                "failed": true
+              },
+              {
+                "classname": "tests.harness.memory.test_memory",
+                "name": "test_snapshot_load_dispatches_as_durable_operation",
+                "failed": false
+              }
+            ],
+            "runtime_store_reads_after_setup_counter_clear": 2,
+            "setup_reads_separate": 1,
+            "model_callbacks": 5,
+            "versions_in_callbacks": [
+              "A",
+              "B",
+              "B",
+              "B",
+              "B"
+            ],
+            "compactions": 3,
+            "initial_journal_steps_observed": 1,
+            "initial_nonempty_not_asserted": true,
+            "journal_memory_rows": 0,
+            "workflow_statuses": [
+              "SUCCESS"
+            ],
+            "backend_restored_exactly": true,
+            "junit_sha256": "a1d23cfb05b51ec49f058d919848fe8a16e9b2deb51b958794ae7a1361e7b516"
+          }
+        ],
+        "plugin_comparison": "Raw names equal after replacing only all-digit object IDs; preserved privately."
+      }
+    ],
+    "native_pytest_processes": 4,
+    "static_processes": 6,
+    "repair_native_reruns": 0,
+    "raw_text_outputs_retained": 48
+  },
+  "setup_and_collector_findings": [
+    {
+      "id": "WIN-SETUP-01",
+      "finding": "Windows checkout CRLF changed raw mutation preimage; rejected before pytest",
+      "closure": "Localclone configuration and exactGitblob backend/comparator bytes; no shared/global setting changed"
+    },
+    {
+      "id": "WIN-SETUP-02",
+      "finding": "Harness-only sync omitted rootproject distribution metadata",
+      "closure": "Rooteditable install in each newvenv using --no-deps --offline"
+    },
+    {
+      "id": "WIN-COLLECTOR-01",
+      "finding": "Localcollector mistook the compaction trace list for integercount3 after normal2PASS",
+      "closure": "Counted the captured list and resumed the remaining3runs; native normal process was not replayed"
+    },
+    {
+      "id": "P01-R3-D01",
+      "finding": "Received repro commands originally collided across sibling checkout outputs",
+      "closure": "Separate checkout-local output paths; documentary path check only, no additional native execution"
+    }
+  ],
+  "counting": "Per OS fourpytestprocesses reuse the same two test identities; normalnative2PASS and mutantnative2expectedFAIL/selectedcomparator4PASS. Not8independenttasks, populationreliability or superiorfullsuitecoverage.",
+  "raw_publication": "This compact derived report is public; full received79textfiles and Windowsrawlogs/JUnit/SQL are retained privately. Hashes establish identity, not independent authenticity. No rawprovider receipts or binary DBs are claimed public.",
+  "reviews": "Two distinct internalAI reviews received for cloudproposal; root technical and Reviewer2 strategic review required for this exact publicsubset. Same-team work is not independenthuman/institutional validation.",
+  "external_gate": "Pydanticmaintaineragreement/assignment pending; no new contact or upstreamPR. Historical169 andR2release unchanged.",
+  "retained_limits": [
+    "Initialjournalnonempty observed notasserted",
+    "10secondcooperative resume/result deadline notwholeprocess",
+    "Constructor remains outsidecleanuptry",
+    "InprocessBaseException with survivingobjects; noOSkill/newinterpreterrecovery",
+    "DeterministicFunctionModel/syntheticstore, notproviderquality",
+    "NoCloud,physical,economic,funding,adoption or novelprotocol claim"
+  ]
+}

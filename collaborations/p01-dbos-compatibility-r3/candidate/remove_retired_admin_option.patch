@@ -1,0 +1,10 @@
+--- a/tests/harness/memory/test_dbos_recovery.py
++++ b/tests/harness/memory/test_dbos_recovery.py
+@@ -53,7 +53,6 @@
+     config: DBOSConfig = {
+         'name': 'memory_recovery',
+         'system_database_url': f'sqlite:///{database}',
+-        'run_admin_server': False,
+         'enable_otlp': False,
+     }
+     instance = DBOS(config=config)
