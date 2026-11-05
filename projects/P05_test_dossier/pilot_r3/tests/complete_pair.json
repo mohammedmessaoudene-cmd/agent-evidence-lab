@@ -1,0 +1,573 @@
+{
+  "schema": "p05-pilot-collection/1",
+  "evidence_kind": "SYNTHETIC",
+  "scope": "SYNTHETIC_PAIR",
+  "material_release_authorized": false,
+  "artifacts": [
+    {
+      "id": "SYNTHETIC_SOURCE",
+      "path": "tests/data/synthetic_source.json",
+      "bytes": 116,
+      "sha256": "7591479c191e22a349cf22c0a1a5f4e2c8c611f4c69a0dd440fdf8e4f4bef6d5"
+    },
+    {
+      "id": "SYNTHETIC_RECORD",
+      "path": "tests/data/synthetic_record.json",
+      "bytes": 158,
+      "sha256": "722bcd2f6b6b7e93faca5fd77924bc6a664966bba049b8e2d81e73d017d55fa7"
+    },
+    {
+      "id": "SYNTHETIC_CONTRACT",
+      "path": "tests/data/synthetic_openhtf_contract.json",
+      "bytes": 1498,
+      "sha256": "4c465fc49465bab3001b0b5d4566734f2f53616b7ccef46fbde7ec5a66068916"
+    }
+  ],
+  "manifest": {
+    "currency": "EUR",
+    "minor_units_per_unit": 100,
+    "roles": {
+      "operator_A": "SYNTHETIC_OPERATOR_A",
+      "operator_B": "SYNTHETIC_OPERATOR_B",
+      "arbiter": "SYNTHETIC_ARBITER",
+      "guardian": "SYNTHETIC_ARBITER"
+    },
+    "approvals": {
+      "pilot_authorization_ref": "SYNTHETIC_RECORD",
+      "data_rights_ref": "SYNTHETIC_RECORD",
+      "comparison_plan_ref": "SYNTHETIC_RECORD",
+      "freeze_ref": "SYNTHETIC_RECORD",
+      "shared_allocation_ref": "SYNTHETIC_RECORD"
+    },
+    "data_rights": {
+      "owner_id": "SYNTHETIC_DECLARATION_NOT_A_REAL_AUTHORIZATION",
+      "use_basis": "SYNTHETIC_DECLARATION_NOT_A_REAL_AUTHORIZATION",
+      "private_destination": "SYNTHETIC_DECLARATION_NOT_A_REAL_AUTHORIZATION",
+      "retention_decision": "SYNTHETIC_DECLARATION_NOT_A_REAL_AUTHORIZATION"
+    },
+    "code_sha256": {
+      "A0": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743",
+      "A1": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38"
+    },
+    "equal_information_tools_rights_budget": true,
+    "outputs_hidden_between_operators": true,
+    "independent_contract_approval": true,
+    "reserve_answers_hidden": true,
+    "freeze_before_reserve": true,
+    "cost_window_closed": true,
+    "support_followup_closed": true,
+    "shared_cost_allocation": "EQUAL_SPLIT_PREDECLARED",
+    "unpriced_obligations": [],
+    "missions": [
+      {
+        "job_id": "SYNTHETIC_PAIR_06",
+        "phase": "RESERVE",
+        "family_id": "SYNTHETIC_FAMILY",
+        "input_artifact_ids": [
+          "SYNTHETIC_SOURCE"
+        ],
+        "contract_ref": "SYNTHETIC_CONTRACT",
+        "contract_approval_ref": "SYNTHETIC_RECORD",
+        "operators": {
+          "A0": "SYNTHETIC_OPERATOR_A",
+          "A1": "SYNTHETIC_OPERATOR_B"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [
+            "SYNTHETIC_PAIR_06:A0:01"
+          ],
+          "A1": [
+            "SYNTHETIC_PAIR_06:A1:01"
+          ]
+        }
+      }
+    ]
+  },
+  "records": [
+    {
+      "job_id": "SYNTHETIC_PAIR_06",
+      "method": "A0",
+      "attempt_id": "SYNTHETIC_PAIR_06:A0:01",
+      "operator_id": "SYNTHETIC_OPERATOR_A",
+      "input_artifact_ids": [
+        "SYNTHETIC_SOURCE"
+      ],
+      "contract_ref": "SYNTHETIC_CONTRACT",
+      "code_sha256": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743",
+      "cost": {
+        "human_events": [
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:preparation",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "preparation",
+            "active_seconds": 1200,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:installation",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "installation",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:learning",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "learning",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:mapping",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "mapping",
+            "active_seconds": 600,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:investigation",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "investigation",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:review",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "review",
+            "active_seconds": 900,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:correction",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "correction",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:support",
+            "actor_id": "SYNTHETIC_HELPER",
+            "category": "support",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:post_transfer_support",
+            "actor_id": "SYNTHETIC_HELPER",
+            "category": "post_transfer_support",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:maintenance",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "maintenance",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:arbitration",
+            "actor_id": "SYNTHETIC_OPERATOR_A",
+            "category": "arbitration",
+            "active_seconds": 0,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          }
+        ],
+        "cash_events": [
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:cash:licenses",
+            "category": "licenses",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:cash:machine_resources",
+            "category": "machine_resources",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:cash:capital_calibration",
+            "category": "capital_calibration",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:cash:actual_liability",
+            "category": "actual_liability",
+            "amount_minor": 0,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:cash:taxes",
+            "category": "taxes",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A0:01:cash:other",
+            "category": "other",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          }
+        ],
+        "assistance": {
+          "requests": 2,
+          "event_ids": [
+            "SYNTHETIC_PAIR_06:A0:01:support",
+            "SYNTHETIC_PAIR_06:A0:01:post_transfer_support"
+          ],
+          "complete": true
+        },
+        "machine_seconds": 600,
+        "calendar_elapsed_seconds": 24000,
+        "waiting_calendar_seconds": 7200,
+        "timing_ref": "SYNTHETIC_RECORD",
+        "collection_complete": true
+      },
+      "quality": {
+        "arbiter_id": "SYNTHETIC_ARBITER",
+        "blind_before_times": true,
+        "record_ref": "SYNTHETIC_RECORD",
+        "documentary_state": "READY_FOR_REVIEW",
+        "measurement_state": "PASS",
+        "outcome": "RECEIVED",
+        "reason": null,
+        "false_ready": 0,
+        "false_pass": 0,
+        "unjustified_rejections": 0,
+        "lost_fields": 0,
+        "invented_fields": 0,
+        "undetected_inconsistencies": 0,
+        "clarifications": 0,
+        "reworks": 0,
+        "critical_findings": []
+      }
+    },
+    {
+      "job_id": "SYNTHETIC_PAIR_06",
+      "method": "A1",
+      "attempt_id": "SYNTHETIC_PAIR_06:A1:01",
+      "operator_id": "SYNTHETIC_OPERATOR_B",
+      "input_artifact_ids": [
+        "SYNTHETIC_SOURCE"
+      ],
+      "contract_ref": "SYNTHETIC_CONTRACT",
+      "code_sha256": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38",
+      "cost": {
+        "human_events": [
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:preparation",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "preparation",
+            "active_seconds": 900,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:installation",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "installation",
+            "active_seconds": 180,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:learning",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "learning",
+            "active_seconds": 240,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:mapping",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "mapping",
+            "active_seconds": 480,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:investigation",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "investigation",
+            "active_seconds": 240,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:review",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "review",
+            "active_seconds": 600,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:correction",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "correction",
+            "active_seconds": 240,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:support",
+            "actor_id": "SYNTHETIC_HELPER",
+            "category": "support",
+            "active_seconds": 240,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:post_transfer_support",
+            "actor_id": "SYNTHETIC_HELPER",
+            "category": "post_transfer_support",
+            "active_seconds": 300,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:maintenance",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "maintenance",
+            "active_seconds": 180,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:arbitration",
+            "actor_id": "SYNTHETIC_OPERATOR_B",
+            "category": "arbitration",
+            "active_seconds": 0,
+            "hourly_minor": 6000,
+            "record_ref": "SYNTHETIC_RECORD"
+          }
+        ],
+        "cash_events": [
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:cash:licenses",
+            "category": "licenses",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:cash:machine_resources",
+            "category": "machine_resources",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:cash:capital_calibration",
+            "category": "capital_calibration",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:cash:actual_liability",
+            "category": "actual_liability",
+            "amount_minor": 0,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:cash:taxes",
+            "category": "taxes",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          },
+          {
+            "event_id": "SYNTHETIC_PAIR_06:A1:01:cash:other",
+            "category": "other",
+            "amount_minor": 400,
+            "record_ref": "SYNTHETIC_RECORD"
+          }
+        ],
+        "assistance": {
+          "requests": 2,
+          "event_ids": [
+            "SYNTHETIC_PAIR_06:A1:01:support",
+            "SYNTHETIC_PAIR_06:A1:01:post_transfer_support"
+          ],
+          "complete": true
+        },
+        "machine_seconds": 300,
+        "calendar_elapsed_seconds": 24000,
+        "waiting_calendar_seconds": 0,
+        "timing_ref": "SYNTHETIC_RECORD",
+        "collection_complete": true
+      },
+      "quality": {
+        "arbiter_id": "SYNTHETIC_ARBITER",
+        "blind_before_times": true,
+        "record_ref": "SYNTHETIC_RECORD",
+        "documentary_state": "READY_FOR_REVIEW",
+        "measurement_state": "PASS",
+        "outcome": "RECEIVED",
+        "reason": null,
+        "false_ready": 0,
+        "false_pass": 0,
+        "unjustified_rejections": 0,
+        "lost_fields": 0,
+        "invented_fields": 0,
+        "undetected_inconsistencies": 0,
+        "clarifications": 0,
+        "reworks": 0,
+        "critical_findings": []
+      }
+    }
+  ],
+  "shared_cost": {
+    "human_events": [
+      {
+        "event_id": "complete_case:SHARED:preparation",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "preparation",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:installation",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "installation",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:learning",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "learning",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:mapping",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "mapping",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:investigation",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "investigation",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:review",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "review",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:correction",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "correction",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:support",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "support",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:post_transfer_support",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "post_transfer_support",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:maintenance",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "maintenance",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:arbitration",
+        "actor_id": "SYNTHETIC_OPERATOR_A",
+        "category": "arbitration",
+        "active_seconds": 0,
+        "hourly_minor": 6000,
+        "record_ref": "SYNTHETIC_RECORD"
+      }
+    ],
+    "cash_events": [
+      {
+        "event_id": "complete_case:SHARED:cash:licenses",
+        "category": "licenses",
+        "amount_minor": 0,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:cash:machine_resources",
+        "category": "machine_resources",
+        "amount_minor": 0,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:cash:capital_calibration",
+        "category": "capital_calibration",
+        "amount_minor": 0,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:cash:actual_liability",
+        "category": "actual_liability",
+        "amount_minor": 0,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:cash:taxes",
+        "category": "taxes",
+        "amount_minor": 0,
+        "record_ref": "SYNTHETIC_RECORD"
+      },
+      {
+        "event_id": "complete_case:SHARED:cash:other",
+        "category": "other",
+        "amount_minor": 0,
+        "record_ref": "SYNTHETIC_RECORD"
+      }
+    ],
+    "assistance": {
+      "requests": 0,
+      "event_ids": [],
+      "complete": true
+    },
+    "machine_seconds": 0,
+    "calendar_elapsed_seconds": 0,
+    "waiting_calendar_seconds": 0,
+    "timing_ref": "SYNTHETIC_RECORD",
+    "collection_complete": true
+  }
+}

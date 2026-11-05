@@ -1,0 +1,625 @@
+{
+  "schema": "p05-pilot-collection/1",
+  "evidence_kind": "TEMPLATE_NOT_AN_OBSERVATION",
+  "scope": "FULL_PILOT",
+  "material_release_authorized": false,
+  "artifacts": [],
+  "manifest": {
+    "currency": null,
+    "minor_units_per_unit": 100,
+    "roles": {
+      "operator_A": "OP_A",
+      "operator_B": "OP_B",
+      "arbiter": null,
+      "guardian": null
+    },
+    "approvals": {
+      "pilot_authorization_ref": null,
+      "data_rights_ref": null,
+      "comparison_plan_ref": null,
+      "freeze_ref": null,
+      "shared_allocation_ref": null
+    },
+    "data_rights": {
+      "owner_id": null,
+      "use_basis": null,
+      "private_destination": null,
+      "retention_decision": null
+    },
+    "code_sha256": {
+      "A0": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743",
+      "A1": "4c4a0e3e814898173a61afe1b0dfc78fa05e64e69a9d86c23063b40e11e27c38"
+    },
+    "equal_information_tools_rights_budget": null,
+    "outputs_hidden_between_operators": null,
+    "independent_contract_approval": null,
+    "reserve_answers_hidden": null,
+    "freeze_before_reserve": null,
+    "cost_window_closed": null,
+    "support_followup_closed": null,
+    "shared_cost_allocation": "EQUAL_SPLIT_PREDECLARED",
+    "unpriced_obligations": null,
+    "missions": [
+      {
+        "job_id": "DEV-01",
+        "phase": "DEVELOPMENT",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "DEV-02",
+        "phase": "DEVELOPMENT",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "DEV-03",
+        "phase": "DEVELOPMENT",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "DEV-04",
+        "phase": "DEVELOPMENT",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-01",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-02",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-03",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-04",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-05",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-06",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-07",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-08",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-09",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-10",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_A",
+          "A1": "OP_B"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-11",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A0",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      },
+      {
+        "job_id": "RESERVE-12",
+        "phase": "RESERVE",
+        "family_id": null,
+        "input_artifact_ids": [],
+        "contract_ref": null,
+        "contract_approval_ref": null,
+        "operators": {
+          "A0": "OP_B",
+          "A1": "OP_A"
+        },
+        "first_method": "A1",
+        "expected_attempt_ids": {
+          "A0": [],
+          "A1": []
+        }
+      }
+    ]
+  },
+  "records": [],
+  "record_template": {
+    "job_id": null,
+    "method": null,
+    "attempt_id": null,
+    "operator_id": null,
+    "input_artifact_ids": [],
+    "contract_ref": null,
+    "code_sha256": null,
+    "cost": {
+      "human_events": [
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:preparation",
+          "actor_id": null,
+          "category": "preparation",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:installation",
+          "actor_id": null,
+          "category": "installation",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:learning",
+          "actor_id": null,
+          "category": "learning",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:mapping",
+          "actor_id": null,
+          "category": "mapping",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:investigation",
+          "actor_id": null,
+          "category": "investigation",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:review",
+          "actor_id": null,
+          "category": "review",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:correction",
+          "actor_id": null,
+          "category": "correction",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:support",
+          "actor_id": null,
+          "category": "support",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:post_transfer_support",
+          "actor_id": null,
+          "category": "post_transfer_support",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:maintenance",
+          "actor_id": null,
+          "category": "maintenance",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:arbitration",
+          "actor_id": null,
+          "category": "arbitration",
+          "active_seconds": null,
+          "hourly_minor": null,
+          "record_ref": null
+        }
+      ],
+      "cash_events": [
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:cash:licenses",
+          "category": "licenses",
+          "amount_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:cash:machine_resources",
+          "category": "machine_resources",
+          "amount_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:cash:capital_calibration",
+          "category": "capital_calibration",
+          "amount_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:cash:actual_liability",
+          "category": "actual_liability",
+          "amount_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:cash:taxes",
+          "category": "taxes",
+          "amount_minor": null,
+          "record_ref": null
+        },
+        {
+          "event_id": "REPLACE_WITH_UNIQUE_ATTEMPT_ID:cash:other",
+          "category": "other",
+          "amount_minor": null,
+          "record_ref": null
+        }
+      ],
+      "assistance": {
+        "requests": null,
+        "event_ids": [],
+        "complete": null
+      },
+      "machine_seconds": null,
+      "calendar_elapsed_seconds": null,
+      "waiting_calendar_seconds": null,
+      "timing_ref": null,
+      "collection_complete": null
+    },
+    "quality": {
+      "arbiter_id": null,
+      "blind_before_times": null,
+      "record_ref": null,
+      "documentary_state": null,
+      "measurement_state": null,
+      "outcome": null,
+      "reason": null,
+      "false_ready": null,
+      "false_pass": null,
+      "unjustified_rejections": null,
+      "lost_fields": null,
+      "invented_fields": null,
+      "undetected_inconsistencies": null,
+      "clarifications": null,
+      "reworks": null,
+      "critical_findings": null
+    }
+  },
+  "shared_cost": {
+    "human_events": [
+      {
+        "event_id": "PILOT_COMMON:preparation",
+        "actor_id": null,
+        "category": "preparation",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:installation",
+        "actor_id": null,
+        "category": "installation",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:learning",
+        "actor_id": null,
+        "category": "learning",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:mapping",
+        "actor_id": null,
+        "category": "mapping",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:investigation",
+        "actor_id": null,
+        "category": "investigation",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:review",
+        "actor_id": null,
+        "category": "review",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:correction",
+        "actor_id": null,
+        "category": "correction",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:support",
+        "actor_id": null,
+        "category": "support",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:post_transfer_support",
+        "actor_id": null,
+        "category": "post_transfer_support",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:maintenance",
+        "actor_id": null,
+        "category": "maintenance",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:arbitration",
+        "actor_id": null,
+        "category": "arbitration",
+        "active_seconds": null,
+        "hourly_minor": null,
+        "record_ref": null
+      }
+    ],
+    "cash_events": [
+      {
+        "event_id": "PILOT_COMMON:cash:licenses",
+        "category": "licenses",
+        "amount_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:cash:machine_resources",
+        "category": "machine_resources",
+        "amount_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:cash:capital_calibration",
+        "category": "capital_calibration",
+        "amount_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:cash:actual_liability",
+        "category": "actual_liability",
+        "amount_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:cash:taxes",
+        "category": "taxes",
+        "amount_minor": null,
+        "record_ref": null
+      },
+      {
+        "event_id": "PILOT_COMMON:cash:other",
+        "category": "other",
+        "amount_minor": null,
+        "record_ref": null
+      }
+    ],
+    "assistance": {
+      "requests": null,
+      "event_ids": [],
+      "complete": null
+    },
+    "machine_seconds": null,
+    "calendar_elapsed_seconds": null,
+    "waiting_calendar_seconds": null,
+    "timing_ref": null,
+    "collection_complete": null
+  }
+}

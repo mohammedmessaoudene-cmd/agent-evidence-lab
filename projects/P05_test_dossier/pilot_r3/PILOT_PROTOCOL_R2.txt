@@ -1,0 +1,144 @@
+P05 R2 — Pilote de transfert prêt sur autorisation séparée
+STATUT : PREPARED_NOT_RUN. Aucun client contacté, aucun achat, aucun essai
+électrique nouveau. La campagne matérielle historique reste gelée.
+
+But primaire : déterminer si un dossier préparé avec l'adaptateur et une revue
+humaine est repris plus sûrement ou avec moins de coût total qu'un dossier
+préparé par un ingénieur compétent et son script. L'agent n'est pas requis.
+Ce pilote documentaire peut utiliser des exports historiques déjà autorisés ;
+toute nouvelle mesure physique relève d'une autorisation et d'un protocole
+distincts. READY_FOR_REVIEW ne libère jamais un lot.
+
+1. Entrée exigée avant démarrage
+
+Le responsable du pilote renseigne pilot_manifest.template.json : détenteur
+des données et droit d'utilisation, pseudonymes DUT, familles produit, stations,
+versions logiciel/firmware, liste attendue de DUT et essais, unités et limites
+approuvées, chemin et SHA256 des exports natifs et pièces jointes, statut de
+l'horloge et de l'étalonnage, rôle d'un arbitre humain. La spécification et la
+population attendue doivent être approuvées indépendamment des exports ; une
+empreinte copiée du dossier ne suffit pas à créer une autorité d'approbation.
+
+Les exportations inconnues ou hors profil sont conservées et déclarées
+incompatibles ; aucune valeur, identité, limite, calibration ou date absente
+n'est complétée par inférence. Toute donnée client reste dans la destination
+privée approuvée. Si les droits ou données sont absents, état BLOCKED_INPUTS,
+pas un échec fabriqué ni une validation commerciale simulée.
+
+2. Population et réserve
+
+Cible de faisabilité : 16 missions de transfert documentaire réellement
+distinctes, couvrant au moins 3 familles produit. Une mission est un ensemble
+cohérent à remettre, pas une ligne de mesure, un DUT isolé ni une variante
+artificielle du même dossier. Ne pas multiplier le dénominateur par les essais.
+
+Les 4 premières missions servent au réglage de l'intégration et à la formation
+des comparateurs. Leur temps est compté séparément comme coût de mise en place.
+Les 12 autres constituent la réserve. Avant leur ouverture, le responsable
+fige le présent protocole, le code des deux méthodes, les identités/empreintes
+des dossiers et la règle de traitement des absences. Un gardien distinct cache
+les résultats de référence et les défauts contrôlés de réserve. Les défauts
+injectés servent à éprouver la cohérence, pas à estimer leur fréquence terrain.
+
+Une correction après ouverture de la réserve transforme les réexécutions de
+celle-ci en résultats descriptifs. Une nouvelle confirmation exige une nouvelle
+réserve indépendante ; aucune extension n'est autorisée automatiquement.
+
+3. Comparateurs et ordre
+
+A0 : ingénieur compétent avec un script indépendant, documents OpenHTF,
+spécification, exports et pièces jointes identiques. Il peut utiliser son
+outillage courant déjà disponible. Il ne reçoit pas moins de champs que A1.
+A1 : même dossier, adaptateur P05 et règles déterministes, plus revue humaine.
+A2 : option ultérieure distincte, agent assistant avec exactement les mêmes
+entrées et droits ; non requis pour démontrer la valeur du service. Tout coût
+de calcul et temps de vérification supplémentaire lui est imputé. Aucune API
+payante ni activation de modèle n'est autorisée par ce protocole préparatoire.
+
+Deux opérateurs compétents traitent chacun la moitié des missions avec chaque
+méthode. Pour une mission donnée, A0 et A1 sont réalisés par des opérateurs
+différents, sans accès à la sortie de l'autre. Le plan fourni alterne méthodes
+et opérateurs : 6 missions A0 en premier, 6 A1 en premier. L'ordre d'arrivée et
+les identités des missions sont figés par le gardien avant exécution. La
+formation des deux méthodes a lieu sur les 4 missions de développement.
+
+L'arbitre reçoit des dossiers anonymisés par méthode, confronte leurs
+conclusions à la source et renseigne les erreurs avant de voir les temps.
+Si deux opérateurs et un arbitre distinct ne sont pas disponibles, conserver
+une étude de cas chronométrée sans annoncer une comparaison causale contrôlée.
+
+4. Critères de réception par mission
+
+Obligatoires : source native retrouvable ; empreintes cohérentes ; aucun champ
+requis inventé ; population et révision reliées au contrat approuvé ; unités,
+limites et valeurs reliées à leur source ; phases et résultats cohérents ;
+pièces jointes identifiables et vérifiables lorsqu'elles sont présentes ;
+reprise par un second opérateur possible avec la commande et la documentation.
+
+Les états sont évalués séparément :
+  documentaire : READY_FOR_REVIEW ou INCOMPLETE ;
+  mesure : PASS, FAIL ou UNKNOWN ;
+  authenticité/instrument/horloge/étalonnage : statut explicite selon preuve ;
+  libération : toujours refusée par ce service.
+Un dossier complet avec mesures hors limites doit être READY_FOR_REVIEW/FAIL.
+Un dossier incomplet ne peut pas devenir PASS par suppression d'une phase ou
+du DUT manquant. Une calibration déclarée n'est pas une calibration vérifiée.
+
+5. Mesures à recueillir, sans substitution par simulation
+
+Pour chaque mission et méthode, utiliser measurement_ledger.template.jsonl :
+temps humain actif de préparation, mise en correspondance, investigation,
+revue, correction, assistance, formation et maintenance ; temps machine ; temps
+calendaire d'attente séparé ; temps d'installation imputé et coût réel des
+licences/ressources supplémentaires. Déplacements : zéro économie créditée
+sans trajet effectivement évité et documenté. Reprendre aussi tous les blocages
+et abandons ; ne pas calculer le coût uniquement sur les dossiers réussis.
+
+Compter : faux READY documentaires, faux PASS, rejets injustifiés de dossiers
+complets, champs perdus, inconnues remplies, incohérences non signalées, nombre
+de demandes de clarification, corrections avant réception et demandes d'aide
+après transfert. Les données « coût total » manquantes restent UNKNOWN.
+
+Le critère économique primaire est la réduction de coût pour livrer l'ensemble
+des missions reçues, en incluant le travail des tentatives rejetées. Rapporter
+aussi coût et temps par mission, taux de réception et résultat par famille
+produit. Les intervalles se calculent par mission/famille, jamais par mesure.
+Avec 3 familles, tout intervalle reste descriptif de cette faisabilité et ne
+justifie pas une généralisation à l'industrie. Le plan ne possède pas encore
+de calcul de puissance, faute de variance des temps humains mesurée.
+
+6. Calendrier relatif et points d'arrêt
+
+J0 : autorisation distincte, droit sur les données, désignation du gardien et
+de l'arbitre, réception des exports existants. Durée humaine à enregistrer.
+J1-J2 : 4 missions de développement, adaptation des deux comparateurs,
+formation identique, fixation des critères et empreintes de réserve.
+J3-J5 : 12 missions de réserve en ordre prévu ; aucun réglage sur leurs réponses.
+J6 : revue aveugle et réception/rejet ; les corrections post-réserve sont
+consignées séparément. J7 : synthèse des temps, défauts, coûts et décision.
+J+14 après remise : demander seulement si autorisé le relevé des reprises et
+de l'assistance ; aucune sollicitation n'est lancée dans R2.
+
+Arrêt immédiat de la voie évaluée : un faux READY sur identité, population ou
+limite contradictoire ; une valeur ou une preuve inventée ; une action sur
+instrument non autorisée ; source ou droits manquants ; exposition hors périmètre.
+Cela suspend l'essai et produit un défaut à corriger, pas une libération de lot.
+
+Abandon de la promesse « gain de 20 % » pour cette version si le gain total
+observé est inférieur à 20 %, si les coûts complets ne sont pas mesurés, ou si
+le taux de réception/qualité est inférieur au contrôle. Un intervalle descriptif
+qui couvre zéro ne devient pas une preuve de supériorité. Aucun seuil numérique
+n'autorise à exclure les temps de revue, maintenance ou correction.
+
+La valeur du service peut rester positive sans réduction de coût si un client
+documente une préférence pour la délégation, la qualité ou la formation. Cette
+valeur doit être recueillie auprès de lui dans une phase séparément autorisée ;
+elle ne peut pas être déduite d'un vote d'agents ou d'une intention inventée.
+
+7. Pièces de réception du pilote
+
+Manifestes signés/validés par le responsable identifié, exports immuables,
+empreintes des deux codes, plan d'ordre figé, ledger de temps, décisions
+d'arbitrage, défauts et corrections, rapport des coûts complets ou manquants,
+résumé des limites et décision. Le protocole actuel fournit les gabarits et
+la procédure ; les signatures, données et observations terrain restent vides.
