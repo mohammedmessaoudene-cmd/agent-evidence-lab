@@ -16,7 +16,7 @@ FORBIDDEN={'external_effect_established','invoice_authenticity','production_dura
 def compare_events(wanted,actual):
     if not isinstance(actual,list) or len(wanted)!=len(actual):return False
     for w,a in zip(wanted,actual):
-        if not isinstance(a,dict) or a.get('exception')!=w['exception']:return False
+        if not isinstance(a,dict) or 'exception' not in a or a['exception']!=w['exception']:return False
         r=a.get('return')
         if not isinstance(r,dict) or any(type(r.get(k)) is not type(v) or r.get(k)!=v for k,v in w['return'].items()):return False
     return True

@@ -1,0 +1,113 @@
+{
+  "status": "FAIL",
+  "python": "3.11.9",
+  "os": "Windows",
+  "mechanisms": 1,
+  "native_adapter_runs": 2,
+  "related_observations": 10,
+  "missing_field_observations": 6,
+  "rows": [
+    {
+      "profile": "v01",
+      "variant": "native_positive",
+      "expected_accept": true,
+      "actual_accept": true,
+      "matches_expected": true,
+      "reader_failures": []
+    },
+    {
+      "profile": "v01",
+      "variant": "missing_steps_2",
+      "expected_accept": false,
+      "actual_accept": true,
+      "matches_expected": false,
+      "reader_failures": []
+    },
+    {
+      "profile": "v01",
+      "variant": "missing_probes_0",
+      "expected_accept": false,
+      "actual_accept": true,
+      "matches_expected": false,
+      "reader_failures": []
+    },
+    {
+      "profile": "v01",
+      "variant": "explicit_conflict",
+      "expected_accept": false,
+      "actual_accept": false,
+      "matches_expected": true,
+      "reader_failures": [
+        "steps"
+      ]
+    },
+    {
+      "profile": "v02",
+      "variant": "native_positive",
+      "expected_accept": true,
+      "actual_accept": true,
+      "matches_expected": true,
+      "reader_failures": []
+    },
+    {
+      "profile": "v02",
+      "variant": "missing_steps_0",
+      "expected_accept": false,
+      "actual_accept": true,
+      "matches_expected": false,
+      "reader_failures": []
+    },
+    {
+      "profile": "v02",
+      "variant": "missing_probes_0",
+      "expected_accept": false,
+      "actual_accept": true,
+      "matches_expected": false,
+      "reader_failures": []
+    },
+    {
+      "profile": "v02",
+      "variant": "missing_probes_1",
+      "expected_accept": false,
+      "actual_accept": true,
+      "matches_expected": false,
+      "reader_failures": []
+    },
+    {
+      "profile": "v02",
+      "variant": "missing_probes_2",
+      "expected_accept": false,
+      "actual_accept": true,
+      "matches_expected": false,
+      "reader_failures": []
+    },
+    {
+      "profile": "v02",
+      "variant": "explicit_conflict",
+      "expected_accept": false,
+      "actual_accept": false,
+      "matches_expected": true,
+      "reader_failures": [
+        "event_state_0"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "profile": "v01",
+      "returncode": 0,
+      "adapter_sha256": "d25c6e9a2e59bd27e61f2c44a7e7efa817eae01a9b40f07d121f77e266eca418"
+    },
+    {
+      "profile": "v02",
+      "returncode": 0,
+      "adapter_sha256": "ce364326c439159f43154cfdbda3f0b265dac0af5a9716bada3a33f06bf49a3b"
+    }
+  ],
+  "source_sha256": {
+    "run_adapter_contract.py": "82b7b658f189965b06e29a0f95698b794bb3338200aedf9f8ea8d8cc2495c4ed",
+    "run_m4_review.py": "a28ab35f33c11e42196cc4c12ef7d3824f380667ab09b716d1b25c5921e56549"
+  },
+  "ledger_sha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+  "scope": "Same-team synthetic local readers. No real external effects or invoice authenticity established."
+}

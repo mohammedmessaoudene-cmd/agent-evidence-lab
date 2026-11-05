@@ -1,0 +1,15 @@
+--- a/pydantic_ai_slim/pydantic_ai/durable_exec/dbos/_operation_backend.py
++++ b/pydantic_ai_slim/pydantic_ai/durable_exec/dbos/_operation_backend.py
+@@ -83,7 +83,11 @@
+         self._operation = operation
+         self._step_function = step
+         self._step_options = step_options
+-        self.step = DBOS.step(**step_options)(step)
++        self.step = (
++            step
++            if isinstance(operation.operation_id, CapabilityOperationId)
++            else DBOS.step(**step_options)(step)
++        )
+         self._dispatch = dispatch
+ 
+     @property

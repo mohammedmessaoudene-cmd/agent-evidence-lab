@@ -1,0 +1,93 @@
+{
+  "historical169": {
+    "repository_commit": "c21bbbc0f9b087d5f1ed2e2cf4fbf4944b6b0e01",
+    "sha256": "30d4f25cf6ccb617499b2a848a2ad1bc87be4d051612ce6d194d6351b4dc4ac1",
+    "bytes": 6435,
+    "lines": 169,
+    "modified": false
+  },
+  "candidate168": {
+    "sha256": "742edc61b5e5a4107a6807ec06520b34e496c47f5e8df07a0540f093f46e576f",
+    "bytes": 6400,
+    "lines": 168
+  },
+  "upstream_pydantic": {
+    "commit": "d44704ec72744e4fc0bd5a3d5dd877462a24da5b",
+    "native_backend_sha256": "40ecc9172df886f7d4988978b00425eac11ca26758ff4e98296b35001cdcfc13",
+    "selected_comparator_sha256": "1e84660ac8be15fda685226b05c20428308a0fc3f29b162243d66f831cf3aedc"
+  },
+  "official_admin_removal": {
+    "url": "https://github.com/dbos-inc/dbos-transact-py/pull/853",
+    "merge_commit": "8e8ef5200898bf23c621aa3f327cec2f05545b5a",
+    "release": "https://github.com/dbos-inc/dbos-transact-py/releases/tag/3.0.0"
+  },
+  "sdk_source_pins_received": [
+    {
+      "version": "2.29.0",
+      "commit": "ab99c997a468e286b2899975ca525eeb05a4d888",
+      "tag_kind": "commit",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "dbos/_dbos_config.py",
+          "git_blob_sha1": "57690d19ea124a3fda5143f5edab9fde4b8e9cf5",
+          "sha256": "a5f96a65029bc6fede906bc93fd0a404b452c34f9e859adbbd9cb137451dcfaf",
+          "bytes": 30517,
+          "findings": "DBOSConfig line75 includes optionalbool run_admin_server; default153-155 uses GlobalParams.dbos_cloud; translate192-200 and process401-407 preserve default; overwrite638-645 removes explicit cloud override.",
+          "url": "https://github.com/dbos-inc/dbos-transact-py/blob/ab99c997a468e286b2899975ca525eeb05a4d888/dbos/_dbos_config.py"
+        },
+        {
+          "path": "dbos/_dbos.py",
+          "git_blob_sha1": "f5747861feea525ba2992320f66a4239d502b651",
+          "sha256": "cd9f304acbb98d781b8b2e1fecf7dfc5d6b1def504a914e39085ebe5a3ee7562",
+          "bytes": 143065,
+          "findings": "Constructor475-481 translates then applies cloud override; launch631-640 constructs AdminServer only if runtime run_admin_server truthy.",
+          "url": "https://github.com/dbos-inc/dbos-transact-py/blob/ab99c997a468e286b2899975ca525eeb05a4d888/dbos/_dbos.py"
+        },
+        {
+          "path": "dbos/_utils.py",
+          "git_blob_sha1": "13648f37956fa2c1e0b754ebde53d41e081e88f7",
+          "sha256": "ca82268a7249509d2879350191392ef79a972a37761cd9abc68189c74a36c48a",
+          "bytes": 7028,
+          "findings": "GlobalParams.dbos_cloud at127 equals os.environ.get('DBOS__CLOUD') == 'true', captured at module import.",
+          "url": "https://github.com/dbos-inc/dbos-transact-py/blob/ab99c997a468e286b2899975ca525eeb05a4d888/dbos/_utils.py"
+        }
+      ]
+    },
+    {
+      "version": "3.4.0",
+      "commit": "718d06613d9b7dc4c935e098e4608b6745267760",
+      "tag_kind": "annotated",
+      "tag_object": "6f806aaa6b17e2405d09f1f93c86e053e140cd12",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "dbos/_dbos_config.py",
+          "git_blob_sha1": "41b73e8ec667b1d8dc88d4e166694c424dfa684b",
+          "sha256": "87db0205c5a052bc5d529de19bee77f97665a76cafd8f44fee8ea97c3c755088",
+          "bytes": 27165,
+          "findings": "DBOSConfig and RuntimeConfig have neither admin_port nor run_admin_server; translation has no admin-server default or option handling.",
+          "url": "https://github.com/dbos-inc/dbos-transact-py/blob/718d06613d9b7dc4c935e098e4608b6745267760/dbos/_dbos_config.py"
+        },
+        {
+          "path": "dbos/_dbos.py",
+          "git_blob_sha1": "061058983eb3b3fa609a0b816aa03f32daea279c",
+          "sha256": "4b88df7d8df27bac038d9c07d3733eefe9fd7894acb4ef2c1165e2cea385c0e7",
+          "bytes": 173985,
+          "findings": "No AdminServer import, field or launch.",
+          "url": "https://github.com/dbos-inc/dbos-transact-py/blob/718d06613d9b7dc4c935e098e4608b6745267760/dbos/_dbos.py"
+        },
+        {
+          "path": "dbos/_utils.py",
+          "git_blob_sha1": "4972bb889e4c0a349cc8b417559c47a10142abc1",
+          "sha256": "5e12e7ed411524af5da97caed82e1643fa354d6906ae977950bdbcf8191f0ed4",
+          "bytes": 7820,
+          "findings": "Cloud-mode capture retained; other Cloud behavior is outside this local contract.",
+          "url": "https://github.com/dbos-inc/dbos-transact-py/blob/718d06613d9b7dc4c935e098e4608b6745267760/dbos/_utils.py"
+        }
+      ],
+      "absent_file": "dbos/_admin_server.py"
+    }
+  ],
+  "manifest_meaning": "Byte identities and receivedsource reconciliation; no supplychain certification or independentexecution inferred."
+}

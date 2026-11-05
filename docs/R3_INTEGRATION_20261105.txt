@@ -1,0 +1,78 @@
+R3 integration: bounded evidence and preparation, 5 November 2026
+
+This composition joins four separately reviewed public supplements on the
+Agent Evidence Lab base4514f652168e1e90c05e62d532bbeef3f01692af. It preserves
+the historical research release v0.1.0-research at c21bbbc0f9b087d5f1ed2e2cf4fbf4944b6b0e01.
+It is preparation predating the later Swarm sprint, not an event result.
+
+P01: pinned DBOS compatibility
+The separate168-line candidate removes only the retired run_admin_server option
+from the historical169-line test. DBOS deliberately removed the option in3.0;
+this is known API evolution, not a new production defect. Local nonCloud profiles
+DBOS2.29.0 and3.4.0 passed selected static and normal tests. A controlled bypass
+of capability journaling makes the native assertion observe versionB while the
+recording-dispatch comparator passes. The same two identities are reused across
+versions and platforms; they are not independent extra scenarios. ReceivedLinux,
+actualWindows and newly hostedUbuntu evidence remain separate. Cloud, a killed
+interpreter, arbitrary SDKs and the whole upstream suite are not qualified.
+Source and CI: https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab/pull/4
+The workflow requires DBOS__CLOUD=false before import. Its artifact gate rejects
+unrelated assertions and timeouts even if versionB occurs in their source context.
+
+P04: mandatory exception-field presence
+The two supplied readers previously accepted an omitted required exception
+member as explicit null. One guard per reader fixes that omission mechanism.
+The regression has two native anchor profiles, six derived omissions and two
+explicit-exception negative controls. It leaves the ledger, adapters, inputs,
+contracts and historical evidence unchanged. A native local positive does not
+establish an external effect or an authentic invoice. Corrected complete CLI
+checks and hostedWindows/Ubuntu evidence are separate from those semantic claims.
+Source and CI: https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab/pull/3
+
+P05: passive collection preparation
+The standard-library calculator checks referenced bytes, documentary prerequisites
+and declared costs. Missing costs and comparisons stay unknown. It never authorizes
+hardware release; twenty_percent_claim remains NOT_ESTABLISHED. Eight regression
+checks contain fabricated values, including an OBSERVED_DECLARATIONS tag solely
+to exercise that branch. Sixteen fabricated jobs and thirty-two records inside a
+fixture are not field missions, authentic observations or measured savings.
+The positive gate still requires human signoff. A coherent forgery can satisfy
+documentary checks; hashes do not authenticate people, data rights or approvals.
+Source and CI: https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab/pull/5
+
+P06: deterministic handoff preparation
+The separate pilot preserves UNKNOWN, exercises actual serialized local handoff,
+and permits an independent obligation to finish. Its finite67 checks comprise
+48 scripted episodes and19 adverse/integrity checks. All interface configurations
+use scripted policies. LLM campaign NOT_RUN; there is no demonstrated advantage
+over an equally informed competent classical system or independent human study.
+The same client uncertainty may correspond to zero or one committed effect.
+Importing another system's UNKNOWN label alone does not establish its semantics.
+Source and CI: https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab/pull/2
+
+Other research decisions
+P02's new four-variant audit-consumption example yielded equality between Python
+and SQL at equal information. A historical closure fact does not by itself authorize
+every later use after a relevant proof revision. Truth and complete coverage remain
+unknown. The preexisting hidden-conclusion example is not a new discovery.
+P03's constructed SQLite witness contrasts a narrower native contract with an
+explicitly added local preservation obligation. A conventional SQL frame check
+matches the separate tuple oracle. Official tool reachability, a complete business
+policy and a superior new algorithm are not established. These results justify
+bounded examples and negative novelty decisions, not a new general framework.
+
+Integration acceptance
+The four public heads must be pinned, their disjoint changes composed exactly,
+and the root manifest recomputed from that union. Separate technical and strategic
+AI reviews cover this composition before publication; integrated CI must pass on
+the actual head before merging. The five existing P04 source/metadata changes are
+the only modifications to preexisting non-root-manifest files. Other historical
+files, component notices and the historical tag remain unchanged.
+
+Original code keeps its existing MIT terms and per-component notices, including
+the Pydantic MIT attribution. No private chat, raw research archive, credentials,
+customer dataset, model weights or private implementation is added. Publication,
+CI and internal AI reviews are not independent human or institutional validation.
+External adoption, field performance, business benefit and protocol novelty remain
+unestablished. No upstream DCO attestation, grant submission or new contact is
+created by this integration.
