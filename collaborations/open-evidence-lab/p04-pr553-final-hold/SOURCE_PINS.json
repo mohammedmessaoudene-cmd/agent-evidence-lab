@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/probityai/agent-evidence-vectors",
+  "commit": "9136dbe3c296e2929a4cbb85dc4e54937e74b193",
+  "commitUrl": "https://github.com/probityai/agent-evidence-vectors/commit/9136dbe3c296e2929a4cbb85dc4e54937e74b193",
+  "filesSha256": {
+    "corpora/vectors-execution-billing-finality/MANIFEST.json": "d45f64b81734a5b6e801748e8b90369546bf1fbcdaa6402387895b06c7d1a29e",
+    "corpora/vectors-execution-billing-finality/tests/billing_adapter.py": "6469a089b33f00819aa158acca9549a2de70e0a0aca6025ebe1e95ba21e8098c",
+    "corpora/vectors-execution-billing-finality/tests/p04/exposure_ledger.py": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+    "packaging/agent_evidence_vectors/__init__.py": "8c2e8d1d1b7e94004d29f11ecad85c02c389cb759264a139637f3b10a05c4538",
+    "packaging/agent_evidence_vectors/executionbilling.py": "5492d76c164c610ec6b0f3d0156b6a1281782dce46aeacf0c3ef7592ff379410",
+    "packaging/agent_evidence_vectors/executionbilling_runtime.py": "10d02811e95c287e690a038d63e40b3eb92f7857697871f80f22eb15f8fc4cca"
+  },
+  "lab": {
+    "repository": "https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab",
+    "headObserved": "a3fd0ea597f763a99c73632813ef92d7e22d0ef5",
+    "ledgerBlob": "3b9599c4fa1063156b28aea0588634f9ca04cefe",
+    "ledgerAtPublicHead": "https://github.com/mohammedmessaoudene-cmd/agent-evidence-lab/blob/a3fd0ea597f763a99c73632813ef92d7e22d0ef5/collaborations/open-evidence-lab/p04-execution-billing/upstream/exposure_ledger.py"
+  }
+}

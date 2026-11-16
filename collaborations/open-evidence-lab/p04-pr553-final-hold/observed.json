@@ -1,0 +1,142 @@
+{
+  "adapter": "6469a089b33f00819aa158acca9549a2de70e0a0aca6025ebe1e95ba21e8098c",
+  "arms": {
+    "early_release": {
+      "failedScenarios": [
+        "F01",
+        "F05",
+        "X4"
+      ],
+      "focused": {
+        "F01": {
+          "beforeB": [
+            0,
+            0,
+            3
+          ],
+          "normalReopenEqual": true,
+          "pairedExpectationMet": false,
+          "reader": {
+            "decision": "deny",
+            "reason": "held_released_before_final_billing"
+          },
+          "reservationB": "admitted",
+          "runtimeProblems": [
+            "the reader denies the record: held_released_before_final_billing"
+          ]
+        },
+        "F05-with-second-reservation": {
+          "beforeB": [
+            0,
+            1,
+            2
+          ],
+          "normalReopenEqual": true,
+          "pairedExpectationMet": true,
+          "reader": {
+            "decision": "deny",
+            "reason": "held_released_before_final_billing"
+          },
+          "reservationB": "admitted",
+          "runtimeProblems": [
+            "the reader denies the record: held_released_before_final_billing"
+          ]
+        }
+      },
+      "shipped": {
+        "conform": 7,
+        "fail": 3,
+        "suiteRefusals": 0,
+        "vectors": 10
+      },
+      "source": "807ebb04ca80e131a47a9b98c157a3462c4ae9c30453727cbcc57ca35b5006a1"
+    },
+    "reference": {
+      "failedScenarios": [],
+      "focused": {
+        "F01": {
+          "beforeB": [
+            2,
+            0,
+            1
+          ],
+          "normalReopenEqual": true,
+          "pairedExpectationMet": true,
+          "reader": {
+            "decision": "allow",
+            "reason": "finality_held"
+          },
+          "reservationB": "refused",
+          "runtimeProblems": []
+        },
+        "F05-with-second-reservation": {
+          "beforeB": [
+            0,
+            1,
+            2
+          ],
+          "normalReopenEqual": true,
+          "pairedExpectationMet": true,
+          "reader": {
+            "decision": "allow",
+            "reason": "finality_held"
+          },
+          "reservationB": "admitted",
+          "runtimeProblems": []
+        }
+      },
+      "shipped": {
+        "conform": 10,
+        "fail": 0,
+        "suiteRefusals": 0,
+        "vectors": 10
+      },
+      "source": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f"
+    },
+    "stuck_hold": {
+      "failedScenarios": [],
+      "focused": {
+        "F01": {
+          "beforeB": [
+            2,
+            0,
+            1
+          ],
+          "normalReopenEqual": true,
+          "pairedExpectationMet": true,
+          "reader": {
+            "decision": "allow",
+            "reason": "finality_held"
+          },
+          "reservationB": "refused",
+          "runtimeProblems": []
+        },
+        "F05-with-second-reservation": {
+          "beforeB": [
+            1,
+            1,
+            1
+          ],
+          "normalReopenEqual": true,
+          "pairedExpectationMet": false,
+          "reader": {
+            "decision": "allow",
+            "reason": "finality_held"
+          },
+          "reservationB": "refused",
+          "runtimeProblems": []
+        }
+      },
+      "shipped": {
+        "conform": 10,
+        "fail": 0,
+        "suiteRefusals": 0,
+        "vectors": 10
+      },
+      "source": "bbe80a7fbff51749d96ff5c45e4c5bfbcdc1d18d1fc1838859f85fde0c03e73d"
+    }
+  },
+  "corpusDigest": "a69ab722927e51f32bfe149ea343d7ad8a2a5fba5f010272ac0c9318fa742a0f",
+  "python": "3.11.9",
+  "reader": "5492d76c164c610ec6b0f3d0156b6a1281782dce46aeacf0c3ef7592ff379410"
+}
