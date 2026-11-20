@@ -1,0 +1,153 @@
+{
+  "after": {
+    "go": {
+      "conflict": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "early_release": {
+        "decision": "deny",
+        "reason": "held_released_before_final_billing"
+      },
+      "member": {
+        "decision": "deny",
+        "reason": "held_after_final_billing"
+      },
+      "reference": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "stuck_hold": {
+        "decision": "deny",
+        "reason": "held_after_final_billing"
+      }
+    },
+    "goCorpus": 32,
+    "python": {
+      "conflict": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "early_release": {
+        "decision": "deny",
+        "reason": "held_released_before_final_billing"
+      },
+      "member": {
+        "decision": "deny",
+        "reason": "held_after_final_billing"
+      },
+      "reference": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "stuck_hold": {
+        "decision": "deny",
+        "reason": "held_after_final_billing"
+      }
+    },
+    "pythonCorpus": "answered 32 of 32 cases"
+  },
+  "archiveSha256": "d55ee487bdfcd5719f98176400d62714e4ac36142bb6f392b593ed070f63b665",
+  "before": {
+    "go": {
+      "conflict": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "early_release": {
+        "decision": "deny",
+        "reason": "held_released_before_final_billing"
+      },
+      "member": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "reference": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "stuck_hold": {
+        "decision": "allow",
+        "reason": "finality_held"
+      }
+    },
+    "goCorpus": 31,
+    "python": {
+      "conflict": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "early_release": {
+        "decision": "deny",
+        "reason": "held_released_before_final_billing"
+      },
+      "member": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "reference": {
+        "decision": "allow",
+        "reason": "finality_held"
+      },
+      "stuck_hold": {
+        "decision": "allow",
+        "reason": "finality_held"
+      }
+    },
+    "pythonCorpus": "answered 31 of 31 cases"
+  },
+  "candidatePatchSha256": "c6c922242d2a0e413d466018465420f06deff712228bf2bb7280279ae9eaea0c",
+  "commit": "9136dbe3c296e2929a4cbb85dc4e54937e74b193",
+  "goVersion": "go version go1.27.1 windows/amd64",
+  "manifest": {
+    "corpusDigest": "cf1f838b9fc505692601df1ffe97cf26d6b8dbf9bed1fa55c21d07ae550d2dc8",
+    "counts": {
+      "allow": 10,
+      "deny": 22
+    },
+    "killedBy": {
+      "F04": "held_after_final_billing",
+      "F05": "held_after_final_billing",
+      "X1": "held_after_final_billing",
+      "X3": "held_after_final_billing"
+    }
+  },
+  "observations": {
+    "early_release": {
+      "beforeB": [
+        0,
+        1,
+        2
+      ],
+      "ledgerSha256": "807ebb04ca80e131a47a9b98c157a3462c4ae9c30453727cbcc57ca35b5006a1",
+      "reservationB": "admitted"
+    },
+    "reference": {
+      "beforeB": [
+        0,
+        1,
+        2
+      ],
+      "ledgerSha256": "c321eab3e1adfa2169164f63238597f1a1c2a7868d339540a3da574f09c82d0f",
+      "reservationB": "admitted"
+    },
+    "stuck_hold": {
+      "beforeB": [
+        1,
+        1,
+        1
+      ],
+      "ledgerSha256": "bbe80a7fbff51749d96ff5c45e4c5bfbcdc1d18d1fc1838859f85fde0c03e73d",
+      "reservationB": "refused"
+    }
+  },
+  "pythonVersion": "3.11.9",
+  "recordSha256": {
+    "conflict.json": "98bbc0762550cfad8918e4ca9a109c597c0e0a808d72e10ea3edb348c3dee615",
+    "early_release.json": "bc241c3b607cacd02cc409967bbff8e53dfbb0f091ff67d3e4ddd8c7293485b2",
+    "member.json": "288b4af6c86edf9e74e187ed179042481c7679f471d3f40423f6d49a34c1e66c",
+    "reference.json": "9bc612a910636b919f942cbc3334fac4e561ca136a400e077ae86d0832cb1a15",
+    "stuck_hold.json": "a22bac0106bac9948489b0fe69fc830d040e77cebd7de693b2a0c6efd8ee3b4f"
+  },
+  "targetedPytest": "19 passed in 3.53s"
+}

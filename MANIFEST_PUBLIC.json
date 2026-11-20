@@ -54,6 +54,31 @@
       "sha256": "2de6e25c83955efa10d2674e860777742b321f119a39132b10cde6902b7c1ee6"
     },
     {
+      "path": "collaborations/dot/p01-lost-reply-and-restart/LICENSE",
+      "bytes": 1077,
+      "sha256": "c3ae75209c90a84492d3ecdf1e20cec31078c093d401fce0d5e1b665b26b284e"
+    },
+    {
+      "path": "collaborations/dot/p01-lost-reply-and-restart/README.md",
+      "bytes": 2372,
+      "sha256": "0182897ffb407cf176bcc0c6b6f675200d67f4212b9ef7d27ce8f8a3a26b51bd"
+    },
+    {
+      "path": "collaborations/dot/p01-lost-reply-and-restart/observed.json",
+      "bytes": 1522,
+      "sha256": "14e0a14a7902d1504269546f6a63a712c58b27136db37187cfe86890859b1d76"
+    },
+    {
+      "path": "collaborations/dot/p01-lost-reply-and-restart/relire.py",
+      "bytes": 3237,
+      "sha256": "4d1751587b4ae059e7b9f0df0c51d6033d1e46dedd644c3f55512540768848b8"
+    },
+    {
+      "path": "collaborations/dot/p01-lost-reply-and-restart/reprise.py",
+      "bytes": 10291,
+      "sha256": "7b0b345153639dbfe033b2f7759059cdbe27392ea5a70da29e16e0cc6ac6bcae"
+    },
+    {
       "path": "collaborations/open-evidence-lab/p04-execution-billing/.gitattributes",
       "bytes": 8,
       "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
@@ -227,6 +252,51 @@
       "path": "collaborations/open-evidence-lab/p04-pr553-final-hold/observed.json",
       "bytes": 3796,
       "sha256": "c59f0ab2a0cb820962e4606ba1813bdfa9be35d6aae30808cb181176e1f0ffb8"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/LICENSE-APACHE-2.0",
+      "bytes": 11343,
+      "sha256": "8b506a9d145be0a6fbef3f0519996faf84c770f8ab8d32d120c8682f2ad6181f"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/LICENSE-MIT",
+      "bytes": 1077,
+      "sha256": "c3ae75209c90a84492d3ecdf1e20cec31078c093d401fce0d5e1b665b26b284e"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/NOTICE.md",
+      "bytes": 1922,
+      "sha256": "c47661069aa92e3751f3d4cd135547b76c21fbb525b11e52c7e6bc91e920ad5f"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/README.md",
+      "bytes": 5516,
+      "sha256": "fd0baa88ac6b25d7618251df1fb20778ee1ea72adb25e78754ff75aaf2dcb3e6"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/candidate.patch",
+      "bytes": 12152,
+      "sha256": "c6c922242d2a0e413d466018465420f06deff712228bf2bb7280279ae9eaea0c"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/deny.record.json",
+      "bytes": 3355,
+      "sha256": "288b4af6c86edf9e74e187ed179042481c7679f471d3f40423f6d49a34c1e66c"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/probe_test.go",
+      "bytes": 989,
+      "sha256": "c5a78cb9b046f040d24b97034be9d7876a23018d737e2a4ae032af1e8bffdfee"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/replay.py",
+      "bytes": 10454,
+      "sha256": "8288e4e82a29eca8e8b9cd0c8e2218a2ffebc577cbe48a0676a46498110faf04"
+    },
+    {
+      "path": "collaborations/open-evidence-lab/p04-python-go-final-hold/results.json",
+      "bytes": 4079,
+      "sha256": "16595fab5734375d71f9eed068784ec81a441a8c14775bba0f67de83cbcac1f5"
     },
     {
       "path": "collaborations/p01-dbos-compatibility-r3/LICENSE",
