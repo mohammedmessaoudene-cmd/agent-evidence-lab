@@ -1,0 +1,40 @@
+{
+  "task_id": "task_20251208_123126_960_c4ad7a70_f974dae7",
+  "oracle_row_zero_based": 35,
+  "oracle_sha256": "1b5948db2db3cc0dc643f7fddcbb90c2ac09489615f369b4fe3abbdcd484d697",
+  "seed_sha256": "71c8e714b920a0f67abd16f06c29818284b741608e0fa3f1a28c1f331aa9e6dc",
+  "commit": "b44f1cf732e4c75460ae2879c03c488fda1f3454",
+  "run_id": "44872924563",
+  "attempt": "1",
+  "image": "shivakrishnareddyma225/enterpriseops-gym-mcp-csm@sha256:eaa456ac9aa85728426e7d3813a0bbca0949d6a8695be30e26f03894e6e6b189",
+  "image_config": "sha256:6b755e5adefabdb62b2fe4c3ca8cf9d297e1d3ea887476ecd58a9f9735ab5be8",
+  "steps": {
+    "CHECKOUT_RESULT": "success",
+    "INPUT_RESULT": "success",
+    "STARTUP_RESULT": "success",
+    "EXERCISE_RESULT": "success"
+  },
+  "observation": {
+    "stage": "complete",
+    "case_write": "ACKNOWLEDGED",
+    "interaction_write": "ACKNOWLEDGED",
+    "database_id_sha256": "bbe6d787e3b9b64b422830764d5a96c4759b820c0dc5ffed2cf94039f47fde34",
+    "served_schemas_match": true,
+    "before": [
+      0,
+      0
+    ],
+    "case_id": 1233,
+    "case_number": "CS-0001233",
+    "after_case": [
+      1,
+      0
+    ],
+    "interaction_id": 1233,
+    "after_interaction": [
+      1,
+      1
+    ],
+    "outcome": "CASE_AND_INTERACTION_OBSERVED"
+  }
+}
