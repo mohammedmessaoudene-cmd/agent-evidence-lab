@@ -14,6 +14,11 @@
       "sha256": "ecc77cf76e5a8967987cda508a455cb1b9d6f9c4a1e95fc6ae071a5ef072b7ff"
     },
     {
+      "path": ".github/workflows/dot-p03-avery.yml",
+      "bytes": 4757,
+      "sha256": "769f04cd80a5c576eed4587ef030359a4c0888d310f90d6b7e892b08a2e8c968"
+    },
+    {
       "path": ".github/workflows/p01-compatibility-r3.yml",
       "bytes": 2170,
       "sha256": "ffbb89b184b93a2fcdd3736c069f659dc50668844ff0f00fc177e17c24eca4f0"
@@ -117,6 +122,21 @@
       "path": "collaborations/dot/p02-prospective-review-observation/baseline.json",
       "bytes": 1290,
       "sha256": "b2d2a66534d9fc2a3abda1d6ef84d05a766bc419ea63f310dc72d2a21e186d9d"
+    },
+    {
+      "path": "collaborations/dot/p03-avery-runtime/collect.py",
+      "bytes": 4470,
+      "sha256": "48c56cbd749b568fea82f014d97dea87902e5d69d615d9a7561e533159ef9d4f"
+    },
+    {
+      "path": "collaborations/dot/p03-avery-runtime/exercise.py",
+      "bytes": 5656,
+      "sha256": "1c97c643d58396e878f1ce905d7e3593a24d064db514a1adf631a3b7ec32036e"
+    },
+    {
+      "path": "collaborations/dot/p03-avery-runtime/prepare.py",
+      "bytes": 3004,
+      "sha256": "e67f393d35e86d5d6dd4459dbcc1e9275785751541c0a22a19d8350262ba6ef9"
     },
     {
       "path": "collaborations/dot/p03-csm-policy-score/README.md",
