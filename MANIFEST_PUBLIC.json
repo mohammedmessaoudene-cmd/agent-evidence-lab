@@ -1005,8 +1005,8 @@
     },
     {
       "path": "projects/P05_test_dossier/acquisition_gate/EXPECTED.json",
-      "bytes": 3285,
-      "sha256": "45c8f3f25416fda25c5c2808e363f70d60ffa2e9109fe9c617eed69e71b7b413"
+      "bytes": 3618,
+      "sha256": "e9ca4ca4a3bb342c53b483c6cdd7243ca248d5dbfed14a02242796d9649b3729"
     },
     {
       "path": "projects/P05_test_dossier/acquisition_gate/LICENSE",
@@ -1015,8 +1015,8 @@
     },
     {
       "path": "projects/P05_test_dossier/acquisition_gate/README.md",
-      "bytes": 3711,
-      "sha256": "484b2054d9f15be9c05cca5fbb628c5e4e1a695a1adcfe32fab792fb40264e2f"
+      "bytes": 4065,
+      "sha256": "c9321ee773c05081116b43785b1127e454d24c1d0871d86d267df33d6421a987"
     },
     {
       "path": "projects/P05_test_dossier/acquisition_gate/SYNTHETIC/acquisition.json",
@@ -1050,13 +1050,13 @@
     },
     {
       "path": "projects/P05_test_dossier/acquisition_gate/controls.py",
-      "bytes": 3695,
-      "sha256": "3931da6debbf3bcb452bea10553b623d5379c7df1e2276c27e0a95656f2aee51"
+      "bytes": 4560,
+      "sha256": "d75b3de11ccb4a1b236ef275efa5621420bdd76fc58bc9e5ff362eeaadea1c2c"
     },
     {
       "path": "projects/P05_test_dossier/acquisition_gate/observer.py",
-      "bytes": 7633,
-      "sha256": "50646a6929ccada8aab77a4fc12e12b511adab6da79fc381d6382425d7974355"
+      "bytes": 7840,
+      "sha256": "1ef7711602a2293ad67a5c9f3451fa5c329d58c52a133265612ce2ea8aa01c30"
     },
     {
       "path": "projects/P05_test_dossier/acquisition_gate/verify.py",

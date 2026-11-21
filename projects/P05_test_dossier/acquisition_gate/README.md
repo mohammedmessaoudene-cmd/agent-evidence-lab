@@ -11,7 +11,7 @@ python -B observer.py SYNTHETIC
 python -B verify.py
 ```
 
-The first command reads five bounded JSON logs and their manifest. It prints a JSON result and returns 0 for a structurally linked trace or 2 for a rejected input. The second command runs 17 named controls and one additional file-integrity control. It compares four complete JSON outputs against the expected file, including the counterexample below and the refusal after one byte is appended to a temporary witness file. Its temporary copies are removed on exit. [Expected outputs](EXPECTED.json) · [Controls](controls.py)
+The first command reads five bounded JSON logs and their manifest. It prints a JSON result and returns 0 for a structurally linked trace or 2 for a rejected input. The second command runs 22 named controls and one additional file-integrity control. It compares four complete JSON outputs against the expected file, including the counterexample below and the refusal after one byte is appended to a temporary witness file. Its temporary copies are removed on exit. [Expected outputs](EXPECTED.json) · [Controls](controls.py)
 
 ## Two conversions with different roles
 
@@ -29,6 +29,8 @@ For the second decision in the counterexample, the observer reports the followin
 ```
 
 An empty list means that the supplied acquisition log contains no row declaring that trigger. Acquisition-log completeness is always `UNKNOWN`.
+
+Every conversion attributed to a request present in the trace must have a timestamp at or after its request's start on the common counter. A separate conversion may finish after the cached response and its decision. The cached value retains its original conversion timestamp. Decision and witness marker uncertainties apply to the reference comparison.
 
 ## Input and scope
 

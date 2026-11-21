@@ -111,6 +111,9 @@ def inspect(manifest, sources):
         else:
             require(g["origin"] == "CACHE" and p["t_ns"] < started and a["trigger"] != request_id,
                     "cache origin mismatch")
+        for conversion_id in declared_by_request.get(request_id, []):
+            require(tables["acquisition"][conversion_id]["t_ns"] >= started,
+                    "declared conversion predates request")
 
     used_responses, used_witnesses, edges = set(), set(), set()
     joined = []
