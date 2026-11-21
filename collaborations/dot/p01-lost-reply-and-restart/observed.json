@@ -1,0 +1,44 @@
+{
+  "original_receipt_sha256": "73e94b2424ded731c6ea95de052817d610a3d9d42a4004fea1851cec85177b7e",
+  "script_sha256": "7b0b345153639dbfe033b2f7759059cdbe27392ea5a70da29e16e0cc6ac6bcae",
+  "python": "3.11.9",
+  "test_host": "Windows",
+  "fixture": "local inert SQLite fixture",
+  "transport": "local subprocess pipes",
+  "cases": [
+    {
+      "lookup": "available",
+      "resolution": "RECOVERED",
+      "first_process_exit": 36,
+      "second_process_exit": 0,
+      "methods_observed": [
+        "execute",
+        "lookup"
+      ],
+      "effect_count_before_restart": 1,
+      "effect_count_after_lookup": 1,
+      "original_result_bytes": 64,
+      "sha256_original_result": "7e8ad45bfb0fef404474a95d2daa0966b83ae9822c10706e1ca4e1a623fbd2f3",
+      "sha256_recovered_result": "7e8ad45bfb0fef404474a95d2daa0966b83ae9822c10706e1ca4e1a623fbd2f3",
+      "full_bytes_compared_equal": true
+    },
+    {
+      "lookup": "unavailable",
+      "resolution": "OUTCOME_PENDING",
+      "first_process_exit": 36,
+      "second_process_exit": 0,
+      "methods_observed": [
+        "execute",
+        "lookup"
+      ],
+      "effect_count_before_restart": 1,
+      "effect_count_after_lookup": 1,
+      "original_result_bytes": 64,
+      "sha256_original_result": "b1a93ae32701d008926f200096388013c6e376f1dd5f0a5b743508c1dbec54f4",
+      "sha256_recovered_result": null,
+      "full_bytes_compared_equal": null
+    }
+  ],
+  "external_provider": "NOT_RUN",
+  "power_loss": "NOT_TESTED"
+}
