@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "frozen_utc": "2026-11-21T05:26:12Z",
+  "repo": "agentrust-io/cmcp",
+  "number": 851,
+  "target_reviewer": "noah-ing",
+  "witness_reviewer": "drk-ram",
+  "retrieval": [
+    "GitHub REST pull review list (paginated)",
+    "GitHub GraphQL pull reviewDecision"
+  ],
+  "pull": {
+    "baseRefOid": "f2193fbb99c1430d4cc55911d81ad44d7d29163c",
+    "headRefOid": "01af41c8201dc30cd06b1b1957e8be8ec0d82985",
+    "isDraft": false,
+    "reviewDecision": "CHANGES_REQUESTED",
+    "state": "OPEN",
+    "updatedAt": "2026-11-20T04:46:59Z",
+    "url": "https://github.com/agentrust-io/cmcp/pull/851"
+  },
+  "reviews": [
+    {
+      "association": "CONTRIBUTOR",
+      "commit_id": "01af41c8201dc30cd06b1b1957e8be8ec0d82985",
+      "id": 5967309163,
+      "login": "drk-ram",
+      "state": "APPROVED",
+      "submitted_at": "2026-11-19T00:15:01Z",
+      "url": "https://github.com/agentrust-io/cmcp/pull/851#pullrequestreview-5967309163"
+    },
+    {
+      "association": "COLLABORATOR",
+      "commit_id": "01af41c8201dc30cd06b1b1957e8be8ec0d82985",
+      "id": 5987628676,
+      "login": "noah-ing",
+      "state": "CHANGES_REQUESTED",
+      "submitted_at": "2026-11-20T04:46:59Z",
+      "url": "https://github.com/agentrust-io/cmcp/pull/851#pullrequestreview-5987628676"
+    }
+  ]
+}

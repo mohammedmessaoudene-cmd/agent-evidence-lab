@@ -109,6 +109,16 @@
       "sha256": "6fa1263671b4c9a24021fe31a2a98d42eb897f659409ef8b9f7fce529abcfa7a"
     },
     {
+      "path": "collaborations/dot/p02-prospective-review-observation/README.md",
+      "bytes": 1743,
+      "sha256": "f0807b0211b072a7cd7d15ef1150a5b1630082c80ff8024098721ab9fdfcce2b"
+    },
+    {
+      "path": "collaborations/dot/p02-prospective-review-observation/baseline.json",
+      "bytes": 1290,
+      "sha256": "b2d2a66534d9fc2a3abda1d6ef84d05a766bc419ea63f310dc72d2a21e186d9d"
+    },
+    {
       "path": "collaborations/dot/p03-csm-policy-score/README.md",
       "bytes": 3883,
       "sha256": "f5310d267446cffce584ec42b2af2c64406cf1269a05de6f823336d6fb25725d"
