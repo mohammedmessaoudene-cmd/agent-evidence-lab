@@ -1,0 +1,18 @@
+{
+  "run": "fiction-1",
+  "scope": "SYNTHETIC",
+  "clock": "example-common-counter",
+  "role": "acquisition",
+  "device": "example-acquisition",
+  "rows": [
+    {
+      "id": "A1",
+      "point": "example-node",
+      "t_ns": 11,
+      "boot": "B1",
+      "seq": 1,
+      "trigger": "Q1",
+      "uv": 80
+    }
+  ]
+}

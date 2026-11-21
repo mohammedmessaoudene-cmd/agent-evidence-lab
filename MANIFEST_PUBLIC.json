@@ -1004,6 +1004,66 @@
       "sha256": "0c510c7a9f5225fa45dfd6d4202526d92492fc1432a31560656afcd41d6aab84"
     },
     {
+      "path": "projects/P05_test_dossier/acquisition_gate/EXPECTED.json",
+      "bytes": 3285,
+      "sha256": "45c8f3f25416fda25c5c2808e363f70d60ffa2e9109fe9c617eed69e71b7b413"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/LICENSE",
+      "bytes": 1077,
+      "sha256": "c3ae75209c90a84492d3ecdf1e20cec31078c093d401fce0d5e1b665b26b284e"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/README.md",
+      "bytes": 3711,
+      "sha256": "484b2054d9f15be9c05cca5fbb628c5e4e1a695a1adcfe32fab792fb40264e2f"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/SYNTHETIC/acquisition.json",
+      "bytes": 316,
+      "sha256": "dedd62a68791aea1d5dc6835ae0ea391c87e9fa5c466f2114b8e531ecadab449"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/SYNTHETIC/decision.json",
+      "bytes": 769,
+      "sha256": "20b9e082299bf53b30cd93b1f9ddfc7e05765735b46a27bb7a3db999a5586648"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/SYNTHETIC/gateway.json",
+      "bytes": 583,
+      "sha256": "e8f6e12d88859ad5e758294c78aa481e387817625161c6c869f2bdd4159f198e"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/SYNTHETIC/manifest.json",
+      "bytes": 1053,
+      "sha256": "0ac489930b94b30f5f14028c8c876294990581091d51370a50f74f2c96e1ec53"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/SYNTHETIC/publication.json",
+      "bytes": 276,
+      "sha256": "e7195f3e29e1678462a5a085b65ad3bb77bf0e7c7d4ad18745693fca425b8e19"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/SYNTHETIC/witness.json",
+      "bytes": 568,
+      "sha256": "701a3b2e6ff9ccf8b834d282174bf03dadd649b17155ad3ad139ccc3892aaa42"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/controls.py",
+      "bytes": 3695,
+      "sha256": "3931da6debbf3bcb452bea10553b623d5379c7df1e2276c27e0a95656f2aee51"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/observer.py",
+      "bytes": 7633,
+      "sha256": "50646a6929ccada8aab77a4fc12e12b511adab6da79fc381d6382425d7974355"
+    },
+    {
+      "path": "projects/P05_test_dossier/acquisition_gate/verify.py",
+      "bytes": 2398,
+      "sha256": "d9f02abff472685c0b6c8f28c2c47f2775d59196bec6b52b1e280150b4468eb4"
+    },
+    {
       "path": "projects/P05_test_dossier/control/competent_script.py",
       "bytes": 23328,
       "sha256": "b565d6e7d0c7cd69d6d8ec7e4192abf07730164391fe30960e9d66d306dbb743"
