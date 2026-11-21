@@ -1,0 +1,41 @@
+{
+  "dataset_doi": "10.5281/zenodo.6974112",
+  "dataset_version": "1.0.1",
+  "session": "01-normal-1",
+  "recorded_frames": 6259,
+  "measurement_streams": 3,
+  "measurement_publications": 3595,
+  "initial_frames_excluded": 3,
+  "consecutive_measurement_pairs": 3592,
+  "reference_new_versions": 292,
+  "reference_repeats": 3300,
+  "unclassified_pairs": 0,
+  "publication_rules": {
+    "capture_time_advances": {
+      "new_versions_called_new": 292,
+      "new_versions_called_repeats": 0,
+      "repeats_called_new": 3300,
+      "repeats_called_repeats": 0
+    },
+    "first_numeric_channel_changes": {
+      "new_versions_called_new": 252,
+      "new_versions_called_repeats": 40,
+      "repeats_called_new": 0,
+      "repeats_called_repeats": 3300
+    }
+  },
+  "time_quality": {
+    "event_time_quality_byte": "0x3f",
+    "measurement_publications_with_this_byte": 3595,
+    "clock_not_synchronized_flag": true,
+    "accuracy": "unspecified"
+  },
+  "unmeasured": [
+    "physical acquisition time for each channel",
+    "application fresh or cached read",
+    "caller decision time",
+    "independent electrical reference at decision time",
+    "physical fault",
+    "false alarm count"
+  ]
+}

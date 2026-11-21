@@ -1,0 +1,60 @@
+{
+  "method": "Offline SQLite end-state comparison with unmodified ServiceNow SQL",
+  "reference_commit": "271f2c357f763376997dfd16807fcde2474ae41b",
+  "task_sha256": "3cc8440866e8b75d7473ce8154c90b77b9aa1a9df990801b0142f5fdef5636bc",
+  "seed_sha256": "71c8e714b920a0f67abd16f06c29818284b741608e0fa3f1a28c1f331aa9e6dc",
+  "local_preregistration_sha256": "e7b27e8669f68e460bc21c23d9b8455e3d493e91db1a7f94ef08ca3098f354de",
+  "query_sha256_in_source_order": [
+    "3381ae166af11f812a55ef731ae188eebf45f7b7bfdfeac7f1869479da5aa4b2",
+    "6c644a839bdb95b9f888e0b21a1fce79583e0f8a6ed6f4e22589739077e6d3b4",
+    "0786541e86926921a8d1485215658d46bff24c7a6ee33b4f74b75c306d1c72c1",
+    "59f7d9ff01076065025fc0fcf2439fb5313f807a7cc11fdb3f0989acf6ce284e"
+  ],
+  "seed_tables": 17,
+  "seed_rows": 10616,
+  "rows_compared_between_hypothetical_states": 10619,
+  "different_cells": 1,
+  "different_field": "customer_case.priority",
+  "counts_in_source_order": {
+    "seed": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "common_device_update_only": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "hypothetical_moderate": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "hypothetical_low": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "checks_returning_the_expected_count": {
+    "seed": 0,
+    "common_device_update_only": 1,
+    "hypothetical_moderate": 3,
+    "hypothetical_low": 4
+  },
+  "scorer_connection_query_only": true,
+  "matches_local_preregistration": true,
+  "service_calls_in_this_comparison": 0,
+  "earlier_isolated_service_run": {
+    "run_id": "44854268191",
+    "attempt": 1,
+    "official_checks_executed": [
+      1
+    ]
+  }
+}
