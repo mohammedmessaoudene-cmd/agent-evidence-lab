@@ -26,6 +26,27 @@ assert q2["consumed_response_uses_conversion_triggered_by_request"] is False
 assert q2_result["acquisition_log_completeness"] == "UNKNOWN"
 checks["q2_triggers_a2_but_cache_delivers_a1"] = "PASS"
 
+# Change only the separate conversion. The cached response still consumes A1.
+for tick, trigger, name in (
+    (1, "Q2", "separate_conversion_before_cached_request"),
+    (49, "Q2", "separate_conversion_one_tick_before_request"),
+    (9, "Q1", "separate_conversion_before_direct_request"),
+):
+    copy["acquisition"]["rows"][-1].update(t_ns=tick, trigger=trigger)
+    try:
+        inspect(manifest, copy)
+    except ValueError as error:
+        assert str(error) == "declared conversion predates request"
+    else:
+        raise AssertionError(name)
+    checks[name] = "REJECTED_AS_EXPECTED"
+
+for tick, name in ((50, "separate_conversion_at_request_start"),
+                   (53, "separate_conversion_after_decision")):
+    copy["acquisition"]["rows"][-1].update(t_ns=tick, trigger="Q2")
+    assert inspect(manifest, copy) == q2_result
+    checks[name] = "PASS"
+
 
 def check(name, role, index, changes, reason):
     data = deepcopy(sources)

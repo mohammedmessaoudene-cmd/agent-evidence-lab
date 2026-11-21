@@ -4,6 +4,11 @@
     "controls": {
       "linked_direct_and_cache": "PASS",
       "q2_triggers_a2_but_cache_delivers_a1": "PASS",
+      "separate_conversion_before_cached_request": "REJECTED_AS_EXPECTED",
+      "separate_conversion_one_tick_before_request": "REJECTED_AS_EXPECTED",
+      "separate_conversion_before_direct_request": "REJECTED_AS_EXPECTED",
+      "separate_conversion_at_request_start": "PASS",
+      "separate_conversion_after_decision": "PASS",
       "second_direct_same_conversion": "REJECTED_AS_EXPECTED",
       "clock_mismatch": "REJECTED_AS_EXPECTED",
       "fetch_timestamp_as_conversion": "REJECTED_AS_EXPECTED",
