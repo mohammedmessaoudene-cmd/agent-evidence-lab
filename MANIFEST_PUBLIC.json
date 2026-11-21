@@ -14,6 +14,11 @@
       "sha256": "ecc77cf76e5a8967987cda508a455cb1b9d6f9c4a1e95fc6ae071a5ef072b7ff"
     },
     {
+      "path": ".github/workflows/dot-p03-runtime.yml",
+      "bytes": 3867,
+      "sha256": "a778a4602f1c553cb7ab608c66d3addd81b4101589c895e6e6ce3a081c894659"
+    },
+    {
       "path": ".github/workflows/p01-compatibility-r3.yml",
       "bytes": 2170,
       "sha256": "ffbb89b184b93a2fcdd3736c069f659dc50668844ff0f00fc177e17c24eca4f0"
@@ -77,6 +82,21 @@
       "path": "collaborations/dot/p01-lost-reply-and-restart/reprise.py",
       "bytes": 10291,
       "sha256": "7b0b345153639dbfe033b2f7759059cdbe27392ea5a70da29e16e0cc6ac6bcae"
+    },
+    {
+      "path": "collaborations/dot/p03-csm-runtime/collect.py",
+      "bytes": 8433,
+      "sha256": "783c5ee3ab4b8b037a902cb6aaf0926646cddae54c0d39c31e0b4aa8f90970ae"
+    },
+    {
+      "path": "collaborations/dot/p03-csm-runtime/exercise.py",
+      "bytes": 6904,
+      "sha256": "de40d308ba26b8affa628969ced5a4e55fb64fd5c7bcd977bb62cec87664e452"
+    },
+    {
+      "path": "collaborations/dot/p03-csm-runtime/prepare.py",
+      "bytes": 1889,
+      "sha256": "6bba7d77b31ee6edf4f4d31577eec5ff9ef7671bc976abfd6b4e36ffc632a211"
     },
     {
       "path": "collaborations/open-evidence-lab/p04-execution-billing/.gitattributes",

@@ -1,0 +1,82 @@
+name: Dot P03 isolated CSM
+on:
+  push:
+    branches:
+      - dot/v2-p03-runtime-20261121
+permissions:
+  contents: read
+jobs:
+  csm:
+    if: github.event.deleted == false && github.event.before == '73c39c45779e1e633621bcbacf9afee541d1634e' && github.run_attempt == '1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      IMAGE: shivakrishnareddyma225/enterpriseops-gym-mcp-csm@sha256:eaa456ac9aa85728426e7d3813a0bbca0949d6a8695be30e26f03894e6e6b189
+      EXPECTED_CONFIG: sha256:6b755e5adefabdb62b2fe4c3ca8cf9d297e1d3ea887476ecd58a9f9735ab5be8
+    steps:
+      - name: Initialize the runner receipt
+        shell: bash
+        run: |
+          umask 077
+          printf '%s\n' '{"observation":{"outcome":"NOT_RUN"},"reason":"RUNNER_SETUP_INCOMPLETE"}' > "$RUNNER_TEMP/dot-p03-receipt.json"
+      - name: Check out the triggering commit
+        id: checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Prepare verified public inputs
+        id: inputs
+        run: python3 -I -B collaborations/dot/p03-csm-runtime/prepare.py "$RUNNER_TEMP/p03-inputs"
+      - name: Start isolated CSM
+        id: startup
+        shell: bash
+        run: |
+          set -euo pipefail
+          exec >/dev/null 2>&1
+          docker pull --platform linux/amd64 "$IMAGE"
+          test "$(docker image inspect --format '{{.Id}}' "$IMAGE")" = "$EXPECTED_CONFIG"
+          docker create --name dot-p03-csm --platform linux/amd64 --network none \
+            --memory 768m --cpus 1 --pids-limit 96 --ulimit nofile=512:512 \
+            --cap-drop ALL --security-opt no-new-privileges --log-driver none \
+            --env HTTP_PROXY= --env HTTPS_PROXY= --env ALL_PROXY= --env NO_PROXY=localhost,127.0.0.1 \
+            "$IMAGE"
+          docker cp "$RUNNER_TEMP/p03-inputs" dot-p03-csm:/tmp/dot-p03-inputs
+          docker inspect dot-p03-csm | python3 -c '
+          import json, os, sys
+          c, = json.load(sys.stdin)
+          valid = (c["Image"] == os.environ["EXPECTED_CONFIG"] and c["Config"]["User"] == "sncsm"
+                   and c["HostConfig"]["NetworkMode"] == "none" and not c["HostConfig"]["PortBindings"]
+                   and not c["HostConfig"]["Privileged"] and not c["Mounts"] and not c["State"]["Running"]
+                   and c["HostConfig"]["PidsLimit"] == 96 and c["HostConfig"]["Memory"] == 768 * 1024 * 1024
+                   and c["HostConfig"]["CapDrop"] == ["ALL"] and "no-new-privileges" in c["HostConfig"]["SecurityOpt"])
+          sys.exit(0 if valid else 1)'
+          docker start dot-p03-csm
+      - name: Observe one documented update
+        id: exercise
+        shell: bash
+        run: timeout -k 2s 4m docker exec dot-p03-csm python -I -B /tmp/dot-p03-inputs/exercise.py >/dev/null 2>&1
+      - name: Preserve the stage and observations
+        if: always() && steps.checkout.outcome == 'success'
+        shell: bash
+        env:
+          CHECKOUT_RESULT: ${{ steps.checkout.outcome }}
+          INPUT_RESULT: ${{ steps.inputs.outcome }}
+          STARTUP_RESULT: ${{ steps.startup.outcome }}
+          EXERCISE_RESULT: ${{ steps.exercise.outcome }}
+        run: python3 -I -B collaborations/dot/p03-csm-runtime/collect.py
+      - name: Remove the disposable container
+        if: always()
+        shell: bash
+        run: |
+          if docker inspect dot-p03-csm >/dev/null 2>&1; then
+            timeout -k 2s 15s docker rm -f dot-p03-csm >/dev/null 2>&1
+          fi
+      - name: Upload the P03 receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dot-p03-receipt-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/dot-p03-receipt.json
+          if-no-files-found: error
+          retention-days: 14
