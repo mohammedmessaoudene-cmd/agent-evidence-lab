@@ -1,0 +1,16 @@
+{
+  "run": "fiction-1",
+  "scope": "SYNTHETIC",
+  "clock": "example-common-counter",
+  "role": "publication",
+  "device": "example-publication",
+  "rows": [
+    {
+      "id": "P1",
+      "point": "example-node",
+      "t_ns": 12,
+      "acq": "A1",
+      "uv": 80
+    }
+  ]
+}

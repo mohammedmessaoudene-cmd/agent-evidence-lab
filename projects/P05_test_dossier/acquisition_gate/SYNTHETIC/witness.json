@@ -1,0 +1,29 @@
+{
+  "run": "fiction-1",
+  "scope": "SYNTHETIC",
+  "clock": "example-common-counter",
+  "role": "witness",
+  "device": "example-witness",
+  "rows": [
+    {
+      "id": "W1",
+      "point": "example-node",
+      "t_ns": 14,
+      "edge": "E1",
+      "lower_uv": 78,
+      "upper_uv": 82,
+      "marker_error_ns": 1,
+      "envelope_half_width_ns": 2
+    },
+    {
+      "id": "W2",
+      "point": "example-node",
+      "t_ns": 52,
+      "edge": "E2",
+      "lower_uv": 118,
+      "upper_uv": 122,
+      "marker_error_ns": 1,
+      "envelope_half_width_ns": 2
+    }
+  ]
+}

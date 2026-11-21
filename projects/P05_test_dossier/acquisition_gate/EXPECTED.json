@@ -1,0 +1,100 @@
+{
+  "controls": {
+    "scope": "SYNTHETIC",
+    "controls": {
+      "linked_direct_and_cache": "PASS",
+      "q2_triggers_a2_but_cache_delivers_a1": "PASS",
+      "second_direct_same_conversion": "REJECTED_AS_EXPECTED",
+      "clock_mismatch": "REJECTED_AS_EXPECTED",
+      "fetch_timestamp_as_conversion": "REJECTED_AS_EXPECTED",
+      "decision_says_cache_is_direct": "REJECTED_AS_EXPECTED",
+      "unknown_response": "REJECTED_AS_EXPECTED",
+      "decision_wrong_request": "REJECTED_AS_EXPECTED",
+      "reused_witness": "REJECTED_AS_EXPECTED",
+      "different_edge": "REJECTED_AS_EXPECTED",
+      "different_tick": "REJECTED_AS_EXPECTED",
+      "insufficient_witness_coverage": "REJECTED_AS_EXPECTED",
+      "same_instrument": "REJECTED_AS_EXPECTED",
+      "different_point": "REJECTED_AS_EXPECTED",
+      "cache_cannot_precede_publication": "REJECTED_AS_EXPECTED",
+      "duplicate_boot_sequence": "REJECTED_AS_EXPECTED",
+      "uncertain_reference": "UNKNOWN_AS_EXPECTED"
+    },
+    "physical_test": "NOT_RUN",
+    "physical_cache_false_alarms": null
+  },
+  "cli_fixture": {
+    "scope": "SYNTHETIC",
+    "status": "STRUCTURALLY_LINKED",
+    "rows": [
+      {
+        "decision": "D1",
+        "rule_id": "example-low-v1",
+        "origin": "DIRECT",
+        "reference": "LOW",
+        "request": "Q1",
+        "consumed_conversion_id": "A1",
+        "declared_conversion_ids_for_request": [
+          "A1"
+        ],
+        "consumed_response_uses_conversion_triggered_by_request": true,
+        "low_alarm_disagrees_with_reference": false
+      },
+      {
+        "decision": "D2",
+        "rule_id": "example-low-v1",
+        "origin": "CACHE",
+        "reference": "NORMAL",
+        "request": "Q2",
+        "consumed_conversion_id": "A1",
+        "declared_conversion_ids_for_request": [],
+        "consumed_response_uses_conversion_triggered_by_request": false,
+        "low_alarm_disagrees_with_reference": true
+      }
+    ],
+    "acquisition_log_completeness": "UNKNOWN",
+    "physical_test": "NOT_RUN",
+    "physical_cache_false_alarms": null
+  },
+  "cli_q2_declares_a2_consumes_a1": {
+    "scope": "SYNTHETIC",
+    "status": "STRUCTURALLY_LINKED",
+    "rows": [
+      {
+        "decision": "D1",
+        "rule_id": "example-low-v1",
+        "origin": "DIRECT",
+        "reference": "LOW",
+        "request": "Q1",
+        "consumed_conversion_id": "A1",
+        "declared_conversion_ids_for_request": [
+          "A1"
+        ],
+        "consumed_response_uses_conversion_triggered_by_request": true,
+        "low_alarm_disagrees_with_reference": false
+      },
+      {
+        "decision": "D2",
+        "rule_id": "example-low-v1",
+        "origin": "CACHE",
+        "reference": "NORMAL",
+        "request": "Q2",
+        "consumed_conversion_id": "A1",
+        "declared_conversion_ids_for_request": [
+          "A2"
+        ],
+        "consumed_response_uses_conversion_triggered_by_request": false,
+        "low_alarm_disagrees_with_reference": true
+      }
+    ],
+    "acquisition_log_completeness": "UNKNOWN",
+    "physical_test": "NOT_RUN",
+    "physical_cache_false_alarms": null
+  },
+  "cli_modified_byte": {
+    "status": "REJECTED",
+    "reason": "source identity mismatch",
+    "physical_test": "NOT_RUN",
+    "physical_cache_false_alarms": null
+  }
+}

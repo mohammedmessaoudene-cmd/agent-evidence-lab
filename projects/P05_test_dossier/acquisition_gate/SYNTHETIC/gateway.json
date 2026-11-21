@@ -1,0 +1,31 @@
+{
+  "run": "fiction-1",
+  "scope": "SYNTHETIC",
+  "clock": "example-common-counter",
+  "role": "gateway",
+  "device": "example-gateway",
+  "rows": [
+    {
+      "id": "G1",
+      "point": "example-node",
+      "t_ns": 13,
+      "publication": "P1",
+      "request": "Q1",
+      "request_ns": 10,
+      "origin": "DIRECT",
+      "acq_ns": 11,
+      "uv": 80
+    },
+    {
+      "id": "G2",
+      "point": "example-node",
+      "t_ns": 51,
+      "publication": "P1",
+      "request": "Q2",
+      "request_ns": 50,
+      "origin": "CACHE",
+      "acq_ns": 11,
+      "uv": 80
+    }
+  ]
+}

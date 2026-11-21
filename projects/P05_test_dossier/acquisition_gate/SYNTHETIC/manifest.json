@@ -1,0 +1,40 @@
+{
+  "schema": "p05-common-edge/1",
+  "run": "fiction-1",
+  "scope": "SYNTHETIC",
+  "clock": "example-common-counter",
+  "point": "example-node",
+  "low_below_uv": 100,
+  "artifacts": [
+    {
+      "id": "acquisition",
+      "path": "acquisition.json",
+      "bytes": 316,
+      "sha256": "dedd62a68791aea1d5dc6835ae0ea391c87e9fa5c466f2114b8e531ecadab449"
+    },
+    {
+      "id": "publication",
+      "path": "publication.json",
+      "bytes": 276,
+      "sha256": "e7195f3e29e1678462a5a085b65ad3bb77bf0e7c7d4ad18745693fca425b8e19"
+    },
+    {
+      "id": "gateway",
+      "path": "gateway.json",
+      "bytes": 583,
+      "sha256": "e8f6e12d88859ad5e758294c78aa481e387817625161c6c869f2bdd4159f198e"
+    },
+    {
+      "id": "decision",
+      "path": "decision.json",
+      "bytes": 769,
+      "sha256": "20b9e082299bf53b30cd93b1f9ddfc7e05765735b46a27bb7a3db999a5586648"
+    },
+    {
+      "id": "witness",
+      "path": "witness.json",
+      "bytes": 568,
+      "sha256": "701a3b2e6ff9ccf8b834d282174bf03dadd649b17155ad3ad139ccc3892aaa42"
+    }
+  ]
+}

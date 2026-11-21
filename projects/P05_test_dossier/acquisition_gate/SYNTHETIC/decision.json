@@ -1,0 +1,37 @@
+{
+  "run": "fiction-1",
+  "scope": "SYNTHETIC",
+  "clock": "example-common-counter",
+  "role": "decision",
+  "device": "example-decision",
+  "rows": [
+    {
+      "id": "D1",
+      "point": "example-node",
+      "t_ns": 14,
+      "response": "G1",
+      "witness": "W1",
+      "request": "Q1",
+      "edge": "E1",
+      "input_uv": 80,
+      "input_origin": "DIRECT",
+      "call": "LOW",
+      "marker_error_ns": 1,
+      "rule_id": "example-low-v1"
+    },
+    {
+      "id": "D2",
+      "point": "example-node",
+      "t_ns": 52,
+      "response": "G2",
+      "witness": "W2",
+      "request": "Q2",
+      "edge": "E2",
+      "input_uv": 80,
+      "input_origin": "CACHE",
+      "call": "LOW",
+      "marker_error_ns": 1,
+      "rule_id": "example-low-v1"
+    }
+  ]
+}
