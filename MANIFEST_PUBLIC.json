@@ -119,6 +119,16 @@
       "sha256": "b2d2a66534d9fc2a3abda1d6ef84d05a766bc419ea63f310dc72d2a21e186d9d"
     },
     {
+      "path": "collaborations/dot/p03-avery-observed/README.md",
+      "bytes": 2320,
+      "sha256": "d36f1ed3039a5c78c1413ebc551c14626cf6f678100f7aad7fc7b8b564849883"
+    },
+    {
+      "path": "collaborations/dot/p03-avery-observed/receipt.json",
+      "bytes": 1259,
+      "sha256": "abe303797e65cf137ae1cea9161c4e27c43ff5b7298a611b8da666889b73c781"
+    },
+    {
       "path": "collaborations/dot/p03-csm-policy-score/README.md",
       "bytes": 3883,
       "sha256": "f5310d267446cffce584ec42b2af2c64406cf1269a05de6f823336d6fb25725d"
