@@ -609,6 +609,16 @@
       "sha256": "1ad3cac22f7d20a3f0e4f9d3a9747d47a80097b7d1522202b018e422c6365add"
     },
     {
+      "path": "projects/P02_corrections/examples/stale-receipt-same-decision/README.md",
+      "bytes": 1732,
+      "sha256": "61f82a9054c18b38879ba1f5bf4cb2294d2c3fe77b28947ecb38209981b82c37"
+    },
+    {
+      "path": "projects/P02_corrections/examples/stale-receipt-same-decision/run.py",
+      "bytes": 5332,
+      "sha256": "1e88064e58bfe622f97dccea7a597ff7f253cd7da030bdfc8a57a47d66cf81bc"
+    },
+    {
       "path": "projects/P02_corrections/protocol/r2_scope_freeze.json",
       "bytes": 300,
       "sha256": "964105dbce431a0bde54d6297b86644b72ff1f3227be7bcd8c013e3cbf6c4949"
