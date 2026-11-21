@@ -89,6 +89,36 @@
       "sha256": "524253ee8d2788bb428f985ab198a6832804c99f58185b755a64e6ddf2eec786"
     },
     {
+      "path": "collaborations/dot/p02-maintainer-review-replay/README.md",
+      "bytes": 3104,
+      "sha256": "e45b3730b1f8ef9ebf676e419936a2883fca460782610643b8fab99ab3952aa8"
+    },
+    {
+      "path": "collaborations/dot/p02-maintainer-review-replay/receipt.json",
+      "bytes": 2138,
+      "sha256": "9ab4991aa3f017ef793d7a9ae85d2d01eabd8d2d2bbc896b971fc2d393c877af"
+    },
+    {
+      "path": "collaborations/dot/p02-maintainer-review-replay/replay.py",
+      "bytes": 5760,
+      "sha256": "1d23d716db42d34dfd150369162ac9253fea0685ee86700f0122c3671d9cd521"
+    },
+    {
+      "path": "collaborations/dot/p02-maintainer-review-replay/source.json",
+      "bytes": 2807,
+      "sha256": "6fa1263671b4c9a24021fe31a2a98d42eb897f659409ef8b9f7fce529abcfa7a"
+    },
+    {
+      "path": "collaborations/dot/p03-csm-policy-score/README.md",
+      "bytes": 3883,
+      "sha256": "f5310d267446cffce584ec42b2af2c64406cf1269a05de6f823336d6fb25725d"
+    },
+    {
+      "path": "collaborations/dot/p03-csm-policy-score/observed.json",
+      "bytes": 1642,
+      "sha256": "a360628d3607a5162f9df0b4c787317aec6a9d820778db71b11d5247b43a0225"
+    },
+    {
       "path": "collaborations/dot/p03-csm-update-observed/README.md",
       "bytes": 3445,
       "sha256": "2e543bba4e245f95fc118f655f573c2508a299338bbffb4522118b47e3364a02"
@@ -97,6 +127,16 @@
       "path": "collaborations/dot/p03-csm-update-observed/observed.json",
       "bytes": 25501,
       "sha256": "c3d7b9798ad046469402dc4a463eb50296a5b6055c22d85cfa54e5c5e05968e4"
+    },
+    {
+      "path": "collaborations/dot/p05-measurement-republication/README.md",
+      "bytes": 3262,
+      "sha256": "e4400a09f080e41c7e8ded108f164d0599861557f79349bc115bdcee821d2218"
+    },
+    {
+      "path": "collaborations/dot/p05-measurement-republication/observed.json",
+      "bytes": 1195,
+      "sha256": "527affe3677f02759f4111d78f2810c902c3f21c03761a971a0f910abb4cc304"
     },
     {
       "path": "collaborations/open-evidence-lab/p04-execution-billing/.gitattributes",

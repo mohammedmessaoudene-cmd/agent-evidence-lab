@@ -1,0 +1,100 @@
+{
+  "source_lf_sha256": "6fa1263671b4c9a24021fe31a2a98d42eb897f659409ef8b9f7fce529abcfa7a",
+  "p02_commit": "f5af76e5935ef475c1269a447e28128bdb8e457f",
+  "p02_tree": "b4918622588b3744f1bb136d520bc39722ad31cb",
+  "comparisons": 12,
+  "local_peer_receipts": [
+    {
+      "review_id": 5026793366,
+      "local_p02_receipt_sha256": "5fd15428ad87d1d5a12457e073d7e956bd2fd97b6fcebfffc338879f893d40e5"
+    },
+    {
+      "review_id": 5026824915,
+      "local_p02_receipt_sha256": "e44de3ea7b6a0388431470257efdd0e53c5bfcaf4e34b84f1b7fe21adc4acb88"
+    },
+    {
+      "review_id": 5033604459,
+      "local_p02_receipt_sha256": "c2711a88c466df34c26b10bb19888fcebe76260167591aa6e220da94a8236958"
+    }
+  ],
+  "observations": [
+    {
+      "at_review": 5026733476,
+      "by_commit_in_source_order": [
+        [
+          null,
+          "NO_FORMAL_REVIEW_ON_THIS_SHA"
+        ],
+        [
+          null,
+          "NO_FORMAL_REVIEW_ON_THIS_SHA"
+        ]
+      ]
+    },
+    {
+      "at_review": 5026793366,
+      "by_commit_in_source_order": [
+        [
+          5026793366,
+          "APPROVED"
+        ],
+        [
+          null,
+          "NO_FORMAL_REVIEW_ON_THIS_SHA"
+        ]
+      ]
+    },
+    {
+      "at_review": 5026824915,
+      "by_commit_in_source_order": [
+        [
+          5026824915,
+          "CHANGES_REQUESTED"
+        ],
+        [
+          null,
+          "NO_FORMAL_REVIEW_ON_THIS_SHA"
+        ]
+      ]
+    },
+    {
+      "at_review": 5027238169,
+      "by_commit_in_source_order": [
+        [
+          5026824915,
+          "CHANGES_REQUESTED"
+        ],
+        [
+          null,
+          "NO_FORMAL_REVIEW_ON_THIS_SHA"
+        ]
+      ]
+    },
+    {
+      "at_review": 5027238702,
+      "by_commit_in_source_order": [
+        [
+          5026824915,
+          "CHANGES_REQUESTED"
+        ],
+        [
+          null,
+          "NO_FORMAL_REVIEW_ON_THIS_SHA"
+        ]
+      ]
+    },
+    {
+      "at_review": 5033604459,
+      "by_commit_in_source_order": [
+        [
+          5026824915,
+          "CHANGES_REQUESTED"
+        ],
+        [
+          5033604459,
+          "APPROVED"
+        ]
+      ]
+    }
+  ]
+}

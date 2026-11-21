@@ -1,0 +1,83 @@
+{
+  "repository": "agentrust-io/cmcp",
+  "pull_number": 575,
+  "pull_author": "mohammedmessaoudene-cmd",
+  "maintainer": {
+    "login": "imran-siddique",
+    "id": 45405841
+  },
+  "reviewed_commits": [
+    "1cb9b20fe0f09e56cbcc9a750bf80f25d2065820",
+    "1100c4924afc7fb7529cab56ecb885cea9b1222a"
+  ],
+  "reviews_api": "https://api.github.com/repos/agentrust-io/cmcp/pulls/575/reviews?per_page=100",
+  "reviews": [
+    {
+      "id": 5026733476,
+      "time": "2026-08-26T04:18:04Z",
+      "reviewer_id": 199175422,
+      "commit": "1cb9b20fe0f09e56cbcc9a750bf80f25d2065820",
+      "state": "COMMENTED",
+      "url": "https://github.com/agentrust-io/cmcp/pull/575#pullrequestreview-5026733476"
+    },
+    {
+      "id": 5026793366,
+      "time": "2026-08-26T04:30:24Z",
+      "reviewer_id": 45405841,
+      "commit": "1cb9b20fe0f09e56cbcc9a750bf80f25d2065820",
+      "state": "APPROVED",
+      "url": "https://github.com/agentrust-io/cmcp/pull/575#pullrequestreview-5026793366"
+    },
+    {
+      "id": 5026824915,
+      "time": "2026-08-26T04:37:32Z",
+      "reviewer_id": 45405841,
+      "commit": "1cb9b20fe0f09e56cbcc9a750bf80f25d2065820",
+      "state": "CHANGES_REQUESTED",
+      "url": "https://github.com/agentrust-io/cmcp/pull/575#pullrequestreview-5026824915"
+    },
+    {
+      "id": 5027238169,
+      "time": "2026-08-26T06:05:41Z",
+      "reviewer_id": 248361935,
+      "commit": "1100c4924afc7fb7529cab56ecb885cea9b1222a",
+      "state": "COMMENTED",
+      "url": "https://github.com/agentrust-io/cmcp/pull/575#pullrequestreview-5027238169"
+    },
+    {
+      "id": 5027238702,
+      "time": "2026-08-26T06:05:47Z",
+      "reviewer_id": 248361935,
+      "commit": "1100c4924afc7fb7529cab56ecb885cea9b1222a",
+      "state": "COMMENTED",
+      "url": "https://github.com/agentrust-io/cmcp/pull/575#pullrequestreview-5027238702"
+    },
+    {
+      "id": 5033604459,
+      "time": "2026-08-26T18:03:45Z",
+      "reviewer_id": 45405841,
+      "commit": "1100c4924afc7fb7529cab56ecb885cea9b1222a",
+      "state": "APPROVED",
+      "url": "https://github.com/agentrust-io/cmcp/pull/575#pullrequestreview-5033604459"
+    }
+  ],
+  "merge": {
+    "url": "https://github.com/agentrust-io/cmcp/pull/575",
+    "head": "1100c4924afc7fb7529cab56ecb885cea9b1222a",
+    "merged_at": "2026-08-26T20:00:00Z",
+    "base": "main",
+    "commit": "717ce86ca265d9c8cb2f4c18005c76169cf96c61",
+    "merged_by": "imran-siddique"
+  },
+  "issue_closure": {
+    "issue": 571,
+    "state": "CLOSED",
+    "reason": "COMPLETED",
+    "closed_at": "2026-08-26T20:00:01Z",
+    "event": "https://github.com/agentrust-io/cmcp/issues/571#event-30065517304",
+    "event_at": "2026-08-26T20:00:02Z",
+    "closer_type": "PullRequest",
+    "closer_number": 575,
+    "closer_merge_commit": "717ce86ca265d9c8cb2f4c18005c76169cf96c61"
+  }
+}
