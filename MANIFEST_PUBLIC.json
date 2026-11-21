@@ -79,6 +79,16 @@
       "sha256": "7b0b345153639dbfe033b2f7759059cdbe27392ea5a70da29e16e0cc6ac6bcae"
     },
     {
+      "path": "collaborations/dot/p01-stellar-testnet-result/README.md",
+      "bytes": 5394,
+      "sha256": "0a54c23fb44476e48e413004a5c33dc55a876f4fc745102d77591c781e7c4cfc"
+    },
+    {
+      "path": "collaborations/dot/p01-stellar-testnet-result/observed.json",
+      "bytes": 2525,
+      "sha256": "524253ee8d2788bb428f985ab198a6832804c99f58185b755a64e6ddf2eec786"
+    },
+    {
       "path": "collaborations/dot/p03-csm-update-observed/README.md",
       "bytes": 3445,
       "sha256": "2e543bba4e245f95fc118f655f573c2508a299338bbffb4522118b47e3364a02"

@@ -1,0 +1,70 @@
+{
+  "scope": "one live Stellar Testnet transaction, one controlled client-side lost reply",
+  "result": "RECOVERED",
+  "network": {
+    "name": "Stellar Testnet",
+    "protocol": 30,
+    "horizon_version_reported": "30.0.1-6f7cff3903be1df4fb980a12910a1313c5d7d8dd"
+  },
+  "transaction": {
+    "hash": "f18f42a9b4d874a425743d3e88ca1fd960fe4e9920f31e3cd4b438d889e9f470",
+    "confirmed_at_utc": "2026-11-21T03:02:16Z",
+    "confirmation_ledger": 5841299,
+    "confirmation_ledger_hash": "5b15c9d9343224b3ec52ffe5836727edf22c3adca6b5293f9af9e9725abaea18",
+    "source_account_sequence": "25088166696321025",
+    "operation_count": 1,
+    "operation_id": "25088188171173889",
+    "effect_id": "0025088188171173889-0000000001",
+    "operation": "manage_data",
+    "effect": "data_created",
+    "marker_name": "dot-p01-3d258a55c5a3d997aabb554e0c33213d",
+    "marker_value_base64": "Ek/tHAy0Y211TXVXoy2HlZTYYfs5yFGXyx5jHrY9iWA="
+  },
+  "client_trace": {
+    "transaction_hash_in_journal_before_submission": true,
+    "new_client_process": true,
+    "first_client_received_reply_bytes_after_dispatch": 0,
+    "milliseconds_from_initial_dispatch_request": {
+      "dispatch_requested": 0.0,
+      "provider_reply_captured": 6125.886,
+      "effect_count_observed": 17554.827,
+      "first_client_timed_out": 120007.421,
+      "new_client_requested_lookup": 120122.309
+    },
+    "funding_requests": 1,
+    "transaction_submissions": 1,
+    "new_client_reads": 1,
+    "new_client_submissions": 0
+  },
+  "marker_counts": [
+    {
+      "phase": "before_submission",
+      "through_ledger": 5841294,
+      "count": 0
+    },
+    {
+      "phase": "before_client_restart",
+      "through_ledger": 5841299,
+      "count": 1
+    },
+    {
+      "phase": "after_client_restart",
+      "through_ledger": 5841323,
+      "count": 1
+    }
+  ],
+  "original_result": {
+    "encoding": "base64 of Stellar TransactionResult XDR",
+    "base64": "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAAKAAAAAAAAAAA=",
+    "decoded_bytes": 32,
+    "sha256_decoded": "1c9373057a05cfc9f1ef772041d7ea4412e3286750e1f1ddecd6b51f06274d58",
+    "same_bytes_in_captured_submission_restarted_client_and_classical_lookup": true
+  },
+  "http_json_bodies": {
+    "comparison": "synchronous submission, restart lookup, classical lookup",
+    "equal_at_capture": true,
+    "bytes_each": 2751,
+    "sha256_each": "76915116ec216fb457fe6098ce8dfe5665bbc9e5cfb70730ce3e3fadde857ad5"
+  },
+  "classical_baseline": "A plain GET using the hash from the same durable journal returned the same bytes."
+}
